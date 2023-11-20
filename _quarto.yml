@@ -14,11 +14,9 @@ website:
     contents:
       - section: "Food Provisioning"
         contents:
-          - chapters/dog.qmd
-          - chapters/cat.qmd
-      - section: "Artisanal Opportunities"
-        contents:
-          - chapters/horse.qmd
+          - chapters/fis.qmd
+          - chapters/mar.qmd
+      - chapters/ao.qmd
           
 format:
   html:
