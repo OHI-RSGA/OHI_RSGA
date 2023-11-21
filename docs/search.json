@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "OHI: Red Sea and Gulf of Aden",
+    "section": "",
+    "text": "The Red Sea is one of the most saline bodies of water on Earth, which has fostered the evolution of a unique and diverse ecosystem. The region is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are also among the most diverse in the world.\nSimilar to the Red Sea, the Gulf of Aden is home to a wide variety of marine life, although its ecological diversity is less studied. The mangroves and coastal wetlands around the Gulf of Aden are crucial for biodiversity, providing breeding grounds for many fish species and habitat for a variety of wildlife."
+  },
+  {
     "objectID": "index_start.html",
     "href": "index_start.html",
     "title": "OHI: Red Sea and Gulf of Aden",
@@ -14,17 +21,17 @@
     "text": "The Red Sea and Gulf of Aden are unique biological areas that provide many services that humans rely upon.\nThe Red Sea is one of the most saline bodies of water on Earth, which has fostered the evolution of a unique and diverse ecosystem. The region is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are also among the most diverse in the world.\nSimilar to the Red Sea, the Gulf of Aden is home to a wide variety of marine life, although its ecological diversity is less studied. The mangroves and coastal wetlands around the Gulf of Aden are crucial for biodiversity, providing breeding grounds for many fish species and habitat for a variety of wildlife.\n\n\nThe Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. It is known for its remarkable depth and narrow width.\nThe waters of Red Sea are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. However, Jordan and Israel have small EEZs in the northern region, located in the Gulf of Aqaba. And, Djibouti, located at the southern extremity, has a smaller EEZ.\nThere are two disputed EEZ regions located in Red Sea. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.\nThe southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait. The Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.\nThe Exclusive Economic Zone (EEZ) of Somalia is complex due to issues of sovereignty and international recognition between the Federal Republic of Somalia and the self-declared Republic of Somaliland. Although Somaliland declared independence from Somalia in 1991, it is not internationally recognized as a sovereign state. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia’s EEZ.\nIn practice, the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations.\n\n\n\n\n\n\n\n\n\nBoth the Red Sea and Gulf of Aden face environmental challenges from overfishing; pollution from oil extraction, shipping, and land-based sources; and climate change.\nThe Gulf of Aden also has a history of piracy, and the lack of effective governance and security in the waters has led to illegal fishing and dumping.\nInternational cooperation is necessary to mitigate the environmental challenges facing the region. Initiatives could include establishing marine protected areas, enforcing stricter fishing regulations, and implementing measures to reduce pollution and tackle the effects of climate change. Additionally, regional cooperation and governance are crucial in addressing issues like piracy and illegal fishing in the Gulf of Aden."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "OHI_RSGA",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "chapters/regions.html",
+    "href": "chapters/regions.html",
+    "title": "Region geography",
+    "section": "",
+    "text": "The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait.\n\n\n\n\n\n\nThe Red Sea is known for its remarkable depth and narrow width. Its waters are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. In the Gulf of Aqaba, located in the north Red Sea, Jordan and Israel have small EEZs. And a small portion of Djibouti’s EEZ is within the Red Sea.\nThe Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.\nDisputed regions\nThe Red Sea has two disputed EEZ regions. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.\nThe Exclusive Economic Zone (EEZ) of Somalia is complex due to issues of sovereignty and international recognition between the Federal Republic of Somalia and the self-declared Republic of Somaliland. Although Somaliland declared independence from Somalia in 1991, it is not internationally recognized as a sovereign state. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia’s EEZ.\nIn practice, the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations."
   }
 ]

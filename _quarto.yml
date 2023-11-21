@@ -1,28 +1,50 @@
-project:
+project: 
   type: website
-
-website:
-  title: "OHI_RSGA"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+  
+website: 
+  page-navigation: true
+  title: "OHI+" 
+  site-url: "https://ohi-rsga.github.io/OHI_RSGA/" 
+  repo-url: https://github.com/ohi-rsga/OHI_RSGA 
+  repo-actions: [edit, issue]
+  
+  page-footer:
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "&copy; CC-By Openscapes, 2022"
+    
   sidebar:
+    logo: "chapters/figs/redsea_globalmap.png"
+    pinned: true
+    align: center
     style: "docked"
     search: true
+    collapse-level: 1
     contents:
+      - href: index.qmd
+        text: Welcome
+      - chapters/regions.qmd
       - section: "Food Provisioning"
         contents:
           - chapters/fis.qmd
           - chapters/mar.qmd
       - chapters/ao.qmd
-          
+  
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+  
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme:
+      light: [cosmo, theme.scss] # from https://github.com/sta210-s22/website/blob/main/_quarto.yml
+      dark: [cosmo, theme-dark.scss]
+    code-copy: true
+    code-overflow: wrap
     toc: true
-
+    
+filters:
+  - quarto
 
 

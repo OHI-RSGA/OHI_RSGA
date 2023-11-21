@@ -1,7 +1,11 @@
 ---
-title: "OHI_RSGA"
+title: "Ocean Health Index"
+subtitle: "Red Sea and Gulf of Aden"
 ---
 
-This is a Quarto website.
+## Welcome {#welcom}
+The Red Sea is one of the most saline bodies of water on Earth, which has fostered the evolution of a unique and diverse ecosystem. The region is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are also among the most diverse in the world.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Some more
+Similar to the Red Sea, the Gulf of Aden is home to a wide variety of marine life, although its ecological diversity is less studied. The mangroves and coastal wetlands around the Gulf of Aden are crucial for biodiversity, providing breeding grounds for many fish species and habitat for a variety of wildlife.
+

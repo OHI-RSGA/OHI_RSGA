@@ -1,0 +1,83 @@
+---
+title: "Region geography"
+---
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(sf)
+library(tidyverse)
+library(here)
+library(leaflet)
+library(rnaturalearth)
+```
+
+The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait. 
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+eez <- st_read(here("_spatial/data/eez.shp"), quiet=TRUE) %>%
+  arrange(country)
+#eez$wtr_bdy
+#eez$country
+eez$color <- c("#FB2500", "#FB2500", "#1DA08A","#F2AD01","darkgray", "#F98400","#B13259", "#E2D200", "#7B1C6B", "#5ABCD6","darkgray",  "#F8AFA8", "#F8AFA8")
+
+red_sea <- st_read(here("_spatial/data/water_bodies.shp"), quiet=TRUE) %>%
+  filter(name== "Red Sea")
+gulf_aden <- st_read(here("_spatial/data/water_bodies.shp"), quiet=TRUE) %>%
+  filter(name== "Gulf of Aden")
+
+land <- ne_countries(scale = "medium", returnclass = "sf") %>%
+  filter(sov_a3 %in% c("DJI", "EGY", "ERI", "SOM", "SOL", "ISR", "JOR" , "SAU", "SDN", "YEM"))
+
+# leaf maps: https://leaflet-extras.github.io/leaflet-providers/preview/index.html
+#st_bbox(eez)
+
+map <-  leaflet() %>%
+  addProviderTiles("CartoDB.Positron") %>%
+    addPolygons(data = red_sea, 
+              fillColor = NA, 
+              weight = 2, 
+              color = "brown", 
+              opacity = 1) %>%
+    addPolygons(data = gulf_aden, 
+              fillColor = NA, 
+              weight = 2, 
+              color = "#5ABCD6", 
+              opacity = 1) %>%
+  addPolygons(data = eez,
+              fillColor = ~color,
+              weight = 0, 
+              fillOpacity = 0.5, 
+              color=NA,
+              popup = ~paste(dscrptn, "<br>",
+                             "km<sup>2</sup> = ", are_km2)) %>%
+  addPolygons(data = land,
+              fillColor = "lightgray",
+              weight = 2, 
+              fillOpacity = 0.5, 
+              color="darkgray",
+              popup = ~paste(formal_en)) %>%
+  setView(lng=41, lat=20, zoom = 5)
+
+map
+
+
+```
+
+The Red Sea is known for its remarkable depth and narrow width. Its waters are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. In the Gulf of Aqaba, located in the north Red Sea,  Jordan and Israel have small EEZs. And a small portion of Djibouti's EEZ is within the Red Sea.
+
+The Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.
+
+Disputed regions
+
+The Red Sea has two disputed EEZ regions. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.
+
+
+The Exclusive Economic Zone (EEZ) of Somalia is complex due to issues of sovereignty and international recognition between the Federal Republic of Somalia and the self-declared Republic of Somaliland. Although Somaliland declared independence from Somalia in 1991, it is not internationally recognized as a sovereign state. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia's EEZ.
+
+In practice, the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations.
