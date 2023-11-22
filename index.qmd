@@ -3,7 +3,56 @@ title: "Ocean Health Index"
 subtitle: "Red Sea and Gulf of Aden"
 ---
 
-## Welcome {#welcom}
+
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(plotly)
+library(sf)
+library(tidyverse)
+library(highcharter)
+library(here)
+
+ohi_scores <- st_read(here("_data/output/scores.shp"), quiet=TRUE)
+reds   <- colorRampPalette(c("#A50026", "#D73027", "#F46D43", "#FDAE61", "#FEE090"), space = "Lab")(65)
+  blues  <- colorRampPalette(c("#E0F3F8", "#ABD9E9", "#74ADD1", "#4575B4", "#313695"), space = "Lab")(35)
+  colors <- c(reds, blues)
+
+### Color Breaks
+col.brks     <- seq(0,100, by = 1)
+
+score <- round(weighted.mean(ohi_scores$Index, ohi_scores$are_km2), 0)
+
+color_stops <- lapply(1:100, function(i) {
+  list(from = i-1, to = i, color = colors[i])
+})
+
+# Create a Highcharter object with gauge type
+hc <- highchart() %>%
+  hc_chart(type = "gauge", plotBackgroundColor = NULL,
+           plotBackgroundImage = NULL, plotBorderWidth = 0,
+           plotShadow = FALSE) %>%
+  hc_title(text = "") %>%
+  hc_pane(startAngle = -140, endAngle = 140) %>%
+  hc_yAxis(min = 0, max = 100,
+           title = list(text = ""),
+           lineWidth = 0,
+           minorTickInterval = NULL,
+           minorTickLength = 0,
+           tickPixelInterval = 30,
+           tickWidth = 2,
+           labels = list(step = 2, rotation = "auto"),
+           plotBands = color_stops) %>%
+  hc_add_series(name = "", data = list(score),
+                tooltip = list(valueSuffix = " units"))
+
+# Render the chart
+hc
+```
+
+
 The Red Sea is one of the most saline bodies of water on Earth, which has fostered the evolution of a unique and diverse ecosystem. The region is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are also among the most diverse in the world.
 
 ## Some more

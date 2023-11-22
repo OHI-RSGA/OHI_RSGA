@@ -9,8 +9,8 @@ website:
   repo-actions: [edit, issue]
   
   page-footer:
-    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    left: "&copy; CC-By Openscapes, 2022"
+    right: "Something here?"
+    left: "An Ocean Health Index collaboration"
     
   sidebar:
     logo: "chapters/figs/redsea_globalmap.png"
@@ -22,19 +22,36 @@ website:
     contents:
       - href: index.qmd
         text: Welcome
-      - chapters/regions.qmd
-      - section: "Food Provisioning"
+      - href: chapters/OHI.qmd
+        text: "Overview of OHI?"
+      - href: chapters/region.qmd
+        text: "Region"
+      - section: "Goals"
         contents:
-          - chapters/fis.qmd
-          - chapters/mar.qmd
-      - chapters/ao.qmd
-  
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-  
+          - href: chapters/ao.qmd
+            text: "Artisanal opportunities"
+          - href: chapters/bd.qmd
+            text: "Biodiversity"
+          - href: chapters/cs.qmd
+            text: "Carbon storage"
+          - href: chapters/cw.qmd
+            text: "Clean waters"
+          - href: chapters/le.qmd
+            text: "Livelihoods and economies"
+          - href: chapters/cp.qmd
+            text: "Coastal protection"
+          - href: chapters/fp.qmd
+            text: "Food provision"
+          - href: chapters/np.qmd
+            text: "Natural products"
+          - href: chapters/sp.qmd
+            text: "Sense of place"
+          - href: chapters/tr.qmd
+            text: "Tourism and recreation"
+      - href: chapters/pressures.qmd
+        text: "Pressures"
+      - href: chapters/resilience.qmd
+        text: "Resilience"
 format:
   html:
     theme:

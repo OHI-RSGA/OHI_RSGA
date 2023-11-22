@@ -1,0 +1,52 @@
+---
+title: "OHI_data"
+output: html_document
+date: "2023-11-22"
+---
+
+```{r setup, include=FALSE}
+library(sf)
+library(terra)
+library(tidyverse)
+library(here)
+library(countrycode)
+library(tidyr)
+
+```
+
+## Get spatial data
+Created using scripts in the _spatial folder.
+```{r}
+
+regions <- st_read(here("_spatial/data/eez.shp"))
+```
+
+## Get OHI data
+```{r}
+
+ohi <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/yearly_results/global2023/OHI_final_formatted_scores_2023-10-02.csv")
+
+#write_csv(ohi, here("data/output/original_ohi.csv"))
+
+ohi$iso3c <- countrycode(ohi$region_name, "country.name", "iso3c")
+
+ohi <- ohi %>%
+  filter(scenario == 2023) %>%
+  filter(dimension == "score") %>%
+  filter(!is.na(iso3c)) %>%
+  select(iso3c, region_name, goal, value) %>%
+  pivot_wider(names_from = goal, values_from = value)
+
+```
+
+## Combine
+```{r}
+scores <- left_join(regions, ohi, by="iso3c") %>%
+  filter(iso3c != "SDN/EGY") %>% #disputed areas
+  filter(iso3c != "ERI/DJI")
+
+#st_write(scores, here("data/output/scores.shp"))
+
+
+```
+

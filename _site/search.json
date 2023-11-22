@@ -47,5 +47,54 @@
     "title": "Ocean Health Index",
     "section": "Some more",
     "text": "Some more\nSimilar to the Red Sea, the Gulf of Aden is home to a wide variety of marine life, although its ecological diversity is less studied. The mangroves and coastal wetlands around the Gulf of Aden are crucial for biodiversity, providing breeding grounds for many fish species and habitat for a variety of wildlife."
+  },
+  {
+    "objectID": "chapters/ao.html",
+    "href": "chapters/ao.html",
+    "title": " Artisanal fishing opportunities",
+    "section": "",
+    "text": "This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.\nArtisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation, and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is also an important component of cultural identity and heritage.\n\n\n\n\n\n\nThis goal measures how easy or hard it is for fishers to access ocean resources when they need them and the sustainability of harvest of stocks used by artisanal fishers.\nThe model has three components:\n\nNeed: The percent of population below the poverty line. Global OHI model uses per capita GDP as a proxy for this variable.\nAccess: Institutional permits and regulations encouraging small fisheries and providing access to coastal regions. Data is from the UN sustainable development goal 14.b.1 which measures the degree of application of a legal, regulatory, policy, or institutional framework which recognizes and protects access rights for small-scale fisheries.\nSustainability: Sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing. The global data uses the fisheries sustainability scores to assess this.\n\nA high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized."
+  },
+  {
+    "objectID": "chapters/ao.html#overview",
+    "href": "chapters/ao.html#overview",
+    "title": " Artisanal fishing opportunities",
+    "section": "",
+    "text": "This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.\nArtisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation, and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is also an important component of cultural identity and heritage."
+  },
+  {
+    "objectID": "chapters/ao.html#scores",
+    "href": "chapters/ao.html#scores",
+    "title": "Artisanal Fishing Opportunities",
+    "section": "Scores",
+    "text": "Scores"
+  },
+  {
+    "objectID": "chapters/ao.html#model-description",
+    "href": "chapters/ao.html#model-description",
+    "title": " Artisanal fishing opportunities",
+    "section": "",
+    "text": "This goal measures how easy or hard it is for fishers to access ocean resources when they need them and the sustainability of harvest of stocks used by artisanal fishers.\nThe model has three components:\n\nNeed: The percent of population below the poverty line. Global OHI model uses per capita GDP as a proxy for this variable.\nAccess: Institutional permits and regulations encouraging small fisheries and providing access to coastal regions. Data is from the UN sustainable development goal 14.b.1 which measures the degree of application of a legal, regulatory, policy, or institutional framework which recognizes and protects access rights for small-scale fisheries.\nSustainability: Sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing. The global data uses the fisheries sustainability scores to assess this.\n\nA high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized."
+  },
+  {
+    "objectID": "chapters/OHI.html",
+    "href": "chapters/OHI.html",
+    "title": "Region geography",
+    "section": "",
+    "text": "The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait.\n\n\n\n\n\n\nThe Red Sea is known for its remarkable depth and narrow width. Its waters are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. In the Gulf of Aqaba, located in the north Red Sea, Jordan and Israel have small EEZs. And a small portion of Djibouti’s EEZ is within the Red Sea.\nThe Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.\nDisputed regions\nThe Red Sea has two disputed EEZ regions. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.\nThe Exclusive Economic Zone (EEZ) of Somalia is complex due to issues of sovereignty and international recognition between the Federal Republic of Somalia and the self-declared Republic of Somaliland. Although Somaliland declared independence from Somalia in 1991, it is not internationally recognized as a sovereign state. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia’s EEZ.\nIn practice, the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations."
+  },
+  {
+    "objectID": "chapters/region.html",
+    "href": "chapters/region.html",
+    "title": "Region geography",
+    "section": "",
+    "text": "The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait.\n\n\n\n\n\n\nThe Red Sea is known for its remarkable depth and narrow width. Its waters are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. In the Gulf of Aqaba, located in the north Red Sea, Jordan and Israel have small EEZs. And a small portion of Djibouti’s EEZ is within the Red Sea.\nThe Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.\nDisputed regions\nThe Red Sea has two disputed EEZ regions. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.\nThe Exclusive Economic Zone (EEZ) of Somalia is complex due to issues of sovereignty and international recognition between the Federal Republic of Somalia and the self-declared Republic of Somaliland. Although Somaliland declared independence from Somalia in 1991, it is not internationally recognized as a sovereign state. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia’s EEZ.\nIn practice, the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations."
+  },
+  {
+    "objectID": "index.html#ocean-health-index-score",
+    "href": "index.html#ocean-health-index-score",
+    "title": "Ocean Health Index",
+    "section": "",
+    "text": "The Red Sea is one of the most saline bodies of water on Earth, which has fostered the evolution of a unique and diverse ecosystem. The region is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are also among the most diverse in the world."
   }
 ]
