@@ -23,7 +23,7 @@ website:
       - href: index.qmd
         text: Welcome
       - href: chapters/OHI.qmd
-        text: "Overview of OHI?"
+        text: "Overview of OHI"
       - href: chapters/region.qmd
         text: "Region"
       - section: "Goals"
@@ -36,12 +36,12 @@ website:
             text: "Carbon storage"
           - href: chapters/cw.qmd
             text: "Clean waters"
-          - href: chapters/le.qmd
-            text: "Livelihoods and economies"
           - href: chapters/cp.qmd
             text: "Coastal protection"
           - href: chapters/fp.qmd
             text: "Food provision"
+          - href: chapters/le.qmd
+            text: "Livelihoods and economies"
           - href: chapters/np.qmd
             text: "Natural products"
           - href: chapters/sp.qmd

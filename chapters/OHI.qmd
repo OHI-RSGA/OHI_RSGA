@@ -1,83 +1,47 @@
 ---
-title: "Region geography"
+title: ""
 ---
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-library(sf)
-library(tidyverse)
-library(here)
-library(leaflet)
-library(rnaturalearth)
-```
+<img src="figs/ocean_health_index2.jpg" style="width: 100%;">
 
-The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait. 
+## What is a goal?
 
+For the global study, participating scientists, economists, and sociologists reviewed what people want and expect from the ocean and then grouped them into ten categories called ‘goals.’
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
+Each goal is scored on the delivery of specific benefits with respect to a sustainable target. A goal is given a score of 100 if its benefits are maximized without compromising the ocean’s ability to deliver those benefits in the future. Lower scores indicate that more benefits could be gained or that current methods are harming the delivery of future benefits.
 
-eez <- st_read(here("_spatial/data/eez.shp"), quiet=TRUE) %>%
-  arrange(country)
-#eez$wtr_bdy
-#eez$country
-eez$color <- c("#FB2500", "#FB2500", "#1DA08A","#F2AD01","darkgray", "#F98400","#B13259", "#E2D200", "#7B1C6B", "#5ABCD6","darkgray",  "#F8AFA8", "#F8AFA8")
+## How are OHI scores calculated?
 
-red_sea <- st_read(here("_spatial/data/water_bodies.shp"), quiet=TRUE) %>%
-  filter(name== "Red Sea")
-gulf_aden <- st_read(here("_spatial/data/water_bodies.shp"), quiet=TRUE) %>%
-  filter(name== "Gulf of Aden")
+:::{.callout-important}
+## Goal scores are the building blocks of the OHI score!
+To obtain the overall OHI score, the scores of the ten goals are averaged. The global assessment weights the goal scores equally, but some regions may place different values on the goals, and thus, weight the goals differently.
+:::
 
-land <- ne_countries(scale = "medium", returnclass = "sf") %>%
-  filter(sov_a3 %in% c("DJI", "EGY", "ERI", "SOM", "SOL", "ISR", "JOR" , "SAU", "SDN", "YEM"))
+Goal scores are based on several components: current status, likely future status, trend, pressures, and resilience.
 
-# leaf maps: https://leaflet-extras.github.io/leaflet-providers/preview/index.html
-#st_bbox(eez)
+*CURRENT STATUS:* A goal's current value compared to its reference point, resulting in a score from 0 to 100.
 
-map <-  leaflet() %>%
-  addProviderTiles("CartoDB.Positron") %>%
-    addPolygons(data = red_sea, 
-              fillColor = NA, 
-              weight = 2, 
-              color = "brown", 
-              opacity = 1) %>%
-    addPolygons(data = gulf_aden, 
-              fillColor = NA, 
-              weight = 2, 
-              color = "#5ABCD6", 
-              opacity = 1) %>%
-  addPolygons(data = eez,
-              fillColor = ~color,
-              weight = 0, 
-              fillOpacity = 0.5, 
-              color=NA,
-              popup = ~paste(dscrptn, "<br>",
-                             "km<sup>2</sup> = ", are_km2)) %>%
-  addPolygons(data = land,
-              fillColor = "lightgray",
-              weight = 2, 
-              fillOpacity = 0.5, 
-              color="darkgray",
-              popup = ~paste(formal_en)) %>%
-  setView(lng=41, lat=20, zoom = 5)
+*LIKELY FUTURE STATUS:* The goal's predicted status score five years in the future (once again on a scale of 0 to 100), which is estimated by adjusting the current status score by three variables:
 
-map
+- *TREND:* observed change in goal's status during most recent 5 years.
 
+- *PRESSURES* ecological and social factors that decrease a goal's status. 
 
-```
+- *RESILIENCE* ecological factors and social initiatives (policies, laws, etc.) that mitigate the pressures acting on a goal. 
 
-The Red Sea is known for its remarkable depth and narrow width. Its waters are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. In the Gulf of Aqaba, located in the north Red Sea,  Jordan and Israel have small EEZs. And a small portion of Djibouti's EEZ is within the Red Sea.
+![](figs/methodology-chart.png)
 
-The Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.
+## Spatial scale
+Scores are calculated at several spatial scales. 
 
-Disputed regions
+Each goal score is calculated at the smallest spatial scale for the assessment.For the global analysis this is each country (or, territory, in some cases), but these spatial units can be smaller than a country when doing regional assessments.
 
-The Red Sea has two disputed EEZ regions. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.
+The scores for larger geographic areas can then be calculated based on the size of their marine area.
 
+## Why do an independent assessment?
+OHI+ assessments are conducted by independent groups to measure ocean health in their regions, countries, states, and communities. These assessments can be used by managers to incorporate local information and priorities at the spatial scale where policy and management decisions are made.
 
-The Exclusive Economic Zone (EEZ) of Somalia is complex due to issues of sovereignty and international recognition between the Federal Republic of Somalia and the self-declared Republic of Somaliland. Although Somaliland declared independence from Somalia in 1991, it is not internationally recognized as a sovereign state. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia's EEZ.
+Independent assessments use the same framework as the global assessment, but can explore the variables influencing ocean health at the smaller scales where policy and management decisions are made. Goal models and targets are created using higher resolution data, indicators, and priorities, which produce scores better reflecting local realities. This enables scientists, managers, policy makers, and the public to better and more holistically understand, track, and communicate the status of local marine ecosystems, and to design strategic management actions to improve overall ocean health.
 
-In practice, the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations.
+Assessments provide an opportunity engage multiple stakeholders in a collaborative process. In our experiences engaging with various countries around the world, the process of conducting the assessment was just as valuable (if not more) than the final results. This is because the assessment process serves as a forum to engage stakeholders from multiple backgrounds (scientific, civil society, government, private sector, NGOs, etc.) to discuss local preferences and priorities, understand the interactions between various activities, and collaboratively establish management targets.
+
+Conducting a local OHI+ assessment is also valuable because it results in a synthesized collection of data, scientific findings, and management efforts.

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Ocean Health Index",
     "section": "",
-    "text": "The Red Sea is one of the most saline bodies of water on Earth, which has fostered the evolution of a unique and diverse ecosystem. The region is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are also among the most diverse in the world."
+    "text": "Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was 68.\n\n\n\n\n\n\n\n\n\n\nThe interactive map below shows how different countries contributed to this score.\n\n\n\n\n\n\n\nEach region’s score is the average of 10 goals that describe all the ways human value and rely on marine systems.\nYou can navigate through the menu at the right to see each goal score and learn more about each goal.\n\n\n\n\n\n\nRegional models will produce more relevant OHI scores!\n\n\n\nThis score is the EEZ weighted average score from the OHI global assessment. A regional assessment can be better for several reasons:\n\nthe global analysis requires using data the most complete global data, however, local data may be available that is better!\nthe goal models can be adapted to better capture the values and concerns of the region.\nthe goals can be weighted differently, and can even be changed."
   },
   {
     "objectID": "index_start.html",
@@ -53,28 +53,28 @@
     "href": "chapters/ao.html",
     "title": " Artisanal fishing opportunities",
     "section": "",
-    "text": "This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.\nArtisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation, and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is also an important component of cultural identity and heritage.\n\n\n\n\n\n\nThis goal measures how easy or hard it is for fishers to access ocean resources when they need them and the sustainability of harvest of stocks used by artisanal fishers.\nThe model has three components:\n\nNeed: The percent of population below the poverty line. Global OHI model uses per capita GDP as a proxy for this variable.\nAccess: Institutional permits and regulations encouraging small fisheries and providing access to coastal regions. Data is from the UN sustainable development goal 14.b.1 which measures the degree of application of a legal, regulatory, policy, or institutional framework which recognizes and protects access rights for small-scale fisheries.\nSustainability: Sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing. The global data uses the fisheries sustainability scores to assess this.\n\nA high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized."
+    "text": "This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.\nArtisanal fishing, often called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation, and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is also an important component of cultural identity and heritage.\n\n\n\n\n\n  Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was 85.\n\n\n\n\n\n\n\n\n\n\nThe interactive map below shows how different countries contributed to this score.\n\n\n\n\n\n\n\n\n\n\nThis goal measures how easily people can access ocean resources when they need them and whether the stocks being harvested are sustainable managed.\nThe model has three components:\n\nNeed: The percent of population below the poverty line. Global OHI model uses per capita GDP as a proxy for this variable.\nAccess: Institutional permits and regulations encouraging small fisheries and providing access to coastal regions. Data is from the UN sustainable development goal 14.b.1 which measures the degree of application of a legal, regulatory, policy, or institutional framework which recognizes and protects access rights for small-scale fisheries.\nSustainability: Sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing. The global data uses the fisheries sustainability scores to assess this.\n\nA high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized.\n\n\n\nMore details to come!"
   },
   {
     "objectID": "chapters/ao.html#overview",
     "href": "chapters/ao.html#overview",
     "title": " Artisanal fishing opportunities",
     "section": "",
-    "text": "This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.\nArtisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation, and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is also an important component of cultural identity and heritage."
+    "text": "This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.\nArtisanal fishing, often called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation, and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is also an important component of cultural identity and heritage."
   },
   {
     "objectID": "chapters/ao.html#scores",
     "href": "chapters/ao.html#scores",
-    "title": "Artisanal Fishing Opportunities",
-    "section": "Scores",
-    "text": "Scores"
+    "title": " Artisanal fishing opportunities",
+    "section": "",
+    "text": "Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was 85.\n\n\n\n\n\n\n\n\n\n\nThe interactive map below shows how different countries contributed to this score."
   },
   {
     "objectID": "chapters/ao.html#model-description",
     "href": "chapters/ao.html#model-description",
     "title": " Artisanal fishing opportunities",
     "section": "",
-    "text": "This goal measures how easy or hard it is for fishers to access ocean resources when they need them and the sustainability of harvest of stocks used by artisanal fishers.\nThe model has three components:\n\nNeed: The percent of population below the poverty line. Global OHI model uses per capita GDP as a proxy for this variable.\nAccess: Institutional permits and regulations encouraging small fisheries and providing access to coastal regions. Data is from the UN sustainable development goal 14.b.1 which measures the degree of application of a legal, regulatory, policy, or institutional framework which recognizes and protects access rights for small-scale fisheries.\nSustainability: Sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing. The global data uses the fisheries sustainability scores to assess this.\n\nA high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized."
+    "text": "This goal measures how easily people can access ocean resources when they need them and whether the stocks being harvested are sustainable managed.\nThe model has three components:\n\nNeed: The percent of population below the poverty line. Global OHI model uses per capita GDP as a proxy for this variable.\nAccess: Institutional permits and regulations encouraging small fisheries and providing access to coastal regions. Data is from the UN sustainable development goal 14.b.1 which measures the degree of application of a legal, regulatory, policy, or institutional framework which recognizes and protects access rights for small-scale fisheries.\nSustainability: Sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing. The global data uses the fisheries sustainability scores to assess this.\n\nA high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized."
   },
   {
     "objectID": "chapters/OHI.html",
@@ -86,9 +86,9 @@
   {
     "objectID": "chapters/region.html",
     "href": "chapters/region.html",
-    "title": "Region geography",
+    "title": "OHI+",
     "section": "",
-    "text": "The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait.\n\n\n\n\n\n\nThe Red Sea is known for its remarkable depth and narrow width. Its waters are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. In the Gulf of Aqaba, located in the north Red Sea, Jordan and Israel have small EEZs. And a small portion of Djibouti’s EEZ is within the Red Sea.\nThe Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.\nDisputed regions\nThe Red Sea has two disputed EEZ regions. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.\nThe Exclusive Economic Zone (EEZ) of Somalia is complex due to issues of sovereignty and international recognition between the Federal Republic of Somalia and the self-declared Republic of Somaliland. Although Somaliland declared independence from Somalia in 1991, it is not internationally recognized as a sovereign state. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia’s EEZ.\nIn practice, the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations."
+    "text": "The Red Sea and Gulf of Aden are biologically and culturally rich marine areas.\n\n\nThe Red Sea is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are among the most diverse in the world.\nThe mangroves and coastal wetlands around the Gulf of Aden are crucial for biodiversity, providing breeding grounds for many fish species and habitat for a variety of wildlife."
   },
   {
     "objectID": "index.html#ocean-health-index-score",
@@ -96,5 +96,54 @@
     "title": "Ocean Health Index",
     "section": "",
     "text": "The Red Sea is one of the most saline bodies of water on Earth, which has fostered the evolution of a unique and diverse ecosystem. The region is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are also among the most diverse in the world."
+  },
+  {
+    "objectID": "chapters/region.html#significance",
+    "href": "chapters/region.html#significance",
+    "title": "OHI+",
+    "section": "",
+    "text": "The Red Sea and Gulf of Aden are biologically and culturally rich marine areas.\n\n\nThe Red Sea is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are among the most diverse in the world.\nThe mangroves and coastal wetlands around the Gulf of Aden are crucial for biodiversity, providing breeding grounds for many fish species and habitat for a variety of wildlife."
+  },
+  {
+    "objectID": "chapters/region.html#description",
+    "href": "chapters/region.html#description",
+    "title": "OHI+",
+    "section": "Description",
+    "text": "Description\nThe Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait.\nThe Red Sea is known for its remarkable depth and narrow width. Its waters are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. In the Gulf of Aqaba, located in the north Red Sea, Jordan and Israel have small EEZs. And a small portion of Djibouti’s EEZ is within the Red Sea.\nThe Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.\n\n\n\n\n\n\nDisputed regions (click to expand)\n\n\n\n\n\nThe Red Sea has two disputed EEZ regions. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.\nThe Exclusive Economic Zone (EEZ) of Somalia is complex. Somaliland declared independence from Somalia in 1991, and the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia’s EEZ."
+  },
+  {
+    "objectID": "chapters/OHI.html#what-is-a-goal",
+    "href": "chapters/OHI.html#what-is-a-goal",
+    "title": "OHI+",
+    "section": "What is a goal?",
+    "text": "What is a goal?\nFor the global study, participating scientists, economists, and sociologists reviewed what people want and expect from the ocean and then grouped them into ten categories called ‘goals.’\nEach goal is scored on the delivery of specific benefits with respect to a sustainable target. A goal is given a score of 100 if its benefits are maximized without compromising the ocean’s ability to deliver those benefits in the future. Lower scores indicate that more benefits could be gained or that current methods are harming the delivery of future benefits."
+  },
+  {
+    "objectID": "chapters/OHI.html#how-are-ohi-scores-calculated",
+    "href": "chapters/OHI.html#how-are-ohi-scores-calculated",
+    "title": "OHI+",
+    "section": "How are OHI scores calculated?",
+    "text": "How are OHI scores calculated?\n\n\n\n\n\n\nGoal scores are the building blocks of the OHI score!\n\n\n\nTo obtain the overall OHI score, the scores of the ten goals are averaged. The global assessment weights the goal scores equally, but some regions may place different values on the goals, and thus, weight the goals differently.\n\n\nGoal scores are based on several components: current status, likely future status, trend, pressures, and resilience.\nCURRENT STATUS: A goal’s current value compared to its reference point, resulting in a score from 0 to 100.\nLIKELY FUTURE STATUS: The goal’s predicted status score five years in the future (once again on a scale of 0 to 100), which is estimated by adjusting the current status score by three variables:\n\nTREND: observed change in goal’s status during most recent 5 years.\nPRESSURES ecological and social factors that decrease a goal’s status.\nRESILIENCE ecological factors and social initiatives (policies, laws, etc.) that mitigate the pressures acting on a goal."
+  },
+  {
+    "objectID": "chapters/OHI.html#spatial-scale",
+    "href": "chapters/OHI.html#spatial-scale",
+    "title": "OHI+",
+    "section": "Spatial scale",
+    "text": "Spatial scale\nScores are calculated at several spatial scales.\nEach goal score is calculated at the smallest spatial scale for the assessment.For the global analysis this is each country (or, territory, in some cases), but these spatial units can be smaller than a country when doing regional assessments.\nThe scores for larger geographic areas can then be calculated based on the size of their marine area."
+  },
+  {
+    "objectID": "chapters/OHI.html#why-do-an-independent-assessment",
+    "href": "chapters/OHI.html#why-do-an-independent-assessment",
+    "title": "OHI+",
+    "section": "Why do an independent assessment?",
+    "text": "Why do an independent assessment?\nOHI+ assessments are conducted by independent groups to measure ocean health in their regions, countries, states, and communities. These assessments can be used by managers to incorporate local information and priorities at the spatial scale where policy and management decisions are made.\nIndependent assessments use the same framework as the global assessment, but can explore the variables influencing ocean health at the smaller scales where policy and management decisions are made. Goal models and targets are created using higher resolution data, indicators, and priorities, which produce scores better reflecting local realities. This enables scientists, managers, policy makers, and the public to better and more holistically understand, track, and communicate the status of local marine ecosystems, and to design strategic management actions to improve overall ocean health.\nAssessments provide an opportunity engage multiple stakeholders in a collaborative process. In our experiences engaging with various countries around the world, the process of conducting the assessment was just as valuable (if not more) than the final results. This is because the assessment process serves as a forum to engage stakeholders from multiple backgrounds (scientific, civil society, government, private sector, NGOs, etc.) to discuss local preferences and priorities, understand the interactions between various activities, and collaboratively establish management targets.\nConducting a local OHI+ assessment is also valuable because it results in a synthesized collection of data, scientific findings, and management efforts."
+  },
+  {
+    "objectID": "chapters/ao.html#regional-analysis",
+    "href": "chapters/ao.html#regional-analysis",
+    "title": " Artisanal fishing opportunities",
+    "section": "",
+    "text": "More details to come!"
   }
 ]

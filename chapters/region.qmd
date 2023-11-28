@@ -1,5 +1,5 @@
 ---
-title: "Region geography"
+title: ""
 ---
 ```{r}
 #| echo: false
@@ -11,11 +11,24 @@ library(here)
 library(leaflet)
 library(rnaturalearth)
 ```
+## Significance
 
-The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait. 
+The Red Sea and Gulf of Aden are biologically and culturally rich marine areas. 
 
 
-```{r}
+:::: {.columns} 
+
+::: {.column width="50%"}
+
+The Red Sea is home to a variety of marine species, including over 1,200 species of fish, of which about 10% are found no where else. The coral reefs in the Red Sea are among the most diverse in the world.
+
+The mangroves and coastal wetlands around the Gulf of Aden are crucial for biodiversity, providing breeding grounds for many fish species and habitat for a variety of wildlife.
+
+:::
+
+::: {.column width="50%"}
+
+```{r, fig.width=3, fig.height=1.5}
 #| echo: false
 #| warning: false
 #| message: false
@@ -62,22 +75,27 @@ map <-  leaflet() %>%
               fillOpacity = 0.5, 
               color="darkgray",
               popup = ~paste(formal_en)) %>%
-  setView(lng=41, lat=20, zoom = 5)
+  setView(lng=41, lat=20, zoom = 4)
 
 map
 
 
 ```
+:::
+
+::::
+## Description
+
+The Red Sea is a seawater inlet of the Indian Ocean, lying between Africa and Asia. The southern tip of the Red Sea opens into the Gulf of Aden via the Bab el Mandeb strait. 
 
 The Red Sea is known for its remarkable depth and narrow width. Its waters are mostly divided between the countries of Saudi Arabia, Egypt, Sudan, and Eritrea. In the Gulf of Aqaba, located in the north Red Sea,  Jordan and Israel have small EEZs. And a small portion of Djibouti's EEZ is within the Red Sea.
 
 The Gulf of Aden is shared among three nations, Yemen on the Arabian Peninsula and Djibouti and Somalia in Africa.
 
-Disputed regions
+::: {.callout-note collapse=true}
+## Disputed regions (click to expand)
 
 The Red Sea has two disputed EEZ regions. One off of the Halaib Triangle between Sudan and Egypt; and the Doumeira Isands between Eritrea and Djibouti.
 
-
-The Exclusive Economic Zone (EEZ) of Somalia is complex due to issues of sovereignty and international recognition between the Federal Republic of Somalia and the self-declared Republic of Somaliland. Although Somaliland declared independence from Somalia in 1991, it is not internationally recognized as a sovereign state. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia's EEZ.
-
-In practice, the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations.
+The Exclusive Economic Zone (EEZ) of Somalia is complex. Somaliland declared independence from Somalia in 1991, and the government of Somaliland administers and lays claim to the waters off its coast as part of its self-declared sovereignty. However, these claims are not recognized by the international community, and any agreements or exploration licenses issued by Somaliland in these waters are not acknowledged by most countries and international organizations. As a result, in terms of international law and most international agreements, the waters off the coast of Somaliland are considered part of Somalia's EEZ.
+::::
