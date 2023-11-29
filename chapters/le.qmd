@@ -3,7 +3,7 @@ title: ""
 format: html
 ---
 
-# ![](livelihoods-and-economies.svg.svg){width="8%" height="8%" color="red"} Livelihoods and economies
+# ![](livelihoods-and-economies.svg){width="8%" height="8%" color="red"} Livelihoods and economies
 
 ## Overview
 
