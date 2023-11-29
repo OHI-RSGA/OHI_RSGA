@@ -1,7 +1,97 @@
 ---
-title: "Artisanal Opportunities"
+title: ""
 format: html
-editor: visual
 ---
 
-## Artisanal opportunities!!!!
+# ![](figs/food-provision.svg){width="8%" height="8%" color="red"} Food provision
+
+## Overview
+
+This goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.
+
+One of the most fundamental services the ocean provides is the provision of food. Fish provide nearly 20% of global animal protein, helping to meet the basic nutritional needs of over half of the world’s population (FAO 2020)!
+
+
+## Scores
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+score <- score(x="FP", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+dial(score,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+map_figure(ohi_scores=ohi_scores, goal="FP")
+
+```
+
+<br>
+
+## Model description
+The Food Provision goal measures the amount of seafood sustainably harvested through any means for human consumption, and thus includes both mariculture and wild-caught fisheries (commercial, artisanal, and recreational).For the global assessment, the contribution of these two subgoals to the overall score is weighted by their total seafood yield. However, other approaches for weighting the contribution of these subgoals are reasonable.
+
+A high score indicates that a region has maximized the amount of sustainably produced seafood from wild or ocean-cultured stocks. For fisheries, both over- and under- harvesting should be penalized. For mariculture, production should be at the sustainable “potential”. 
+
+### Wild caught fisheries
+
+The wild-caught fisheries subgoal evaluates how well we maximize harvest without damaging the ocean’s ability to continue providing fish for people in the future. The sustainable harvest of wild-caught seafood avoids excessively high exploitation of target species and does not target threatened populations. Each year’s catch must not take so much from the population that future catches will decline. 
+
+We assess food provision from wild caught fisheries by estimating population biomass relative to the biomass that can deliver maximum sustainable yield ($B/B_{MSY}$) for each stock. When available, we obtained $B/B_{MSY}$ values from the RAM Legacy Stock Assessment Database.
+
+When RAM data were not available, we used data-limited approaches that have been developed to estimate $B/B_{MSY}$ values using globally available catch data. 
+
+To calculate the status for each region and year, $B/B_{MSY}$ values were converted to a stock status score between 0-1 that penalizes over-harvesting. To obtain the overall status for each region, the stock status scores for all the stocks within a region were averaged using a geometric mean weighted by the average catch (tonnes) of each stock using Sea Around Us catch data. 
+
+
+### Mariculture
+
+As humanity’s population continues to expand, we must increasingly rely upon new and improved methods for cultivating food on land and in the ocean. The term aquaculture refers to the cultivation in water (fresh and saltwater) of animals or plants for human consumption. Mariculture refers to the commercial harvest of seafood that is farm-raised in the ocean and along the coast.
+
+Aquaculture is the fastest growing animal food production sector in the world, with a 527% rise in production from 1990 to 2018 (FAO 2020)! As the population contines to grow, it will become increasingly important to efficiently grow food using sustainable mariculture practices.
+
+::: {.callout-note collapse="true"}
+## More details (click to expand)
+The status of the mariculture subgoal, $x_{mar}$, was calculated using three sources of data:
+
+- *Mariculture production:* Tonnes of production for both marine and brackish waters, excluding species that were not used as a source of food for human consumption is from FAO.
+
+- *Potential production:* Gentry et al. (2019) estimates the tonnes of possible production for marine aquaculture at a high resolution spatial scale. To account for social and economic realities and other constraints to these ecological potentials, we constrained the per-country potential to 1% of this tonnage estimate and used these country values as reference points. 
+
+- *Sustainability:* Additionally, we include a sustainability score for each species in each region which is based on the [Monterey Bay Aquarium Seafood Watch aquaculture recommendations](https://www.seafoodwatch.org/seafood-recommendations/standards-revision) [@2023].
+
+:::
+
+## Regional analysis
+
+More details to come!
+
+```{r}
+
+```

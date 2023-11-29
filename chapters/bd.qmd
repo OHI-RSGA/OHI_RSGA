@@ -1,6 +1,133 @@
 ---
-title: Fisheries
+title: ""
 format: html
 ---
 
-## Little Fishies in the Sea!
+# ![](figs/biodiversity.svg){width="8%" height="8%" color="red"} Biodiversity
+
+## Overview
+
+This goal describes how successfully the richness and variety of marine life is being maintained.
+
+People value the existence of a diverse array of species for their intrinsic qualities and their contribution to the structure and function of resilient ecosystems. The risk of species extinction generates great emotional and moral concern for many people. This concern is demonstrated by the large sums of money that people donate to help conserve species and habitats.
+
+
+## Scores
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+score <- score(x="BD", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+dial(score,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+map_figure(ohi_scores=ohi_scores, goal="BD")
+
+```
+
+<br>
+
+## Model description
+For the Global OHI, this goal assesses the conservation status of species based on two sub-goals: Species and Habitats. Species are assessed because they are what one typically thinks of in relation to biodiversity. We also assess Habitats because only a small proportion of marine species worldwide have been mapped and assessed, so we consider habitats a proxy for the condition of the broad suite of species that depend on them.
+
+We calculate each of these sub- goals separately and treat them equally when calculating the overall goal score. A score of 100 means all species are all species are at very low risk of extinction, and all habitats are conserved.
+
+
+### Habitat
+The habitat component of the biodiversity goal measures the status of marine habitats that support large numbers of marine species.
+
+Healthier habitats mean healthier species! Habitat is included as a subgoal of the Biodiversity goal to provide a more complete picture of diversity in the system than only considering the conservation status of species (the other subgoal for Biodiversity). This is because species assessments are often incomplete.
+
+This goal assesses the condition of marine habitats that are particularly important in supporting large numbers of marine species. The status of each habitat is its current condition relative to its reference condition, which is often based on historical area. A score of 1 indicates that the condition equals or exceeds the reference point. The subgoal score is then calculated by combining the habitat scores for each region.
+
+For the global OHI assessment, we included mangroves, coral reefs, kelp forests, seagrass beds, salt marshes, sea ice, or subtidal soft-bottom habitats. All habitats measured contribute equally to the score, regardless of their extent, because the presence of a diverse set of habitats, as well as the level of conservation of each, is considered valuable to achieve this goal.
+
+
+::: {.callout-note collapse=true}
+## More about global habitats (click to expand)
+
+Habitat | Condition | Extent | Trend
+-------- | --------------------- | ----------------- | ------------------
+Seagrass | Increasing or stable trend assigned condition = 1.0; decreasing trend assigned condition = 0.71 based on global loss | Seagrass extent per oceanic region (vector based) | Calculated across data from 1990 - 2000
+Kelp | Increasing or stable trend assigned condition = 1.0; decreasing trend assigned condition based on a 2% global yearly loss | Kelp extent per oceanic region (vector based) | Calculated across data from 1983 - 2012
+Coral reefs | Current % cover divided by reference % cover | Coral reef extent per oceanic region (Vector based) | Calculated across data from 1975-2006
+Mangroves | Current hectares divided by reference hectares, for coastal mangroves only | Mangrove extent per oceanic region (vector based) | Calculated using 5 most recent years of data
+Salt marsh | All regions assigned condition = 0.75 based on conservative historical extent losses | Salt marsh extent per oceanic region | All regions assigned trend based on historical .28% global yearly loss 
+Sea ice edge | Current (3-year rolling-average using the current year and previous 2 years) % cover of sea ice having 10-50% cover, divided by reference % cover average from 1979-2000 | Same as condition | Calculated from the fitted slope of %-deviation-from-reference per year, of the most recent 5 years of data (each year of data is based on 3-year average)
+Soft bottom | Soft-bottom destructive fishing practices relative to area of soft-bottom habitat and rescaled to 0-1 based on relative global values | Halpern et al. [-@halpern2008global] | Calculated using 5 most recent years of condition data
+Tidal flat | Average tidal flat extent of 2010 and 2013 relative to historic extent (average of 1989 and 1992) | Tidal flat extent per oceanic region (vector based) | Calculated across data from 2001-2013
+::::
+
+### Species
+The habitat component of the biodiversity goal measures the conservation status of marine species.
+
+This sub-goal assesses the health of all marine species present in a country’s EEZ, including endangered species and species in relatively good conditions. The presence of species that are not at risk leads to a higher score.
+
+::: {.callout-note collapse=true}
+## Species calculation details (click to expand)
+
+Species status was calculated as the area weighted average of the conservation status of the assessed species within each region. Marine species distribution and threat category data mostly came from IUCN Red List of Threatened Species, and we limited data to all species having IUCN habitat system of "marine" [http://www.iucnredlist.org](http://www.iucnredlist.org) [@iucn2022; @iucn_spatial_2022]. Seabird distributions data came from Birdlife International [http://datazone.birdlife.org](http://datazone.birdlife.org) [@birdlifeinternationalandhandbookofthebirdsoftheworld2020].   
+
+We scaled the lower end of the biodiversity goal to be 0 when 75% species are extinct, a level comparable to the five documented mass extinctions [@barnosky_has_2011] and would constitute a catastrophic loss of biodiversity. 
+
+Threat weights, $w_{i}$, were assigned based on the IUCN threat categories status of each $i$ species, following the weighting schemes developed by Butchart et al. [-@butchart2007improvements]. For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include the Data Deficient classification as assessed species following previously published guidelines for a mid-point approach [@schipper2008status; @hoffmann_impact_2010].
+
+We first calculated each the region’s area-weighted average species risk status, $\bar R_{spp}$. For each 0.5 degree grid cell within a region, $c$, the risk status, $w$, for each species, $i$, present is summed and multiplied by cell area $A_c$, to get an area- and count-weighted species risk for each cell.  This value is then divided by the sum of count-weighted area $A_c \times N_c$ across all cells within the region.  The result is the area-weighted mean species risk across the entire region.
+
+$$
+\bar R_{spp} = \frac { \displaystyle\sum_{ c=1 }^{ M } \left( \displaystyle\sum _{ i=1 }^{N_c} w_i \right) \times A_c } 
+                { \displaystyle\sum_{ c=1 }^{ M } A_c \times N_c },  (Eq. 6.4)
+$$
+To convert $\bar R_{spp}$ into a score, we set a floor at 25% (representing a catastrophic loss of biodiversity, as noted above) and then rescaled to produce a $x_{spp}$ value between zero and one.
+
+$$
+x_{spp} = max \left( \frac { \bar R_{SPP} - .25 }{ .75 }, 0 \right), (Eq. 6.5)
+$$
+
+
+**Weights for assessment of species status based on IUCN risk categories**
+
+| Risk Category   | IUCN code | Weight|
+|-----------------|-----------|-------|
+| Extinct         |     EX    |  0.0  |
+| Critically Endangered | CR  |  0.2  |
+| Endangered      |     EN    |  0.4  |
+| Vulnerable      |     VU    |  0.6  |
+| Near Threatened |     NT    |  0.8  |
+| Least Concern   |     LC    |  1.0  |
+:::
+
+## Regional analysis
+
+More details to come!
+
+```{r}
+
+```

@@ -1,7 +1,71 @@
 ---
-title: Mariculture
+title: ""
 format: html
-editor: visual
 ---
 
-## Rearing sea monkeys!
+# ![](figs/carbon-storage.svg){width="8%" height="8%" color="red"} Carbon storage
+
+## Overview
+
+This goal captures the ability of coastal habitats to store carbon given their capacity to store carbon and their health.
+
+Carbon dioxide (CO₂) is the primary heat trapping gas in Earth’s atmosphere and is a key driver of global climate change. The ocean plays a major role in slowing the pace of global climate change by absorbing CO₂ from the atmosphere and storing it as carbon.
+
+
+## Scores
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+score <- score(x="CS", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+dial(score,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+map_figure(ohi_scores=ohi_scores, goal="CS")
+
+```
+
+<br>
+
+## Model description
+
+This goal focuses on three coastal ecosystems — mangroves, tidal marshes and seagrasses — that have remarkable ability to store and sequester carbon in their living parts and buried detritus. When destroyed or degraded, these ecosystems not only stop sequestering carbon but can start to release it, becoming new sources of carbon dioxide that can accelerate global warming for decades or longer. Though these coastal ecosystems form less than 2% of the ocean’s surface, they contribute more to long-term carbon storage and sequestration in sediments than any other ocean ecosystem.
+
+The Carbon Storage score is based on the current extent and condition of CO₂-storing coastal habitats (mangrove forests, seagrass meadows, and salt marshes) relative to their recent historical condition. The status of each habitat is calculated (see [biodiversity/habitat goal](https://mazu.nceas.ucsb.edu/rstudio/p/7dda0cdc/chapters/bd.html#habitat)) and their contribution to the total goal score is the average of the habitats weighted by their average carbon storing capacity.
+
+A score of 100 would indicate that these habitats are all still intact or have been restored to the same condition as in the past. A low score indicates that these habitats have declined significantly and that more protection and restoration must occur in order for them to store the maximum amount of carbon.
+
+## Regional analysis
+
+More details to come!
+
+```{r}
+
+```

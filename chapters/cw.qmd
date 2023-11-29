@@ -1,7 +1,89 @@
 ---
-title: "Artisanal Opportunities"
+title: ""
 format: html
-editor: visual
 ---
 
-## Artisanal opportunities!!!!
+# ![](figs/clean-waters.svg){width="8%" height="8%" color="red"} Clean waters
+
+## Overview
+
+This goal captures the degree to which local waters are unpolluted by human-made causes.
+
+Chemicals, excess nutrients, pathogens, and trash that enter the marine environment can harm human health, livelihoods, and recreation, as well as the health of marine life and habitats.
+
+## Scores
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+score <- score(x="CW", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+dial(score,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+map_figure(ohi_scores=ohi_scores, goal="CW")
+
+```
+
+<br>
+
+## Model description
+
+This goal includes 4 types of pollution inputs into marine environments:
+
+Pollutant | Sources  | OHI data
+---------- | -------------------- | ---------------
+nutrient  | municipal sewage, agricultural fertilizers, livestock manure, aquaculture | fertilizers and manure ([Halpern et al. 2022](https://www.nature.com/articles/s41893-022-00965-x))
+chemicals | oil spills, sewage, agricultural runoff, aquaculture, industrial sources, runoff from impermeable surfaces, shipping |  agricultural pesticide use ([FAO](https://www.fao.org/faostat/en/#data and [Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.)), shipping and ports and harbors ([Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.)), impervious surface runoff([Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.))  
+Pathogens | human waste (land and ships), livestock and aquaculture waste | human waste in terms of access to sanitation ([World Health Organization and United Nations Children's Fund](https://data.unicef.org)) and coastal human population 
+Trash | sources on land, ocean vessels, fishing, aquaculture | marine plastic pollution (Eriksen et al. 2014)
+
+::: {.callout-note collapse=true}
+## Clean waters calculation details (click to expand)
+
+The status of this goal, $x_{cw}$, was calculated as the geometric mean of the four components, such that:
+
+$$
+x_{cw} = \sqrt [ 4 ]{ a\ast u\ast l\ast d },  (Eq. 6.8)
+$$
+
+where $a$ = 1 - the number of people without access to sanitation, rescaled to the global maximum; $u$ = 1 – (nutrient input), rescaled at the raster level by the 99th quantile value; $l$ = 1 – (chemical input), rescaled at the raster level by the 99.99th quantile value; and $d$ = 1 – (marine debris), rescaled at the raster level by the 99.99th quantile value. 
+
+We used a geometric mean, as is commonly done for water quality indices [@liou2004generalized], because a very bad score for any one subcomponent would pollute the waters sufficiently to make people feel the waters were ‘too dirty’ to enjoy for recreational or aesthetic purposes (e.g., a large oil spill trumps any other measure of pollution).  However, in cases where a subcomponent was zero, we added a value of 0.01 (on a scale of 0 to 1) to prevent the overall score from going to zero.  Given that there is uncertainty around our pollution estimates, a zero score resulting from one subcomponent seemed too extreme.
+
+Although clean waters are relevant and important anywhere in the ocean, coastal waters drive this goal both because the problems of pollution are concentrated there and because people predominantly access and care about clean waters in coastal areas. The nearshore area is what people can see and where beach-going, shoreline fishing, and other activities occur. Furthermore, the data for high seas areas is limited and there is little meaningful regulation or governance over the input of pollution into these areas. We therefore calculate this goal only for the first 3 nm of ocean for each country’s EEZ. We chose 3 nm for several reasons, but found the status results to be relatively insensitive to different distances. 
+:::
+
+## Regional analysis
+
+More details to come!
+
+```{r}
+
+```

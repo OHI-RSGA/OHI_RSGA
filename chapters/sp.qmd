@@ -1,7 +1,91 @@
 ---
-title: Mariculture
+title: ""
 format: html
-editor: visual
 ---
 
-## Rearing sea monkeys!
+# ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of place
+
+## Overview
+
+This goal describes how well we are preserving current and future access to the coastal and marine systems that people value as part of their cultural identity. For the global assessment, this is evaluated by determining the condition of iconic species (iconic species subgoal) and the protection of coastal regions (lasting special places subgoal).
+
+## Scores
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+score <- score(x="SP", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+dial(score,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+map_figure(ohi_scores=ohi_scores, goal="SP")
+
+```
+
+<br>
+
+## Model description
+People derive a sense of identity or value from living near the ocean, visiting coastal or marine locations or just knowing that such places and their characteristic species exist. This goal tries to capture the aspects of the coastal and marine system that people value as part of their cultural identity by measuring two subgoals: the condition of iconic species and the condition of lasting special places.
+
+### Iconic species
+The iconic species subgoal measures the conservation status of iconic marine species, which are the animals that have unique importance to humans as demonstrated through traditional activities, ethnic or religious practices, existence value, or locally acknowledged aesthetic value.
+
+Iconic species are those that are relevant to local cultural identity through a species’ relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., touristic attractions/common subjects for art such as whales).
+
+This sub-goal is estimated by averaging the status scores of the iconic species in each region based on their IUCN Red List threat categories. 
+
+The list of iconic species was drawn from several data sources, but primarily from the World Wildlife Fund’s global and regional lists for Priority Species (especially important to people for their health, livelihoods, and/or culture) and Flagship Species (‘charismatic’ and/or well-known). Additional culturally important species species, available at the continent level (Garcia et al. 2023), were added to supplement the original iconic species list. 
+
+
+### Lasting special places
+The Lasting Special Places sub-goal measures how well we are protecting, for current and future generations, the locations that contribute to marine-related cultural identity.
+
+Special places are coastal and marine areas that are culturally significant for a variety of reasons. Designating a place to be a landmark, monument, and/or Marine Protected Area can help ensure its existence, provide valuable ecosystem services and preserve cultural heritage and identity.
+
+To get a score of 100 a region must protect at least 30% of its coastal area. 
+
+We use the United Nation’s World Database on Protected Areas (WDPA) to identify protected areas. The WDPA aggregates several key databases: IUCN’s World Commission on Protected Areas, Global Marine Protected Areas, UNESCO World Heritage Marine sites, National Parks and Nature Reserves, and the United Nations List of Protected Places.  In most cases the year of designation is listed for each protected area.
+
+We focus only on coastal waters (within 3 nautical miles of shore) for marine special places because we assume lasting special places are primarily in coastal areas. For coastlines, we focus only on the first 1-km-wide strip of land as a way to increase the likelihood that the area being protected by terrestrial parks is connected to the marine system in some way.
+
+
+::: {.callout-note collapse=true}
+## More details (click to expand)
+
+The lasting special places sub-goal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons. This sub-goal is particularly hard to quantify. Ideally one would survey every community around the world to determine the top list of special places, and then assess how those locations are faring relative to a desired state (e.g., protected or well managed). The reality is that such lists do not exist. Instead, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true.
+:::
+
+## Regional analysis
+
+More details to come!
+
+```{r}
+
+```

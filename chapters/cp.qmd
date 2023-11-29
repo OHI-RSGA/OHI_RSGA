@@ -1,7 +1,67 @@
 ---
-title: Mariculture
+title: ""
 format: html
-editor: visual
 ---
 
-## Rearing sea monkeys!
+# ![](figs/coastal-protection.svg){width="8%" height="8%" color="red"} Coastal protection
+
+## Overview
+
+This goal aims to assess the amount of protection provided by marine and coastal habitats against flooding and erosion to coastal areas that people value, both inhabited (homes and other structures) and uninhabited (parks, special places, etc.).
+
+## Scores
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+score <- score(x="CP", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+dial(score,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+map_figure(ohi_scores=ohi_scores, goal="CP")
+
+```
+
+<br>
+
+## Model description
+
+Storm protection by coastal habitats saves lives, property and is worth billions of dollars each year. Coral reefs, mangroves, seagrasses, salt marshes, and sea ice act as natural buffers against incoming waves. 
+This goal assesses the amount of protection provided by marine and coastal habitats by measuring the area they cover now relative to the area they covered in the recent past. The status of each habitat is calculated (see [biodiversity/habitat goal](https://mazu.nceas.ucsb.edu/rstudio/p/7dda0cdc/chapters/bd.html#habitat)) and their contribution to the total goal score is the average of the habitats weighted by the relative protection they provide.
+
+A score of 100 would indicate that these habitats are all still intact or have been restored to the same condition as in the past. A score of 0 would indicate that these protective coastal habitats are completely absent.
+
+## Regional analysis
+
+More details to come!
+
+```{r}
+
+```

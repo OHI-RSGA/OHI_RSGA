@@ -1,7 +1,78 @@
 ---
-title: Fisheries
+title: ""
 format: html
-editor: visual
 ---
 
-## Little Fishies in the Sea!
+# ![](livelihoods-and-economies.svg.svg){width="8%" height="8%" color="red"} Livelihoods and economies
+
+## Overview
+
+This goal measures jobs and revenue from sustainable marine-related industries. This goal is divided into two subgoals because the number and quality of jobs (Livelihoods) and the amount of revenue produced (Economies) are both of considerable interest to stakeholders and governments, and can have different patterns in some cases.
+
+## Scores
+::: {.callout-important}
+## Livelihoods and economies has not been updated for many years!
+
+Pay little heed to these scores because these scores have not been updated for many years due to a lack of global data.
+
+:::
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+score <- score(x="LE", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+dial(score,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+map_figure(ohi_scores=ohi_scores, goal="LE")
+
+```
+
+<br>
+
+## Model description
+The jobs and revenue produced from marine-related industries are clearly of huge value to many people, even for those people who do not directly participate in marine-related industries. People value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal tracks the number and quality of jobs and the amount of revenue produced across as many marine-related industries/sectors as possible through two sub-goals, Livelihoods and Economies. A score of 100 reflects productive coastal economies that avoid the loss of ocean-dependent livelihoods while maximizing livelihood quality.
+
+### Livelihoods
+People rely on the ocean to provide livelihoods (i.e., jobs with steady wages) and stable economies for coastal communities. The jobs produced from marine-related industries directly benefit those who are employed, but also have substantial indirect importance to many others.
+
+Ideally, this sub-goal describes the quality and quantity as well as the sustainability of marine jobs in a coastal community. The jobs and revenue produced from marine-related industries directly benefit those who are employed, and also those who gain indirect value from related economic and social impacts of a stable coastal economy, such as community identity and tax revenue.
+
+### Economies
+The Economies goal captures the economic value associated with marine industries using revenue from marine sectors, such as commercial fishing, mariculture, tourism and recreation, shipping and transportation, whale watching, ports and harbors, ship and boat building, and renewable energy production.
+
+## Regional analysis
+
+More details to come!
+
+```{r}
+
+```
