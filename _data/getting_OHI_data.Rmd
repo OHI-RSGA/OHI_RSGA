@@ -50,3 +50,51 @@ scores <- left_join(regions, ohi, by="iso3c") %>%
 
 ```
 
+
+## Data with all score components
+```{r}
+ohi <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/yearly_results/global2023/OHI_final_formatted_scores_2023-10-02.csv")
+
+ohi$iso3c <- countrycode(ohi$region_name, "country.name", "iso3c")
+
+ohi <- ohi %>%
+  filter(scenario == 2023) %>%
+  filter(!is.na(iso3c)) %>%
+  filter(iso3c %in% regions$iso3c) %>%
+  select(iso3c, region_name, goal, dimension, value) %>%
+  pivot_wider(names_from = dimension, values_from = value)
+
+areas <- st_drop_geometry(select(regions, c(iso3c, are_km2))) %>%
+  filter(!(iso3c %in% c("SDN/EGY", "ERI/DJI"))) %>%
+  group_by(iso3c) %>%
+  summarize(are_km2 = sum(are_km2))
+
+ohi <- left_join(ohi, areas, by="iso3c")
+
+#write_csv(ohi, here("_data/output/score_dimensions.csv"))
+
+```
+
+## get region data
+```{r}
+ohi_rgns <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/yearly_results/global2023/OHI_final_formatted_scores_2023-10-02.csv")
+
+ohi_rgns$iso3c <- countrycode(ohi_rgns$region_name, "country.name", "iso3c")
+
+ohi_rgns <- ohi_rgns %>%
+  filter(scenario == 2023) %>%
+  select(iso3c, region_name, rgn_id=region_id) %>%
+  unique()
+
+rsga_regions <- st_read(here("_spatial/data/eez.shp")) %>%
+  filter(!(iso3c %in% c("SDN/EGY", "ERI/DJI"))) %>%
+  pull(iso3c) %>%
+  unique()
+
+rsga_ohi_regions <- filter(ohi_rgns, iso3c %in% rsga_regions)
+
+#write_csv(ohi_rgns, here("_data/output/ohi_rgns.csv"))
+#write_csv(rsga_ohi_regions, here("_data/output/rsga_ohi_rgns.csv"))
+
+
+```

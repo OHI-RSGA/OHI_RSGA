@@ -16,7 +16,9 @@ Artisanal fishing, often called small-scale fishing, provides a critical source 
 #| message: false
 
 source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
 source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
 score <- score(x="AO", ohi_scores)
 
 ```
@@ -73,7 +75,151 @@ A high score indicates that the demand for artisanal fishing is being met using 
 
 ## Regional analysis
 
-More details to come!
+This plot shows how the different components, or dimensions, of the goal score contribute to the final score. 
+
+::: {.callout-note collapse=true}
+
+## Terminology review (click to expand)
+
+*Current status:* Current value relative to reference point.
+*Likely future status:* Predicted status score five years in the future based on current status and three additional variables:
+  
+  - *Trend:* short term (usually 5 years) observed change in status 
+  - *Pressures:* pressures acting on a goal to reduce its score, e.g., climate change, pollution, etc.
+  - *Resilience:* ecological factors and social initiatives (policies, laws, etc.) that mitigate the pressures acting on a system
+  
+:::  
+
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
+score_dimensions("AO")
 
 ```
+
+### Breaking down the status score
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+goal <- "ao"
+rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
+
+# list of OHI datafiles:
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+  filter(str_detect(layer, goal)) 
+
+# prep files:
+prep <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_dataprep.csv")
+
+```
+
+### Economic need for small scale marine fisheries 
+
+As a proxy for subsistence fishing need, we use the inverse of per capita purchasing power parity (PPP) adjusted gross domestic product (GDP), or GDPpcPPP. These data are rescaled to values between 0 and 1 by taking the natural log of the data and dividing all the values by the GDPpcPPP value that corresponds to the 95th quantile across all years (from 2005 to most recent data) and countries. 
+
+Saudi Arabia, Israel, and Yemen have low economic need, whereas, the other countries have relatively high economic mean.
+
+For more details see the data preparation [script](https://ohi-science.org/ohiprep_v2023/globalprep/ao/v2023/ao_need_data_prep.html).
+
+::: {.callout-note collapse=true}
+
+## Need: Country scores (click to expand)
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+ao_need <- filter(datafiles, layer=="ao_need") 
+
+ao_need_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", ao_need$dir), ao_need$fn)) 
+
+ao_need_df <- left_join(rsga_rgns, ao_need_df, by="rgn_id") %>%
+  group_by(iso3c) %>%
+  filter(year==max(year)) %>%
+  select(country = region_name, `economic need` = value) %>%
+  mutate(`economic need` = round((1 - `economic need`), 2)) %>%
+  arrange(`economic need`)
+
+  datatable(ao_need_df,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+```
+
+:::
+
+### Access to small scale marine fisheries 
+These data are from the [UN sustainable development goal 14.b.1](https://www.fao.org/sustainable-development-goals/indicators/14b1/en/), “Degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries (level of implementation: 1 lowest to 5 highest)”. We linearly rescale these data to have values between 0 and 1.
+
+All Red Sea and Gulf of Aden regions have high access scores from 0.8-1, except Eritrea which is 0.6.
+
+https://ohi-science.org/ohiprep_v2023/globalprep/ao/v2023/ao_access_data_prep.html
+
+::: {.callout-note collapse=true}
+
+## Access to artisanal fisheries: Country scores (click to expand)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+ao_access <- filter(datafiles, layer=="ao_access") 
+
+ao_access_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", ao_access$dir), ao_access$fn)) 
+
+ao_access_df <- left_join(rsga_rgns, ao_access_df, by="rgn_id") %>%
+  group_by(iso3c) %>%
+  filter(year==max(year)) %>%
+  select(country = region_name, `access` = value) %>%
+  arrange(`access`)
+
+  datatable(ao_access_df,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+```
+
+:::
+
+
+### Sustainable harvest of artisanally fished stocks 
+
+This is calculated using the same data as the fisheries subgoal, but using only the artisanal catch. For each region, we average the stock status scores weighted by the total catch. The country level catch data (tonnes per year) is from FAO and the B/Bmsy (the biomass of the population relative to the biomass at maximum sustainable yield) are from RAM when available. Otherwise, we use the CMSY approach to estimate B/Bmsy. 
+
+The scores are relatively high for all the Red Sea and Gulf of Aden regions. They are around 0.8 for for Sudan, Egypt, and Israel; and > 0.9 for the remaining countries.
+
+For more information about the methods, check out the scripts used to prepare these data: ([preparing catch](https://ohi-science.org/ohiprep_v2023/globalprep/ao/v2023/ao_catch_prep_saup.html) and [estimating score]( 
+https://ohi-science.org/ohiprep_v2023/globalprep/ao/v2023/ao_stock_status_saup.html)
+
+::: {.callout-note collapse=true}
+
+## Sustainable harvest of artisanal stocks: Country scores (click to expand)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+ao_sust <- filter(datafiles, layer=="ao_sust") 
+
+ao_sust_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", ao_sust$dir), ao_sust$fn)) 
+
+ao_sust_df <- left_join(rsga_rgns, ao_sust_df, by="rgn_id") %>%
+  group_by(iso3c) %>%
+  filter(year==max(year)) %>%
+  select(country = region_name, `fisheries sustainability` = score) %>%
+  arrange(`fisheries sustainability`)
+
+  datatable(ao_sust_df,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+```
+
+:::

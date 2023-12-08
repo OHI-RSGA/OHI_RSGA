@@ -5,6 +5,7 @@ library(highcharter)
 library(here)
 library(leaflet)
 library(rnaturalearth)
+library(DT)
 
 ohi_scores <- st_read(here("_data/output/scores.shp"), quiet=TRUE)
 

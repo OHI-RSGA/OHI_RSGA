@@ -1,0 +1,223 @@
+iso3c,region_name,rgn_id
+NA,Global average,0
+CCK,Cocos Islands,1
+CXR,Christmas Island,2
+NFK,Norfolk Island,3
+NA,Macquarie Island,4
+NCL,New Caledonia,5
+VUT,Vanuatu,6
+SLB,Solomon Islands,7
+PLW,Palau,8
+NA,Micronesia,9
+NRU,Nauru,10
+MHL,Marshall Islands,11
+NA,Wake Island,12
+NA,Northern Mariana Islands and Guam,13
+TWN,Taiwan,14
+PHL,Philippines,15
+AUS,Australia,16
+PNG,Papua New Guinea,17
+FJI,Fiji,18
+TUV,Tuvalu,19
+KOR,South Korea,20
+PRK,North Korea,21
+KHM,Cambodia,24
+THA,Thailand,25
+NA,Andaman and Nicobar,26
+COM,Comoro Islands,28
+MYT,Mayotte,29
+NA,Glorioso Islands,30
+SYC,Seychelles,31
+NA,R_union,32
+NA,Juan de Nova Island,33
+IND,Bassas da India,34
+NA,Ile Europa,35
+NA,Ile Tromelin,36
+MUS,Mauritius,37
+IOT,British Indian Ocean Territory,38
+MDV,Maldives,39
+LKA,Sri Lanka,40
+MOZ,Mozambique,41
+MDG,Madagascar,42
+KEN,Kenya,43
+SOM,Somalia,44
+ERI,Eritrea,45
+DJI,Djibouti,46
+YEM,Yemen,47
+OMN,Oman,48
+SDN,Sudan,49
+SAU,Saudi Arabia,50
+KWT,Kuwait,51
+BHR,Bahrain,52
+PAK,Pakistan,53
+ARE,United Arab Emirates,54
+NA,Azores,55
+CPV,Cape Verde,56
+NA,Madeira,57
+NA,Canary Islands,58
+BEL,Belgium,59
+GIB,Gibraltar,60
+TUN,Tunisia,61
+MAR,Morocco,62
+ESH,Western Sahara,63
+MRT,Mauritania,64
+GMB,Gambia,65
+SEN,Senegal,66
+LBY,Libya,67
+MLT,Malta,68
+LVA,Latvia,69
+EST,Estonia,70
+BGR,Bulgaria,71
+ROU,Romania,72
+RUS,Russia,73
+GEO,Georgia,74
+UKR,Ukraine,75
+TUR,Turkey,76
+SYR,Syria,77
+LBN,Lebanon,78
+ISR,Israel,79
+GRC,Greece,80
+CYP,Cyprus,81
+ALB,Albania,82
+DZA,Algeria,84
+NA,Ascension,85
+SHN,Saint Helena,86
+NA,Tristan da Cunha,88
+SGS,South Georgia and the South Sandwich Islands,89
+NA,Prince Edward Islands,90
+NA,Crozet Islands,91
+NA,Amsterdam Island and Saint Paul Island,92
+NA,Kerguelen Islands,93
+HMD,Heard and McDonald Islands,94
+FLK,Falkland Islands,95
+SLE,Sierra Leone,96
+LBR,Liberia,97
+TGO,Togo,98
+BEN,Benin,99
+COG,Republique du Congo,100
+NAM,Namibia,101
+ZAF,South Africa,102
+STP,Sao Tome and Principe,103
+GNQ,Equatorial Guinea,104
+BVT,Bouvet Island,105
+GHA,Ghana,106
+NA,Clipperton Island,107
+BMU,Bermuda,108
+BHS,Bahamas,110
+TCA,Turks and Caicos Islands,111
+CUB,Cuba,112
+CYM,Cayman Islands,113
+HTI,Haiti,114
+DOM,Dominican Republic,115
+NA,Puerto Rico and Virgin Islands of the United States,116
+VGB,British Virgin Islands,117
+AIA,Anguilla,118
+KNA,Saint Kitts and Nevis,119
+ATG,Antigua and Barbuda,120
+MSR,Montserrat,121
+LCA,Saint Lucia,122
+DMA,Dominica,123
+BRB,Barbados,124
+GRD,Grenada,125
+TTO,Trinidad and Tobago,126
+VCT,Saint Vincent and the Grenadines,127
+PAN,Panama,129
+CRI,Costa Rica,130
+NIC,Nicaragua,131
+COL,Colombia,132
+HND,Honduras,133
+SLV,El Salvador,134
+MEX,Mexico,135
+GTM,Guatemala,136
+ECU,Ecuador,137
+PER,Peru,138
+VEN,Venezuela,139
+NA,Guadeloupe and Martinique,140
+FRO,Faeroe Islands,141
+ISL,Iceland,143
+NA,Jan Mayen,144
+GRL,Greenland,145
+PCN,Pitcairn,146
+PYF,French Polynesia,147
+KIR,Line Islands (Kiribati),148
+NA,Jarvis Island,149
+NA,Palmyra Atoll,150
+ASM,American Samoa,151
+WSM,Samoa,152
+COK,Cook Islands,153
+NIU,Niue,154
+TON,Tonga,155
+TKL,Tokelau,156
+KIR,Phoenix Islands (Kiribati),157
+NA,Howland Island and Baker Island,158
+NA,Johnston Atoll,159
+WLF,Wallis and Futuna,161
+NZL,New Zealand,162
+USA,United States,163
+BLZ,Belize,164
+JAM,Jamaica,166
+GUY,Guyana,167
+SUR,Suriname,168
+GUF,French Guiana,169
+BRA,Brazil,171
+ARG,Argentina,172
+URY,Uruguay,173
+FIN,Finland,174
+DNK,Denmark,175
+DEU,Germany,176
+NLD,Netherlands,177
+POL,Poland,178
+FRA,France,179
+GBR,United Kingdom,180
+IRL,Ireland,181
+ESP,Spain,182
+PRT,Portugal,183
+ITA,Italy,184
+MCO,Monaco,185
+MNE,Montenegro,186
+HRV,Croatia,187
+SVN,Slovenia,188
+LTU,Lithuania,189
+QAT,Qatar,190
+IRN,Iran,191
+IRQ,Iraq,192
+GNB,Guinea Bissau,193
+GIN,Guinea,194
+CIV,Ivory Coast,195
+NGA,Nigeria,196
+CMR,Cameroon,197
+GAB,Gabon,198
+COD,Democratic Republic of the Congo,199
+AGO,Angola,200
+TZA,Tanzania,202
+IND,India,203
+BGD,Bangladesh,204
+MMR,Myanmar,205
+MYS,Malaysia,206
+VNM,Vietnam,207
+SGP,Singapore,208
+CHN,China,209
+JPN,Japan,210
+KIR,Gilbert Islands (Kiribati),212
+ATA,Antarctica,213
+EGY,Egypt,214
+JOR,Jordan,215
+IDN,Indonesia,216
+CAN,Canada,218
+SPM,Saint Pierre and Miquelon,219
+SXM,Sint Maarten,220
+NA,Northern Saint-Martin,221
+SWE,Sweden,222
+NOR,Norway,223
+CHL,Chile,224
+JEY,Jersey,227
+GGY,Guernsey,228
+TLS,East Timor,231
+BIH,Bosnia and Herzegovina,232
+NA,Oecussi Ambeno,237
+CUW,Curacao,244
+NA,Bonaire,245
+BRN,Brunei,247
+NA,Saba,248
+NA,Sint Eustatius,249
+ABW,Aruba,250
