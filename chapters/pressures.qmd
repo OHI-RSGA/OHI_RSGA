@@ -4,8 +4,18 @@ format: html
 ---
 
 ## Pressures overview
-Pressures stress marine systems and threaten future delivery of benefits, and thus, are likely to reduce future status. We determine the type and magnitude of pressures acting on each goal to better predict what goal scores will look like in the near future. 
+Pressures stress marine systems and threaten future delivery of benefits, and thus, suppress future status. We determine the type and magnitude of pressures acting on each goal to better predict what goal scores will look like in the near future. 
 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+```
 
 :::: {.columns} 
 
@@ -15,7 +25,7 @@ Pressures stress marine systems and threaten future delivery of benefits, and th
 :::
 
 ::: {.column width="40%"}
-*Pressures acting on a goal include both ecological and social pressures. For the global OHI assessment, ecological pressures include 5 general categories: fishing pressure, habitat destruction, climate change, water pollution, species/genetic introductions.*
+*Figure 1. Pressures acting on a goal include both ecological and social pressures. For the global OHI assessment, ecological pressures include 5 general categories: fishing pressure, habitat destruction, climate change, water pollution, species/genetic introductions.*
 
 
 :::
@@ -43,11 +53,92 @@ The **social** pressure category describes the lack of effectiveness of governme
 
 ----
 
-Each pressure category may include several stressors. For example, the climate category includes: increases to sea surface temperature, ocean acidification, sea level rise, and changes to UV radiation. We determine the intensity of each individual stressor within each country on a scale of 0-1, with 1 indicating the highest stress.
+Each pressure category may include several stressors (See Table 1 for full list of stressors). For example, the climate category includes: increases to sea surface temperature, ocean acidification, sea level rise, and changes to UV radiation. We determine the intensity of each individual stressor within each country on a scale of 0-1, with 1 indicating the highest stress.
 
-We then link the stressors to specific goals, by estimating the rank sensitivity of each goal to each stressor. For example, in the global assessment, coral habitat is extremely sensitive to increasing sea surface temperature but is not particularly sensitive to trash pollution. 
+::: {.callout-note collapse=true}
+
+## Description of global pressure data (click to expand)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+full_lyr_names <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>% 
+  select(layer, name, description)
+
+pressure_pre <-  read.csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/eez/conf/pressure_categories.csv") %>% 
+  left_join(full_lyr_names, by = "layer") %>% 
+  mutate(subcategory = gsub("_", " ", subcategory))
+
+pressure_pretty <- pressure_pre %>%
+  select(Pressure = name, Category = category, Subcategory = subcategory, Description = description)
+
+  datatable(pressure_pretty,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+```
+
+:::
+
+We then link the stressors to specific goals, by estimating the rank sensitivity of each goal to each stressor (Figure 2). For example, in the global assessment, coral habitat is extremely sensitive to increasing sea surface temperature but is not particularly sensitive to trash pollution. 
+
+*Figure 2. The impact of the global pressures on the goals. The larger the dot, the larger the impact (ranging from 0 - 3). Dots of the same color are the same goal, but some goals have different components that are affected differently. For example, the pressures affecting the Habitat goal will depend on which habitats a country has.*
+
+```{r, fig.width=7, fig.height=7}
+#| echo: false
+#| warning: false
+#| message: false
+
+pressure_labels <- pressure_pre %>%
+  select(pressure_short=layer, category, subcategory, pressure = name)
+
+#subgoal_labels <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/ohi_model/tables/Subgoal_Descriptions.csv") 
+#goal_labels <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/ohi_model/tables/ten_goals.csv") %>%
+#  filter(!(tolower(Goal) %in% tolower(subgoal_labels$Goal)))
+#goal_names <- subgoal_labels %>%
+#  mutate(Goal = paste0(Goal, ": ", Subgoal)) %>%
+#  select(Goal, Abbreviation) %>%
+#  rbind(select(goal_labels, c(Goal, Abbreviation)))
+
+goal_names <- data.frame(Goal = c("Food provision: Fisheries", "Food provision: Mariculture", "Biodiversity: Habitat", "Biodiversity: Species condition", "Sense of place: Iconic species", "Sense of place: Lasting special places", "Livelihoods", "Economies", "Artisanal Fishing Opportunity", "Natural Products", "Carbon Storage", "Tourism and Recreation", "Clean Waters", "Coastal Protection"),
+                 Abbreviation = c("FIS", "MAR", "HAB", "SPP", "ICO", "LSP", "LIV",
+                                  "ECO", "AO", "NP", "CS", "TR", "CW", "CP"))
+
+
+
+pressure_matrix <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/eez/conf/pressures_matrix.csv") %>%
+  mutate(element = ifelse(is.na(element_name), element, element_name)) %>%
+  select(-element_name) %>%
+  pivot_longer(cols=-c("goal", "element"),
+               names_to = "pressure_short") %>%
+  mutate(pressure_category = substr(pressure_short, 1,2)) %>%
+  left_join(pressure_labels, by="pressure_short") %>%
+  rename(Abbreviation = goal) %>%
+  left_join(goal_names, by="Abbreviation") %>%
+  mutate(goal = ifelse(!is.na(element), paste0(Goal, ": ", element), Goal)) %>%
+  mutate(goal = gsub("_", " ", goal)) %>%
+  select(Abbreviation, goal, pressure, value) %>%
+  mutate(goal = gsub("NA", "", goal))
+
+
+ggplot(pressure_matrix, aes(x = pressure, y = goal, size = value, color = Abbreviation)) +
+  geom_point(alpha = 0.7) +  # Adjust alpha for dot transparency
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels
+    axis.text.y = element_text(angle = 0, hjust = 1),  # Rotate x-axis labels
+    axis.title.x = element_blank(),                      # Remove x-axis title
+    axis.title.y = element_blank(),                       # Remove y-axis title
+    legend.position = "none"
+    ) 
+
+
+```
+
 
 We estimate the total pressure acting on every goal in each country based on the relative sensitivity of the goal to each stressor and the magnitude of the stressor in each country. This is accomplished by first combining the ecological stressors within each of the 5 categories (e.g., pollution, climate change), then combining the 5 ecological categories into a single score, and then averaging the ecological and social categories.
 
 The pressure estimate for each goal and country is then combined with the trend and resilience estimates to calculate goal scores.
+
 
