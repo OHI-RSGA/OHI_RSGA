@@ -12,6 +12,21 @@ source("_data/functions/start_script.R")
 source("_data/functions/score_display_functions.R")
 score <- score(x="Index", ohi_scores)
 
+# Code to make flower plots
+
+#if (!require(devtools)){install.packages("devtools")}
+#if (!require(ohicore)){devtools::install_github('ohi-science/ohicore')}
+#library(ohicore)
+#source(here::here('_data/functions/flowerPlot.R'))
+#flower_data <- read_csv(here("_data/output/flowerplot_scores.csv"))
+
+#PlotFlower(
+#  region_plot = NA,
+#  dir_fig_save = here::here("chapters/figs/FlowerPlots"),
+#  scores_file = here("_data/output/flowerplot_scores.csv"),
+#)
+
+
 ```
 
 :::: {.columns} 
@@ -50,11 +65,15 @@ map_figure(ohi_scores=ohi_scores, goal="Index")
 
 <br>
 
-Each region's score is the average of 10 goals that describe all the ways human value and rely on marine systems. 
+The Index score is the average of 10 goals that describe all the ways human value and rely on marine systems. 
 
-You can navigate through the menu at the right to see each goal score and learn more about each goal.
+The Flower plot provides the overall score for the Red Sea and Gulf of Aden region for each goal. The center value is the overall Index score.
 
-:::{.callout-important}
+![](chapters/figs/FlowerPlots/flower_Global_average.png)
+
+To learn more: Navigate through the menu at the right for more information about the goals and to see the scores for each of the countries comprising the Red Sea and Gulf of Aden.
+
+:::{.callout-tip}
 ## Regional models will produce more relevant OHI scores!
 
 This score is the EEZ weighted average score from the OHI global assessment. A regional assessment can be better for several reasons: 

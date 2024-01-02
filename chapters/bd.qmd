@@ -55,40 +55,14 @@ map_figure(ohi_scores=ohi_scores, goal="BD")
 <br>
 
 ## Model description
-For the Global OHI, this goal assesses the conservation status of species based on two sub-goals: Species and Habitats. Species are assessed because they are what one typically thinks of in relation to biodiversity. We also assess Habitats because only a small proportion of marine species worldwide have been mapped and assessed, so we consider habitats a proxy for the condition of the broad suite of species that depend on them.
+For the Global OHI, this goal assesses the conservation status of species based on two subgoals: Species and habitat condition. Species are assessed because they are what one typically thinks of in relation to biodiversity. We also assess Habitats because only a small proportion of marine species worldwide have been mapped and assessed, so we consider habitats a proxy for the condition of the broad suite of species that depend on them.
 
-We calculate each of these sub- goals separately and treat them equally when calculating the overall goal score. A score of 100 means all species are all species are at very low risk of extinction, and all habitats are conserved.
-
-
-### Habitat
-The habitat component of the biodiversity goal measures the status of marine habitats that support large numbers of marine species.
-
-Healthier habitats mean healthier species! Habitat is included as a subgoal of the Biodiversity goal to provide a more complete picture of diversity in the system than only considering the conservation status of species (the other subgoal for Biodiversity). This is because species assessments are often incomplete.
-
-This goal assesses the condition of marine habitats that are particularly important in supporting large numbers of marine species. The status of each habitat is its current condition relative to its reference condition, which is often based on historical area. A score of 1 indicates that the condition equals or exceeds the reference point. The subgoal score is then calculated by combining the habitat scores for each region.
-
-For the global OHI assessment, we included mangroves, coral reefs, kelp forests, seagrass beds, salt marshes, sea ice, or subtidal soft-bottom habitats. All habitats measured contribute equally to the score, regardless of their extent, because the presence of a diverse set of habitats, as well as the level of conservation of each, is considered valuable to achieve this goal.
-
-
-::: {.callout-note collapse=true}
-## More about global habitats (click to expand)
-
-Habitat | Condition | Extent | Trend
--------- | --------------------- | ----------------- | ------------------
-Seagrass | Increasing or stable trend assigned condition = 1.0; decreasing trend assigned condition = 0.71 based on global loss | Seagrass extent per oceanic region (vector based) | Calculated across data from 1990 - 2000
-Kelp | Increasing or stable trend assigned condition = 1.0; decreasing trend assigned condition based on a 2% global yearly loss | Kelp extent per oceanic region (vector based) | Calculated across data from 1983 - 2012
-Coral reefs | Current % cover divided by reference % cover | Coral reef extent per oceanic region (Vector based) | Calculated across data from 1975-2006
-Mangroves | Current hectares divided by reference hectares, for coastal mangroves only | Mangrove extent per oceanic region (vector based) | Calculated using 5 most recent years of data
-Salt marsh | All regions assigned condition = 0.75 based on conservative historical extent losses | Salt marsh extent per oceanic region | All regions assigned trend based on historical .28% global yearly loss 
-Sea ice edge | Current (3-year rolling-average using the current year and previous 2 years) % cover of sea ice having 10-50% cover, divided by reference % cover average from 1979-2000 | Same as condition | Calculated from the fitted slope of %-deviation-from-reference per year, of the most recent 5 years of data (each year of data is based on 3-year average)
-Soft bottom | Soft-bottom destructive fishing practices relative to area of soft-bottom habitat and rescaled to 0-1 based on relative global values | Halpern et al. [-@halpern2008global] | Calculated using 5 most recent years of condition data
-Tidal flat | Average tidal flat extent of 2010 and 2013 relative to historic extent (average of 1989 and 1992) | Tidal flat extent per oceanic region (vector based) | Calculated across data from 2001-2013
-::::
+We calculate each of these subgoals separately and average them to estimate the overall goal score. A score of 100 means all species are at very low risk of extinction and all habitats are conserved.
 
 ### Species
 The habitat component of the biodiversity goal measures the conservation status of marine species.
 
-This sub-goal assesses the health of all marine species present in a country’s EEZ, including endangered species and species in relatively good conditions. The presence of species that are not at risk leads to a higher score.
+This subgoal assesses the health of all marine species present in a country’s EEZ, including endangered species and species in relatively good conditions. The presence of species that are not at risk leads to a higher score.
 
 ::: {.callout-note collapse=true}
 ## Species calculation details (click to expand)
@@ -124,10 +98,282 @@ $$
 | Least Concern   |     LC    |  1.0  |
 :::
 
-## Regional analysis
+### Habitat
+The habitat component of the biodiversity goal measures the status of marine habitats that support large numbers of marine species.
 
-More details to come!
+Healthier habitats mean healthier species! Habitat is included as a subgoal of the Biodiversity goal to provide a more complete picture of diversity in the system than only considering the conservation status of species (the other subgoal for Biodiversity). This is because species assessments are often incomplete.
+
+This goal assesses the condition of marine habitats that are particularly important in supporting large numbers of marine species. The status of each habitat is its current condition relative to its reference condition, which is often based on historical area. A score of 1 indicates that the condition equals or exceeds the reference point. The subgoal score is then calculated by combining the habitat scores for each region.
+
+For the global OHI assessment, we included mangroves, coral reefs, kelp forests, seagrass beds, salt marshes, sea ice, or subtidal soft-bottom habitats. All habitats measured contribute equally to the score, regardless of their extent, because the presence of a diverse set of habitats, as well as the level of conservation of each, is considered valuable to achieve this goal.
+
+
+::: {.callout-note collapse=true}
+## More about global habitats (click to expand)
+
+Habitat | Condition | Extent | Trend
+-------- | --------------------- | ----------------- | ------------------
+Seagrass | Increasing or stable trend assigned condition = 1.0; decreasing trend assigned condition = 0.71 based on global loss | Seagrass extent per oceanic region (vector based) | Calculated across data from 1990 - 2000
+Kelp | Increasing or stable trend assigned condition = 1.0; decreasing trend assigned condition based on a 2% global yearly loss | Kelp extent per oceanic region (vector based) | Calculated across data from 1983 - 2012
+Coral reefs | Current % cover divided by reference % cover | Coral reef extent per oceanic region (Vector based) | Calculated across data from 1975-2006
+Mangroves | Current hectares divided by reference hectares, for coastal mangroves only | Mangrove extent per oceanic region (vector based) | Calculated using 5 most recent years of data
+Salt marsh | All regions assigned condition = 0.75 based on conservative historical extent losses | Salt marsh extent per oceanic region | All regions assigned trend based on historical .28% global yearly loss 
+Sea ice edge | Current (3-year rolling-average using the current year and previous 2 years) % cover of sea ice having 10-50% cover, divided by reference % cover average from 1979-2000 | Same as condition | Calculated from the fitted slope of %-deviation-from-reference per year, of the most recent 5 years of data (each year of data is based on 3-year average)
+Soft bottom | Soft-bottom destructive fishing practices relative to area of soft-bottom habitat and rescaled to 0-1 based on relative global values | Halpern et al. [-@halpern2008global] | Calculated using 5 most recent years of condition data
+Tidal flat | Average tidal flat extent of 2010 and 2013 relative to historic extent (average of 1989 and 1992) | Tidal flat extent per oceanic region (vector based) | Calculated across data from 2001-2013
+::::
+
+## A closer look at the data
+
+We will first look at the data underlying the species condition subgoal and then then habitat subgoal. 
+
+### Species condition
 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+
+score_spp <- score(x="SPP", ohi_scores)
 
 ```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_spp`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+dial(score_spp,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+map_figure(ohi_scores=ohi_scores, goal="SPP")
+
+```
+
+<br>
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+goal <- "spp"
+rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
+
+# list of OHI datafiles:
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+  filter(str_detect(layer, goal)) 
+
+# prep files:
+prep <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_dataprep.csv")
+
+```
+
+For more details see the data preparation [script](https://ohi-science.org/ohiprep_v2023/globalprep/spp/v2022/spp_data_prep.html).
+
+::: {.callout-note collapse=true}
+
+Egypt has the lowest score of 73, and the other countries score 80 or higher. These are reasonably good scores.
+
+## Species condition: status data (click to expand)
+Getting the underlying data for this goal requires processing a large amount of spatial data.
+
+Given this, this section is on hold for now.
+
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+## final scores, not very helpful:
+#spp <- filter(datafiles, layer=="spp_status") 
+
+#spp_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+#gsub("ohiprep:", "", spp$dir), spp$fn)) 
+
+#############
+#rgn <- terra::rast("/home/shares/ohi/git-annex/globalprep/spp/v2022/spp_risk_dists/spatial/cell_id_500m.tif")
+#ocean <- terra::rast("/home/shares/ohi/git-annex/globalprep/spp/v2022/spp_risk_dists/spatial/ocean_500m.tif")
+#spp <- read_csv(list.files("/home/shares/ohi/git-annex/globalprep/spp/v2022/spp_risk_dists/spp_rasters", full=TRUE)[1])  
+#  tmp <- read_csv(comp_files[1])
+  
+#iucn <- read_csv("/home/shares/ohi/git-annex/globalprep/spp/v2022/spp_risk_dists/iucn/spp_systems_from_api_2022-1.csv") %>%
+#  filter(marine_system == TRUE)
+
+#iucn <- read_csv("/home/shares/ohi/git-annex/globalprep/spp/v2022/spp_risk_dists/iucn/spp_info_from_api_2022-1.csv") %>%
+#  filter(iucn_sid == 22698175)
+  
+```
+
+:::
+
+### Habitat condition
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+score_hab <- score(x="HAB", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_hab`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+dial(score_hab,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+map_figure(ohi_scores=ohi_scores, goal="HAB")
+
+```
+
+<br>
+
+
+::: {.callout-note collapse=true}
+
+## Habitat condition: data (click to expand)
+Extent reflects the estimated area of the habitat; health is the condition of the habitat on a scale from 0 to 1, with 1 indicating the current condition is at, or better, than the reference point; trend is the average yearly change in health during the most recent 5 years.  
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+goal <- "hab"
+rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
+
+# list of OHI datafiles:
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+  filter(str_detect(layer, goal)) %>%
+  filter(str_detect(layer, "hab_")) %>%
+  filter(layer != "element_wts_hab_pres_abs") %>%
+  filter(layer != "hab_rockyreef_extent")
+
+all_habs <- data.frame()
+for(i in 1:24){
+#i=1
+hab <- datafiles[i,] 
+hab_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", hab$dir), hab$fn)) %>%
+  select(rgn_id, year, habitat, everything()) %>%
+  mutate(layer = hab$layer) 
+
+hab_df <- hab_df %>%
+  mutate(units = names(hab_df)[4])
+
+names(hab_df)[4] <- "score"
+all_habs <- rbind(all_habs, hab_df)
+all_habs
+  }
+
+hab_df <- left_join(rsga_rgns, all_habs, by="rgn_id") %>%
+  group_by(iso3c, habitat, units) %>%
+  filter(year==max(year)) %>%
+  ungroup()
+
+hab_df1 <- hab_df %>%
+  select(iso3c, country=region_name, habitat, layer, score) %>%
+  mutate(score = round(score, 1)) %>%
+  mutate(layer = gsub("tidal_flat", "tidal-flat", layer)) %>%
+  separate(layer, into = c("first", "second", "third"), sep = "_") %>%
+  select(-first, -second) %>%
+  pivot_wider(names_from = third, values_from = score) %>%
+  mutate(extent = ifelse(is.na(extent), 0, extent)) %>%
+  mutate(health = ifelse(extent == 0 , NA, health)) %>%
+  mutate(trend = ifelse(extent == 0, NA, trend)) %>%
+  rename(extent_km2 = extent)
+
+
+  datatable(hab_df1,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+
+
+```
+:::
+
+Saudi Arabia's score of 62 is the lowest within the region. This is primarily due to poor condition of mangrove forests and soft-bottom habitat.
+
+## Implications
+
+Based on the current model, this goal would be most improved by:
+- reducing reliance on fishing practices that are destructive to marine soft-bottom habitats, such as dredging, particularly in Saudi Arabia
+- restoring mangrove habitat
+
+Future assessments should carefully assess the underlying data for improvements because typically better habitat data is available within each country, this allows for improved estimates of extent, condition, and trend.
+
+The inclusion of both species and habitat levels in the model should also be discussed.
+
+If a habitat subgoal is included, evaluate how to best weight the habitats (currently equal weighting) and whether these habitats fully capture the important habitats of the region. 
+
+Other OHI+ analyses have revised the [habitat](https://oceanhealthindex.org/guidance/habitats/) and [species](https://oceanhealthindex.org/guidance/species/) subgoals to better reflect local concerns.  

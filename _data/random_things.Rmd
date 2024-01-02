@@ -1,0 +1,30 @@
+---
+title: "Random stuff"
+output: html_document
+date: "2023-12-14"
+---
+
+My first attempt at breaking down the scores, this was for AO. 
+
+This plot shows how the different components, or dimensions, of the goal score contribute to the final score. 
+
+::: {.callout-note collapse=true}
+
+## Terminology review (click to expand)
+
+*Current status:* Current value relative to reference point.
+*Likely future status:* Predicted status score five years in the future based on current status and three additional variables:
+  
+  - *Trend:* short term (usually 5 years) observed change in status 
+  - *Pressures:* pressures acting on a goal to reduce its score, e.g., climate change, pollution, etc.
+  - *Resilience:* ecological factors and social initiatives (policies, laws, etc.) that mitigate the pressures acting on a system
+  
+:::  
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+score_dimensions("AO")
+
+```

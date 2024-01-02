@@ -73,32 +73,13 @@ The model has three components:
 
 A high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized.
 
-## Regional analysis
+## A closer look at the data
 
-This plot shows how the different components, or dimensions, of the goal score contribute to the final score. 
+The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
 
-::: {.callout-note collapse=true}
+A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
 
-## Terminology review (click to expand)
-
-*Current status:* Current value relative to reference point.
-*Likely future status:* Predicted status score five years in the future based on current status and three additional variables:
-  
-  - *Trend:* short term (usually 5 years) observed change in status 
-  - *Pressures:* pressures acting on a goal to reduce its score, e.g., climate change, pollution, etc.
-  - *Resilience:* ecological factors and social initiatives (policies, laws, etc.) that mitigate the pressures acting on a system
-  
-:::  
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-score_dimensions("AO")
-
-```
-
-### Breaking down the status score
+### Current status
 ```{r}
 #| echo: false
 #| warning: false
@@ -223,3 +204,17 @@ ao_sust_df <- left_join(rsga_rgns, ao_sust_df, by="rgn_id") %>%
 ```
 
 :::
+
+## Implications
+
+Based on the current model, this goal would be most improved by reducing the economic need for artisanal fishing in Somalia, Sudan, Dijibouti, Eritrea, Jordan, and Egypt. Access to artisanal fishing could also be improved in Eritrea.
+
+Otherwise, based on the data, there is relatively good access for artisanal fishing and artisanally fished stocks are relatively healthy. 
+
+Future assessments should carefully assess the underlying data for improvements:
+- How gapfilled are the stock status scores? Are there better regional assessments of stock status?
+- Does the artisanal stock list seem accurate? 
+- Do the opportunity scores seem reasonable? Should other factors be incorporated, such as piracy?
+- Use a better estimate of poverty than rescaled per capita GDP, such as portion of population below the poverty line.
+
+[Other OHI+ analyses](https://oceanhealthindex.org/guidance/artisanal-fishing-opportunities/) have revised this goal to better reflect local concerns.  

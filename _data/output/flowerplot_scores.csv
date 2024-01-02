@@ -1,0 +1,191 @@
+iso3c,region_name,goal,dimension,score
+SOM,Somalia,AO,score,97.01
+ERI,Eritrea,AO,score,60.3
+DJI,Djibouti,AO,score,73.02
+YEM,Yemen,AO,score,94.6
+SDN,Sudan,AO,score,62.3
+SAU,Saudi Arabia,AO,score,93.96
+ISR,Israel,AO,score,81.09
+EGY,Egypt,AO,score,67.58
+JOR,Jordan,AO,score,84.62
+SOM,Somalia,BD,score,76.85
+ERI,Eritrea,BD,score,82.65
+DJI,Djibouti,BD,score,90.96
+YEM,Yemen,BD,score,84.47
+SDN,Sudan,BD,score,83.66
+SAU,Saudi Arabia,BD,score,73.2
+ISR,Israel,BD,score,66.87
+EGY,Egypt,BD,score,74.76
+JOR,Jordan,BD,score,88.75
+SOM,Somalia,CP,score,55.78
+ERI,Eritrea,CP,score,98.01
+DJI,Djibouti,CP,score,99.18
+YEM,Yemen,CP,score,70.81
+SDN,Sudan,CP,score,77.67
+SAU,Saudi Arabia,CP,score,71.28
+ISR,Israel,CP,score,75.17
+EGY,Egypt,CP,score,89.74
+JOR,Jordan,CP,score,87.43
+SOM,Somalia,CS,score,84.53
+ERI,Eritrea,CS,score,69.17
+DJI,Djibouti,CS,score,98.36
+YEM,Yemen,CS,score,67.95
+SDN,Sudan,CS,score,70.87
+SAU,Saudi Arabia,CS,score,70.31
+ISR,Israel,CS,score,73.34
+EGY,Egypt,CS,score,71.96
+JOR,Jordan,CS,score,75.47
+SOM,Somalia,CW,score,58.31
+ERI,Eritrea,CW,score,46.55
+DJI,Djibouti,CW,score,53.41
+YEM,Yemen,CW,score,51.47
+SDN,Sudan,CW,score,44.75
+SAU,Saudi Arabia,CW,score,63.96
+ISR,Israel,CW,score,48.64
+EGY,Egypt,CW,score,52.12
+JOR,Jordan,CW,score,80.07
+SOM,Somalia,ECO,score,97.02
+ERI,Eritrea,ECO,score,6.68
+DJI,Djibouti,ECO,score,99.95
+YEM,Yemen,ECO,score,95.16
+SDN,Sudan,ECO,score,98.3
+SAU,Saudi Arabia,ECO,score,100
+ISR,Israel,ECO,score,100
+EGY,Egypt,ECO,score,100
+JOR,Jordan,ECO,score,100
+SOM,Somalia,FIS,score,40.84
+ERI,Eritrea,FIS,score,24.39
+DJI,Djibouti,FIS,score,63.97
+YEM,Yemen,FIS,score,54.95
+SDN,Sudan,FIS,score,28.24
+SAU,Saudi Arabia,FIS,score,50.42
+ISR,Israel,FIS,score,42.03
+EGY,Egypt,FIS,score,30.27
+JOR,Jordan,FIS,score,44.9
+SOM,Somalia,FP,score,40.84
+ERI,Eritrea,FP,score,24.37
+DJI,Djibouti,FP,score,63.97
+YEM,Yemen,FP,score,54.95
+SDN,Sudan,FP,score,28.24
+SAU,Saudi Arabia,FP,score,27.65
+ISR,Israel,FP,score,33.94
+EGY,Egypt,FP,score,17.18
+JOR,Jordan,FP,score,44.9
+SOM,Somalia,HAB,score,74.3
+ERI,Eritrea,HAB,score,81.45
+DJI,Djibouti,HAB,score,94.43
+YEM,Yemen,HAB,score,89.29
+SDN,Sudan,HAB,score,86.36
+SAU,Saudi Arabia,HAB,score,62.39
+ISR,Israel,HAB,score,70.68
+EGY,Egypt,HAB,score,76.39
+JOR,Jordan,HAB,score,89.78
+SOM,Somalia,ICO,score,59.43
+ERI,Eritrea,ICO,score,56.84
+DJI,Djibouti,ICO,score,61.14
+YEM,Yemen,ICO,score,51.63
+SDN,Sudan,ICO,score,51.48
+SAU,Saudi Arabia,ICO,score,54.43
+ISR,Israel,ICO,score,57.29
+EGY,Egypt,ICO,score,56.43
+JOR,Jordan,ICO,score,60.19
+SOM,Somalia,Index,score,69.72
+ERI,Eritrea,Index,score,54.81
+DJI,Djibouti,Index,score,78.01
+YEM,Yemen,Index,score,67.99
+SDN,Sudan,Index,score,61.09
+SAU,Saudi Arabia,Index,score,73.67
+ISR,Israel,Index,score,70.5
+EGY,Egypt,Index,score,70.85
+JOR,Jordan,Index,score,74.03
+SOM,Somalia,LE,score,95.21
+ERI,Eritrea,LE,score,3.42
+DJI,Djibouti,LE,score,96.67
+YEM,Yemen,LE,score,97.58
+SDN,Sudan,LE,score,73.09
+SAU,Saudi Arabia,LE,score,100
+ISR,Israel,LE,score,100
+EGY,Egypt,LE,score,97.83
+JOR,Jordan,LE,score,87.72
+SOM,Somalia,LIV,score,93.4
+ERI,Eritrea,LIV,score,0.16
+DJI,Djibouti,LIV,score,93.4
+YEM,Yemen,LIV,score,100
+SDN,Sudan,LIV,score,47.88
+SAU,Saudi Arabia,LIV,score,100
+ISR,Israel,LIV,score,100
+EGY,Egypt,LIV,score,95.67
+JOR,Jordan,LIV,score,75.45
+SOM,Somalia,LSP,score,0.04
+ERI,Eritrea,LSP,score,0
+DJI,Djibouti,LSP,score,0
+YEM,Yemen,LSP,score,0.04
+SDN,Sudan,LSP,score,0
+SAU,Saudi Arabia,LSP,score,40.85
+ISR,Israel,LSP,score,14.8
+EGY,Egypt,LSP,score,69.26
+JOR,Jordan,LSP,score,0
+SOM,Somalia,MAR,score,0
+ERI,Eritrea,MAR,score,0
+DJI,Djibouti,MAR,score,0
+YEM,Yemen,MAR,score,0
+SDN,Sudan,MAR,score,0
+SAU,Saudi Arabia,MAR,score,7.85
+ISR,Israel,MAR,score,29.54
+EGY,Egypt,MAR,score,10.69
+JOR,Jordan,MAR,score,0
+SOM,Somalia,NP,score,89.21
+ERI,Eritrea,NP,score,80.42
+DJI,Djibouti,NP,score,NA
+YEM,Yemen,NP,score,97.21
+SDN,Sudan,NP,score,NA
+SAU,Saudi Arabia,NP,score,88.67
+ISR,Israel,NP,score,89.87
+EGY,Egypt,NP,score,74.78
+JOR,Jordan,NP,score,83.84
+SOM,Somalia,SP,score,29.73
+ERI,Eritrea,SP,score,28.42
+DJI,Djibouti,SP,score,30.57
+YEM,Yemen,SP,score,25.83
+SDN,Sudan,SP,score,25.74
+SAU,Saudi Arabia,SP,score,47.64
+ISR,Israel,SP,score,36.04
+EGY,Egypt,SP,score,62.84
+JOR,Jordan,SP,score,30.09
+SOM,Somalia,SPP,score,79.4
+ERI,Eritrea,SPP,score,83.86
+DJI,Djibouti,SPP,score,87.49
+YEM,Yemen,SPP,score,79.66
+SDN,Sudan,SPP,score,80.96
+SAU,Saudi Arabia,SPP,score,84
+ISR,Israel,SPP,score,63.06
+EGY,Egypt,SPP,score,73.13
+JOR,Jordan,SPP,score,87.73
+SOM,Somalia,TR,score,NA
+ERI,Eritrea,TR,score,NA
+DJI,Djibouti,TR,score,95.93
+YEM,Yemen,TR,score,35.01
+SDN,Sudan,TR,score,83.51
+SAU,Saudi Arabia,TR,score,100
+ISR,Israel,TR,score,100
+EGY,Egypt,TR,score,99.71
+JOR,Jordan,TR,score,77.37
+GLO,Global average,AO,score,85
+GLO,Global average,BD,score,79
+GLO,Global average,CP,score,74
+GLO,Global average,CS,score,73
+GLO,Global average,CW,score,55
+GLO,Global average,ECO,score,88
+GLO,Global average,FIS,score,43
+GLO,Global average,FP,score,35
+GLO,Global average,HAB,score,77
+GLO,Global average,ICO,score,55
+GLO,Global average,Index,score,68
+GLO,Global average,LE,score,85
+GLO,Global average,LIV,score,82
+GLO,Global average,LSP,score,18
+GLO,Global average,MAR,score,3
+GLO,Global average,NP,score,88
+GLO,Global average,SP,score,37
+GLO,Global average,SPP,score,81
+GLO,Global average,TR,score,77

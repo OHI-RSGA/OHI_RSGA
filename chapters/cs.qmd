@@ -60,12 +60,94 @@ This goal focuses on three coastal ecosystems — mangroves, tidal marshes and s
 
 The Carbon Storage score is based on the current extent and condition of CO₂-storing coastal habitats (mangrove forests, seagrass meadows, and salt marshes) relative to their recent historical condition. The status of each habitat is calculated (see [biodiversity/habitat goal](https://mazu.nceas.ucsb.edu/rstudio/p/7dda0cdc/chapters/bd.html#habitat)) and their contribution to the total goal score is the average of the habitats weighted by their average carbon storing capacity.
 
+*Carbon sequestration data* Weighting factors based on carbon sequestration rates for habitats used in the carbon storage goal (Chen & Lee 2022).
+
+Habitat | carbon storage
+---------- | -------------
+Mangrove	| 230.9
+Saltmarsh	| 244.7
+Seagrass	| 138
+Tidal flat | 129.8
+
 A score of 100 would indicate that these habitats are all still intact or have been restored to the same condition as in the past. A low score indicates that these habitats have declined significantly and that more protection and restoration must occur in order for them to store the maximum amount of carbon.
 
-## Regional analysis
+## A closer look at the data
 
-More details to come!
+::: {.callout-note collapse=true}
+
+The status of this goal is based on the condition, area, and carbon storage ability of saltmarsh, seagrass, mangrove, and tidal flats.
+
+## Habitat condition: data (click to expand)
+Extent reflects the estimated area of the habitat; health is the condition of the habitat on a scale from 0 to 1, with 1 indicating the current condition is at, or better, than the reference point; trend is the average yearly change in health during the most recent 5 years.  
 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+goal <- "hab"
+rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
+
+# list of OHI datafiles:
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+  filter(str_detect(layer, goal)) %>%
+  filter(str_detect(layer, "hab_")) %>%
+  filter(layer != "element_wts_hab_pres_abs") %>%
+  filter(layer != "hab_rockyreef_extent")
+
+all_habs <- data.frame()
+for(i in 1:24){
+#i=1
+hab <- datafiles[i,] 
+hab_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", hab$dir), hab$fn)) %>%
+  select(rgn_id, year, habitat, everything()) %>%
+  mutate(layer = hab$layer) 
+
+hab_df <- hab_df %>%
+  mutate(units = names(hab_df)[4])
+
+names(hab_df)[4] <- "score"
+all_habs <- rbind(all_habs, hab_df)
+all_habs
+  }
+
+hab_df <- left_join(rsga_rgns, all_habs, by="rgn_id") %>%
+  group_by(iso3c, habitat, units) %>%
+  filter(year==max(year)) %>%
+  ungroup()
+
+hab_df1 <- hab_df %>%
+  select(iso3c, country=region_name, habitat, layer, score) %>%
+  mutate(score = round(score, 1)) %>%
+  mutate(layer = gsub("tidal_flat", "tidal-flat", layer)) %>%
+  separate(layer, into = c("first", "second", "third"), sep = "_") %>%
+  select(-first, -second) %>%
+  pivot_wider(names_from = third, values_from = score) %>%
+  mutate(extent = ifelse(is.na(extent), 0, extent)) %>%
+  mutate(health = ifelse(extent == 0 , NA, health)) %>%
+  mutate(trend = ifelse(extent == 0, NA, trend)) %>%
+  rename(extent_km2 = extent)
+
+hab_df2 <- hab_df1 %>%
+  filter(habitat %in% c("mangrove", "saltmarsh", "seagrass", "tidal flat"))
+  
+
+  datatable(hab_df2,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+
 
 ```
+:::
+
+
+## Implications
+
+Based on the current model, this goal would be most improved by:
+
+- improving mangrove condition, particularly in Somalia, Saudi Arabia, and Egypt
+- improving condition of saltmarsh and seagrass in all regions
+
+Future assessments should carefully assess the underlying data for improvements because typically better habitat data is available within each country, this allows for improved estimates of extent, condition, and trend.
+

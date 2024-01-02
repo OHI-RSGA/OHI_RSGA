@@ -11,7 +11,7 @@ Each goal is scored on the delivery of specific benefits with respect to a susta
 
 ## How are OHI scores calculated?
 
-:::{.callout-important}
+:::{.callout-note}
 ## Goal scores are the building blocks of the OHI score!
 To obtain the overall OHI score, the scores of the ten goals are averaged. The global assessment weights the goal scores equally, but some regions may place different values on the goals, and thus, weight the goals differently.
 :::

@@ -75,6 +75,46 @@ ohi <- left_join(ohi, areas, by="iso3c")
 
 ```
 
+## Flowerplot Data
+```{r}
+ohi <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/yearly_results/global2023/OHI_final_formatted_scores_2023-10-02.csv")
+
+ohi$iso3c <- countrycode(ohi$region_name, "country.name", "iso3c")
+
+ohi <- ohi %>%
+  filter(scenario == 2023) %>%
+  filter(!is.na(iso3c)) %>%
+  filter(iso3c %in% regions$iso3c) %>%
+  select(iso3c, region_name, goal, dimension, score=value)  %>%
+  filter(dimension=="score")
+
+areas <- st_drop_geometry(select(regions, c(iso3c, are_km2))) %>%
+  filter(!(iso3c %in% c("SDN/EGY", "ERI/DJI"))) %>%
+  group_by(iso3c) %>%
+  summarize(are_km2 = sum(are_km2))
+
+ohi <- left_join(ohi, areas, by="iso3c")
+
+ohi_avgs <- ohi %>%
+  group_by(goal, dimension) %>%
+  summarize(score = round(weighted.mean(score, are_km2, na.rm=TRUE), 0)) %>%
+  mutate(iso3c = "GLO",
+         region_name = "Global average",
+         goal = goal,
+         dimension = "score",
+         score = score,
+         are_km2 = NA
+         )
+
+flower_data <- rbind(ohi, ohi_avgs) %>%
+  select(-are_km2)
+
+#write_csv(flower_data, here("_data/output/flowerplot_scores.csv"))
+
+```
+
+
+
 ## get region data
 ```{r}
 ohi_rgns <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/yearly_results/global2023/OHI_final_formatted_scores_2023-10-02.csv")
