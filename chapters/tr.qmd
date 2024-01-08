@@ -9,6 +9,9 @@ This goal captures the number of people, and the quality of their experience, vi
 
 Tourism and recreation in coastal areas is a major component of thriving coastal communities and a measure of how much people value ocean systems. Tourism and recreation provide opportunities for the enjoyment of marine and coastal environments. The ability to visit culturally or aesthetically pleasing places with healthy coastal ecosystems, diverse wildlife, and opportunities for exploration and recreation contributes to the well-being of many people.
 
+The scores for the region are relatively high for most regions, particularly Saudi Arabia, Sudan, Egypt, Israel, Djibouti, and Jordan. They are low in Eritrea (score = 52) and we have no data for Somalia, and Eritrea.
+
+The sustainability scores for tourism seem in line with the rest of the world.
 
 ## Scores
 ```{r}
@@ -138,9 +141,68 @@ The sustainability factor, $S$, is the Travel and Tourism Sustainability Subinde
 :::
 
 
-## Regional analysis
+## A closer look at the data
 
-More details to come!
+The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
+
+A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+
+### Current status
+
+::: {.callout-note collapse=true}
+
+## Tourism data (click to expand)
+The arrivals data is the proportion of overnight tourist arrivals divided by the total international arrivals. A score of 1 indicates that the vast majority of the people entering the country are staying. The sustainability scores range from 1-7, but in reality, the observed county scores range from 3.1 to 5.3, with a mean of 4.2. 
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
 
+goal <- "tr_"
+rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
+
+# list of OHI datafiles:
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+  filter(str_detect(layer, goal)) 
+
+
+
+arrivals <- filter(datafiles, layer=="tr_arrivals_props_tourism") 
+
+arrivals_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", arrivals$dir), arrivals$fn)) 
+
+arrivals_df <- left_join(rsga_rgns, arrivals_df, by="rgn_id") %>%
+  filter(year==2021) %>%
+  select(iso3c, region_name, rgn_id, arrivals = Ap)
+
+# sustainability component
+sustain <- filter(datafiles, layer=="tr_sustainability") 
+
+sustain_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", sustain$dir), sustain$fn)) 
+
+sustain_df <- sustain_df %>%
+  filter(year==2021) 
+#min(sustain_df$S_score,na.rm=TRUE)
+#max(sustain_df$S_score,na.rm=TRUE)
+#mean(sustain_df$S_score,na.rm=TRUE)
+# combine
+tr <- left_join(arrivals_df, sustain_df, by="rgn_id") %>%
+  select(iso3c, country=region_name, arrivals, )
+
+  datatable(tr,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
 ```
+
+:::
+
+
+## Implications
+
+This goal is in a bit of flux. The dataset we have used to estimate tourism rates was discontinued this year, and we have been trying to establish the best way forward. Given this, local data would be preferable to use. 
+
+Furthermore, the model underlying this goal should be adapted to the tourism goals of the region.
+
+[Other OHI+ analyses](https://oceanhealthindex.org/guidance/tourism-and-recreation/) have revised this goal to better reflect local concerns.  
