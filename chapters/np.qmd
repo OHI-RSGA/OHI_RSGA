@@ -9,6 +9,8 @@ This goal assesses how well countries are maximizing the sustainable harvest of 
 
 Marine natural products can provide substantial economic benefits when sustainably harvested and traded. For example, millions of marine ornamental (aquarium) fish are harvested and exported for sale each year. This trade can provide a valuable and long-term income stream for low-income coastal communities if undertaken in a sustainable manner.
 
+For the Red Sea and Gulf of Aden region, this score is driven almost entirely by the fish oil/fish meal trade. The one exception is that ornamental fish trade comprises about 18% of Israel's Natural product score, the rest of the countries have very little (i.e., < 1% of score) or no ornamental fish trade.
+
 ## Scores
 ```{r}
 #| echo: false
@@ -65,9 +67,108 @@ Currently, the global Ocean Health Index includes harvest and production of non-
 
 A high score indicates that natural resources are maximally harvested at a rate that does not threaten future harvest and minimizes ecological harm.
 
-## Regional analysis
+## A closer look at the data
 
-More details to come!
+The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
+
+A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+
+For this region, fishoil and fishmeal drives the Natural products score. The one exception is that Israel collects ornamental fish for the aquarium trade, and this comprises about 18% of its score. No seaweed is grown for non-food purposes in any of the regions. 
+
+### Current status
 ```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+goal <- "np"
+rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
+
+# list of OHI datafiles:
+datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
+  filter(str_detect(layer, goal)) 
 
 ```
+
+
+::: {.callout-note collapse=true}
+
+## Fish oil / Fish meal harvest (click to expand)
+These are the scores for the fish oil/fish meal component of the Natural product goal. Scores reflect the sustainability of marine fisheries for the species used for the production of fish oil and fish meal. The scores are scaled to values between 0 and 1, with one indicating that the stocks are managed sustainably. The model is similar to the fisheries subgoal model. 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+# exploring product weights
+harvest_wt <- filter(datafiles, layer=="np_harvest_product_weight") 
+
+harvest_wt_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", harvest_wt$dir), harvest_wt$fn)) 
+
+harvest_wt_df <- left_join(rsga_rgns, harvest_wt_df, by="rgn_id") 
+
+# exploring ornamentals
+harvest_wt <- filter(datafiles, layer=="np_orn_tonnes_relative") 
+
+harvest_wt_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", harvest_wt$dir), harvest_wt$fn)) 
+
+harvest_wt_df <- left_join(rsga_rgns, harvest_wt_df, by="rgn_id") 
+
+# exploring ornamentals for Israel
+harvest_wt <- filter(datafiles, layer=="np_exposure_orn") 
+
+harvest_wt_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", harvest_wt$dir), harvest_wt$fn)) 
+
+harvest_wt_df <- left_join(rsga_rgns, harvest_wt_df, by="rgn_id") 
+
+harvest_wt <- filter(datafiles, layer=="np_risk_orn") 
+
+harvest_wt_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", harvest_wt$dir), harvest_wt$fn)) 
+
+harvest_wt_df <- left_join(rsga_rgns, harvest_wt_df, by="rgn_id") %>%
+  filter(year == 2019)
+
+seaweed <- filter(datafiles, layer=="np_seaweed_tonnes") 
+
+seaweed_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", seaweed$dir), seaweed$fn)) 
+
+seaweed_df <- left_join(rsga_rgns, seaweed_df, by="rgn_id") 
+
+# fish meal/ fish oil
+fmfo <- filter(datafiles, layer=="np_fofm_scores") 
+
+fmfo_df  <- read_csv(file.path("https://raw.githubusercontent.com/OHI-Science/ohiprep_v2023/gh-pages/",
+gsub("ohiprep:", "", fmfo$dir), fmfo$fn)) %>%
+  filter(year == 2019) %>%
+  select(rgn_id, score)
+
+fmfo_df <- left_join(rsga_rgns, fmfo_df, by="rgn_id") %>%
+  select(iso3c, country = region_name, score)
+
+datatable(fmfo_df,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+
+```
+
+:::
+
+
+
+
+## Implications
+    
+This score is primarily driven by the harvest of fish for fish oil and fish meal products, which are primarily used for animal feed (land and marine farming). The fish oil/fish meal component of the  score is calculated using a model similar to that used for the marine fisheries subgoal. In this case, the model only includes fish used to produce fish oil and meal. The scores for this goal are reasonably good, with room for improvement, for most of these regions (> 0.8), but Egypt's score is a bit low (score = 0.75)   
+
+For Israel, nearly 20% of the score is based on the harvest of ornamental fish for the aquarium trade. According to our limited data, the risk to these species is low. 
+
+Future assessments should consider:
+- Are there other natural products harvested from the region that are currently not accounted for?
+- Does better data exist?
+
+[Other OHI+ analyses](https://oceanhealthindex.org/guidance/natural-products/) have revised this goal to better reflect local concerns.  

@@ -67,6 +67,13 @@ kelp | 1
 A score of 100 would indicate that these habitats are all still intact or have been restored to the same condition as in the past. A score of 0 would indicate that these protective coastal habitats are completely absent.
 
 ## A closer look at the data
+
+The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
+
+A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+
+### Current status
+
 The status of this goal is based on the condition, area, and coastal protection provided by saltmarsh, seagrass, mangrove, coral, and kelp.
 
 ::: {.callout-note collapse=true}

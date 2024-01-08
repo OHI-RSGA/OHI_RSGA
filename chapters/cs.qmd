@@ -72,7 +72,11 @@ Tidal flat | 129.8
 A score of 100 would indicate that these habitats are all still intact or have been restored to the same condition as in the past. A low score indicates that these habitats have declined significantly and that more protection and restoration must occur in order for them to store the maximum amount of carbon.
 
 ## A closer look at the data
+The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
 
+A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+
+### Current status
 ::: {.callout-note collapse=true}
 
 The status of this goal is based on the condition, area, and carbon storage ability of saltmarsh, seagrass, mangrove, and tidal flats.

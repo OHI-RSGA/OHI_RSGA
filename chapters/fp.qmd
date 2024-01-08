@@ -54,51 +54,22 @@ map_figure(ohi_scores=ohi_scores, goal="FP")
 
 <br>
 
-## Model description
-The Food Provision goal measures the amount of seafood sustainably harvested through any means for human consumption, and thus includes both mariculture and wild-caught fisheries (commercial, artisanal, and recreational).For the global assessment, the contribution of these two subgoals to the overall score is weighted by their total seafood yield. However, other approaches for weighting the contribution of these subgoals are reasonable.
+For the Global OHI, this goal assesses seafood obtained from wild-caught fisheries and marine farming, or mariculture. 
 
-A high score indicates that a region has maximized the amount of sustainably produced seafood from wild or ocean-cultured stocks. For fisheries, both over- and under- harvesting should be penalized. For mariculture, production should be at the sustainable “potential”. 
+We calculate each of these subgoals separately and average them to estimate the overall goal score. For this goal we weight the contributions to the final score based on the tonnes of production. A score of 100 means that food production is *sustainably* maximized.
 
+The subgoal scores can be viewed below.
 
-### Mariculture
-
-As humanity’s population continues to expand, we must increasingly rely upon new and improved methods for cultivating food on land and in the ocean. The term aquaculture refers to the cultivation in water (fresh and saltwater) of animals or plants for human consumption. Mariculture refers to the commercial harvest of seafood that is farm-raised in the ocean and along the coast.
-
-Aquaculture is the fastest growing animal food production sector in the world, with a 527% rise in production from 1990 to 2018 (FAO 2020)! As the population contines to grow, it will become increasingly important to efficiently grow food using sustainable mariculture practices.
-
-::: {.callout-note collapse="true"}
-## More details (click to expand)
-The status of the mariculture subgoal, $x_{mar}$, was calculated using three sources of data:
-
-- *Mariculture production:* Tonnes of production for both marine and brackish waters, excluding species that were not used as a source of food for human consumption is from FAO.
-
-- *Potential production:* Gentry et al. (2019) estimates the tonnes of possible production for marine aquaculture at a high resolution spatial scale. To account for social and economic realities and other constraints to these ecological potentials, we constrained the per-country potential to 1% of this tonnage estimate and used these country values as reference points. 
-
-- *Sustainability:* Additionally, we include a sustainability score for each species in each region which is based on the [Monterey Bay Aquarium Seafood Watch aquaculture recommendations](https://www.seafoodwatch.org/seafood-recommendations/standards-revision) [@2023].
-
-:::
-
-### Wild caught fisheries
-
-The wild-caught fisheries subgoal evaluates how well we maximize harvest without damaging the ocean’s ability to continue providing fish for people in the future. The sustainable harvest of wild-caught seafood avoids excessively high exploitation of target species and does not target threatened populations. Each year’s catch must not take so much from the population that future catches will decline. 
-
-::: {.callout-note collapse="true"}
-## More details (click to expand)
-We assess food provision from wild caught fisheries by estimating population biomass relative to the biomass that can deliver maximum sustainable yield ($B/B_{MSY}$) for each stock. When available, we obtained $B/B_{MSY}$ values from the RAM Legacy Stock Assessment Database.
-
-When RAM data were not available, we used data-limited approaches that have been developed to estimate $B/B_{MSY}$ values using globally available catch data. 
-
-To calculate the status for each region and year, $B/B_{MSY}$ values were converted to a stock status score between 0-1 that penalizes over-harvesting. To obtain the overall status for each region, the stock status scores for all the stocks within a region were averaged using a geometric mean weighted by the average catch (tonnes) of each stock using Sea Around Us catch data. 
-
-:::
+:::{.callout-note collapse=TRUE}
 
 
-## A closer look at the data
-
-We will first look at the data underlying the mariculture subgoal and then then wildcaught fisheries subgoal. 
+## Subgoal scores (click to expand)
 
 ### Mariculture
+Mariculture scores are based on two factors:
 
+- Maximizing the amount of seafood that can grown based on conditions.
+- Ensuring that mariculture practices are sustainable.
 ```{r}
 #| echo: false
 #| warning: false
@@ -153,7 +124,118 @@ map_figure(ohi_scores=ohi_scores, goal="MAR")
 
 <br>
 
-All counties in the region have very low mariculture scores, this is primarily because the region has far more mariculture potential than what is currently realized. This is not an unusual result, based on the global assessment, given that mariculture expansion is just taking off.
+### Wildcaught fisheries
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+score_hab <- score(x="FIS", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_hab`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+dial(score_hab,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+map_figure(ohi_scores=ohi_scores, goal="FIS")
+
+```
+:::
+
+
+## Model description
+The Food Provision goal measures the amount of seafood sustainably harvested through any means for human consumption, and thus includes both mariculture and wild-caught fisheries (commercial, artisanal, and recreational).For the global assessment, the contribution of these two subgoals to the overall score is weighted by their total seafood yield. However, other approaches for weighting the contribution of these subgoals are reasonable.
+
+A high score indicates that a region has maximized the amount of sustainably produced seafood from wild or ocean-cultured stocks. For fisheries, both over- and under- harvesting should be penalized. For mariculture, production should be at the sustainable “potential”. 
+
+
+### Mariculture
+
+As humanity’s population continues to expand, we must increasingly rely upon new and improved methods for cultivating food on land and in the ocean. The term aquaculture refers to the cultivation in water (fresh and saltwater) of animals or plants for human consumption. Mariculture refers to the commercial harvest of seafood that is farm-raised in the ocean and along the coast.
+
+Aquaculture is the fastest growing animal food production sector in the world, with a 527% rise in production from 1990 to 2018 (FAO 2020)! As the population contines to grow, it will become increasingly important to efficiently grow food using sustainable mariculture practices.
+
+::: {.callout-note collapse="true"}
+## More details (click to expand)
+The status of the mariculture subgoal, $x_{mar}$, was calculated using three sources of data:
+
+- *Mariculture production:* Tonnes of production for both marine and brackish waters, excluding species that were not used as a source of food for human consumption is from FAO.
+
+- *Potential production:* Gentry et al. (2019) estimates the tonnes of possible production for marine aquaculture at a high resolution spatial scale. To account for social and economic realities and other constraints to these ecological potentials, we constrained the per-country potential to 1% of this tonnage estimate and used these country values as reference points. 
+
+- *Sustainability:* Additionally, we include a sustainability score for each species in each region which is based on the [Monterey Bay Aquarium Seafood Watch aquaculture recommendations](https://www.seafoodwatch.org/seafood-recommendations/standards-revision) [@2023].
+
+:::
+
+### Wild caught fisheries
+
+The wild-caught fisheries subgoal evaluates how well we maximize harvest without damaging the ocean’s ability to continue providing fish for people in the future. The sustainable harvest of wild-caught seafood avoids excessively high exploitation of target species and does not target threatened populations. Each year’s catch must not take so much from the population that future catches will decline. 
+
+::: {.callout-note collapse="true"}
+## More details (click to expand)
+We assess food provision from wild caught fisheries by estimating population biomass relative to the biomass that can deliver maximum sustainable yield ($B/B_{MSY}$) for each stock. When available, we obtained $B/B_{MSY}$ values from the RAM Legacy Stock Assessment Database.
+
+When RAM data were not available, we used data-limited approaches that have been developed to estimate $B/B_{MSY}$ values using globally available catch data. 
+
+To calculate the status for each region and year, $B/B_{MSY}$ values were converted to a stock status score between 0-1 that penalizes over-harvesting. To obtain the overall status for each region, the stock status scores for all the stocks within a region were averaged using a geometric mean weighted by the average catch (tonnes) of each stock using Sea Around Us catch data. 
+
+:::
+
+
+## A closer look at the data
+
+The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
+
+A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+
+### Current status
+
+We will first look at the data underlying the mariculture subgoal and then then wildcaught fisheries subgoal. 
+
+
+::: {.callout-note collapse=true}
+
+## Mariculture: status data (click to expand)
+The tonnes of production and sustainability of rearing practices for each species that is currently grown in each country.Sustainability is rescaled to values between 0 and 1, with 1 being perfectly sustainable.
+
 
 
 ```{r}
@@ -173,12 +255,6 @@ prep <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft
 
 ```
 
-For more details see the data preparation [script](https://ohi-science.org/ohiprep_v2023/globalprep/mapr/v2022/spp_data_prep.html).
-
-::: {.callout-note collapse=true}
-
-## Mariculture: status data (click to expand)
-The tonnes of production and sustainability of rearing practices for each species that is currently grown in each country.Sustainability is rescaled to values between 0 and 1, with 1 being perfectly sustainable.
 
 ```{r}
 #| echo: false
@@ -242,60 +318,6 @@ potential_df <- left_join(rsga_rgns, potential_df, by="rgn_id") %>%
 
 :::
 
-### Wildcaught fisheries
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-score_hab <- score(x="FIS", ohi_scores)
-
-```
-
-::: columns
-::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_hab`.
-:::
-
-::: {.column width="50%"}
-```{r, fig.width=10, fig.height=3}
-#| echo: false
-#| warning: false
-#| message: false
-
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-dial(score_hab,colors)
-
-```
-:::
-:::
-
-The interactive map below shows how different countries contributed to this score.
-
-```{r, fig.width=3, fig.height=1.5}
-#| echo: false
-#| warning: false
-#| message: false
-
-
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-map_figure(ohi_scores=ohi_scores, goal="FIS")
-
-```
 
 <br>
 

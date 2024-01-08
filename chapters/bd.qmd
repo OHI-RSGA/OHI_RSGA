@@ -11,7 +11,6 @@ This goal describes how successfully the richness and variety of marine life is 
 
 People value the existence of a diverse array of species for their intrinsic qualities and their contribution to the structure and function of resilient ecosystems. The risk of species extinction generates great emotional and moral concern for many people. This concern is demonstrated by the large sums of money that people donate to help conserve species and habitats.
 
-
 ## Scores
 
 ```{r}
@@ -54,13 +53,133 @@ map_figure(ohi_scores=ohi_scores, goal="BD")
 
 <br>
 
-## Model description
 For the Global OHI, this goal assesses the conservation status of species based on two subgoals: Species and habitat condition. Species are assessed because they are what one typically thinks of in relation to biodiversity. We also assess Habitats because only a small proportion of marine species worldwide have been mapped and assessed, so we consider habitats a proxy for the condition of the broad suite of species that depend on them.
 
 We calculate each of these subgoals separately and average them to estimate the overall goal score. A score of 100 means all species are at very low risk of extinction and all habitats are conserved.
 
+The subgoal scores can be viewed below.
+
+::: {.callout-note collapse=true}
+## Subgoal scores (click to expand)
+
+### Species condition
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+
+score_spp <- score(x="SPP", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_spp`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+dial(score_spp,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+map_figure(ohi_scores=ohi_scores, goal="SPP")
+
+```
+
+Egypt has the lowest score of 73, and the other countries score 80 or higher. These are reasonably good scores.
+
+<br>
+
+### Habitat condition
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+score_hab <- score(x="HAB", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_hab`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+dial(score_hab,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+map_figure(ohi_scores=ohi_scores, goal="HAB")
+
+```
+:::
+
+## Model description
+
 ### Species
-The habitat component of the biodiversity goal measures the conservation status of marine species.
+The species component of the biodiversity goal measures the conservation status of marine species.
 
 This subgoal assesses the health of all marine species present in a country’s EEZ, including endangered species and species in relatively good conditions. The presence of species that are not at risk leads to a higher score.
 
@@ -125,64 +244,13 @@ Tidal flat | Average tidal flat extent of 2010 and 2013 relative to historic ext
 
 ## A closer look at the data
 
+The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
+
+A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+
+### Current status
+
 We will first look at the data underlying the species condition subgoal and then then habitat subgoal. 
-
-### Species condition
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-
-score_spp <- score(x="SPP", ohi_scores)
-
-```
-
-::: columns
-::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_spp`.
-:::
-
-::: {.column width="50%"}
-```{r, fig.width=10, fig.height=3}
-#| echo: false
-#| warning: false
-#| message: false
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-dial(score_spp,colors)
-
-```
-:::
-:::
-
-The interactive map below shows how different countries contributed to this score.
-
-```{r, fig.width=3, fig.height=1.5}
-#| echo: false
-#| warning: false
-#| message: false
-
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-map_figure(ohi_scores=ohi_scores, goal="SPP")
-
-```
-
-<br>
-
 
 ```{r}
 #| echo: false
@@ -201,11 +269,8 @@ prep <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft
 
 ```
 
-For more details see the data preparation [script](https://ohi-science.org/ohiprep_v2023/globalprep/spp/v2022/spp_data_prep.html).
 
 ::: {.callout-note collapse=true}
-
-Egypt has the lowest score of 73, and the other countries score 80 or higher. These are reasonably good scores.
 
 ## Species condition: status data (click to expand)
 Getting the underlying data for this goal requires processing a large amount of spatial data.
@@ -241,63 +306,8 @@ Given this, this section is on hold for now.
 
 :::
 
-### Habitat condition
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-score_hab <- score(x="HAB", ohi_scores)
-
-```
-
-::: columns
-::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_hab`.
-:::
-
-::: {.column width="50%"}
-```{r, fig.width=10, fig.height=3}
-#| echo: false
-#| warning: false
-#| message: false
-
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-dial(score_hab,colors)
-
-```
-:::
-:::
-
-The interactive map below shows how different countries contributed to this score.
-
-```{r, fig.width=3, fig.height=1.5}
-#| echo: false
-#| warning: false
-#| message: false
-
-
-source("../_data/functions/start_script.R")
-#source("_data/functions/start_script.R")
-source("../_data/functions/score_display_functions.R")
-#source("_data/functions/score_display_functions.R")
-
-map_figure(ohi_scores=ohi_scores, goal="HAB")
-
-```
 
 <br>
-
 
 ::: {.callout-note collapse=true}
 
@@ -361,8 +371,6 @@ hab_df1 <- hab_df %>%
 
 ```
 :::
-
-Saudi Arabia's score of 62 is the lowest within the region. This is primarily due to poor condition of mangrove forests and soft-bottom habitat.
 
 ## Implications
 

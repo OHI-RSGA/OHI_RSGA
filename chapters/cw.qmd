@@ -82,9 +82,15 @@ Although clean waters are relevant and important anywhere in the ocean, coastal 
 
 ## A closer look at the data
 
-::: {.callout-note collapse=true}
+The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
+
+A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+
+### Current status
 
 The status of this goal is based on 4 types of pollution: nutrient, chemical, pathogen, and plastic trash.
+
+::: {.callout-note collapse=true}
 
 ## Clean waters data (click to expand)
 High scores are good because they indicate low pollution.

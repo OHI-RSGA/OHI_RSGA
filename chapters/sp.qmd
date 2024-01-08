@@ -9,6 +9,8 @@ format: html
 
 This goal describes how well we are preserving current and future access to the coastal and marine systems that people value as part of their cultural identity. For the global assessment, this is evaluated by determining the condition of iconic species (iconic species subgoal) and the protection of coastal regions (lasting special places subgoal).
 
+Overall, the scores for this goal are low throughout the region. This suggests that the marine places people value may not be well protected for future generations.
+
 ## Scores
 
 ```{r}
@@ -51,8 +53,130 @@ map_figure(ohi_scores=ohi_scores, goal="SP")
 
 <br>
 
+For the Global OHI, this goal captures the aspects of the coastal and marine system that people value as part of their cultural identity by measuring two subgoals: the condition of iconic species and the condition of lasting special places.
+
+We calculate each of these subgoals separately and average them to estimate the overall goal score. A score of 100 means all iconic species are at very low risk of extinction and at least 30% of coastal habitats are designated as marine protected areas.
+
+The subgoal scores can be viewed below.
+
+::: {.callout-note collapse=true}
+## Subgoal scores (click to expand)
+
+### Iconic species condition
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+
+score_spp <- score(x="ICO", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_spp`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+dial(score_spp,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+map_figure(ohi_scores=ohi_scores, goal="ICO")
+
+```
+
+These scores are fairly low throughout the region, indicating that the welfare of many iconic species may be threatened.
+<br>
+
+### Lasting special places
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+score_hab <- score(x="LSP", ohi_scores)
+
+```
+
+::: columns
+::: {.column width="50%"}
+<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_hab`.
+:::
+
+::: {.column width="50%"}
+```{r, fig.width=10, fig.height=3}
+#| echo: false
+#| warning: false
+#| message: false
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+dial(score_hab,colors)
+
+```
+:::
+:::
+
+The interactive map below shows how different countries contributed to this score.
+
+```{r, fig.width=3, fig.height=1.5}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+source("../_data/functions/start_script.R")
+#source("_data/functions/start_script.R")
+source("../_data/functions/score_display_functions.R")
+#source("_data/functions/score_display_functions.R")
+
+map_figure(ohi_scores=ohi_scores, goal="LSP")
+
+```
+:::
+
+
 ## Model description
-People derive a sense of identity or value from living near the ocean, visiting coastal or marine locations or just knowing that such places and their characteristic species exist. This goal tries to capture the aspects of the coastal and marine system that people value as part of their cultural identity by measuring two subgoals: the condition of iconic species and the condition of lasting special places.
 
 ### Iconic species
 The iconic species subgoal measures the conservation status of iconic marine species, which are the animals that have unique importance to humans as demonstrated through traditional activities, ethnic or religious practices, existence value, or locally acknowledged aesthetic value.
@@ -82,10 +206,4 @@ We focus only on coastal waters (within 3 nautical miles of shore) for marine sp
 The lasting special places sub-goal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons. This sub-goal is particularly hard to quantify. Ideally one would survey every community around the world to determine the top list of special places, and then assess how those locations are faring relative to a desired state (e.g., protected or well managed). The reality is that such lists do not exist. Instead, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true.
 :::
 
-## Regional analysis
-
-More details to come!
-
-```{r}
-
-```
+## Implications
