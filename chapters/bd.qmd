@@ -250,25 +250,7 @@ A great deal of data are used to calculate the final score for each goal, but th
 
 ### Current status
 
-We will first look at the data underlying the species condition subgoal and then then habitat subgoal. 
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-goal <- "spp"
-rsga_rgns <- read_csv(here("_data/output/rsga_ohi_rgns.csv"))
-
-# list of OHI datafiles:
-datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>%
-  filter(str_detect(layer, goal)) 
-
-# prep files:
-prep <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_dataprep.csv")
-
-```
-
+We will first look at the data underlying the species condition subgoal and then the habitat subgoal. 
 
 ::: {.callout-note collapse=true}
 
@@ -276,8 +258,6 @@ prep <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft
 Getting the underlying data for this goal requires processing a large amount of spatial data.
 
 Given this, this section is on hold for now.
-
-
 
 ```{r}
 #| echo: false

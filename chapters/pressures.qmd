@@ -25,6 +25,10 @@ source("../_data/functions/score_display_functions.R")
 :::
 
 ::: {.column width="40%"}
+
+<br>
+<br>
+<br>
 *Figure 1. Pressures acting on a goal include both ecological and social pressures. For the global OHI assessment, ecological pressures include 5 general categories: fishing pressure, habitat destruction, climate change, water pollution, species/genetic introductions.*
 
 
@@ -85,7 +89,7 @@ We then link the stressors to specific goals, by estimating the rank sensitivity
 
 *Figure 2. The impact of the global pressures on the goals. The larger the dot, the larger the impact (ranging from 0 - 3). Dots of the same color are the same goal, but some goals have different components that are affected differently. For example, the pressures affecting the Habitat goal will depend on which habitats a country has.*
 
-```{r, fig.width=7, fig.height=7}
+```{r, fig.width=9, fig.height=9}
 #| echo: false
 #| warning: false
 #| message: false
