@@ -35,6 +35,7 @@ score <- score(x="Index", ohi_scores)
 
 <br>
 <br>
+
 Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
 :::
 
@@ -52,6 +53,7 @@ dial(score,colors)
 :::
 
 ::::
+The overall Index score is the average of all the regions that have EEZ territories in the [Red Sea and Gulf of Aden](https://ohi-rsga.github.io/OHI_RSGA/chapters/region.html). The contribution of each country is weighted by the area of their EEZ.  
 
 The interactive map below shows how different countries contributed to this score.
 
@@ -64,24 +66,62 @@ map_figure(ohi_scores=ohi_scores, goal="Index")
 ```
 
 <br>
+<br>
 
-The Index score is the average of 10 goals that describe all the ways human value and rely on marine systems. 
+## Goal Scores
 
-The Flower plot provides the overall score for the Red Sea and Gulf of Aden region for each goal. The center value is the overall Index score.
+The Index score is the average of 10 goals that describe how humans value and rely on marine systems. 
+
+:::: {.columns} 
+
+::: {.column width="25%"}
+
+<br>
+<br>
+
+The Flower plot provides the goal scores for the Red Sea and Gulf of Aden region. The center value is the overall Index score.
+
+:::
+
+::: {.column width="75%"}
 
 ![](chapters/figs/FlowerPlots/flower_Global_average.png)
+:::
 
-To learn more: Navigate through the menu at the right for more information about the goals and to see the scores for each of the countries comprising the Red Sea and Gulf of Aden.
+::::
+
+::: {.callout-note collapse=true}
+
+## More about goals (click to expand)
+
+Clicking on the goal will link to the goal pages which provide more information about goals.
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+goals_df  <- read_csv(here("_data/output/goals.csv")) 
+goals_df$subgoal <- sapply(goals_df$subgoal, function(x) 
+  if (!is.na(x)) paste0(strrep('&nbsp;', 4), x) else x)
+
+  datatable(goals_df, escape=FALSE, rownames=FALSE)
+```
+
+:::
+
+To learn even more: Navigate through the menu at the right for more information about each goal and to view the underlying data used to calculate the goal scores. 
+
+A description of how goal scores are calculated is [located here](https://ohi-rsga.github.io/OHI_RSGA/chapters/OHI.html).
 
 :::{.callout-tip}
 ## Regional models will produce more relevant OHI scores!
 
-This score is the EEZ weighted average score from the OHI global assessment. A regional assessment can be better for several reasons: 
+A regional assessment can be better for several reasons: 
 
-- the global analysis requires using data the most complete global data, however,  local data may be available that is better!
+- Higher quality local data is often available!
 
-- the goal models can be adapted to better capture the values and concerns of the region. 
+- Goal models, and reference points, can be adapted to better capture the values and concerns of the region.  
 
-- the goals can be weighted differently, and can even be changed.
+- Goals can be weighted differently based on regional priorities.
 
 :::

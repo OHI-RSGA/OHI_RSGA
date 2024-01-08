@@ -4,7 +4,7 @@ project:
   
 website: 
   page-navigation: true
-  title: "OHI+" 
+  title: "OHI: Red Sea & Gulf of Aden" 
   site-url: "https://ohi-rsga.github.io/OHI_RSGA/" 
   repo-url: https://github.com/ohi-rsga/OHI_RSGA 
   repo-actions: [edit, issue]
