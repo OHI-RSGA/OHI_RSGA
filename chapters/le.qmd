@@ -69,10 +69,12 @@ Ideally, this sub-goal describes the quality and quantity as well as the sustain
 ### Economies
 The Economies goal captures the economic value associated with marine industries using revenue from marine sectors, such as commercial fishing, mariculture, tourism and recreation, shipping and transportation, whale watching, ports and harbors, ship and boat building, and renewable energy production.
 
-## Regional analysis
+## A closer look at the data
 
-More details to come!
+These data have not been updated at the global scale for over 10 years due to data limitations.
 
-```{r}
+## Implications
 
-```
+Future assessments will require data needed to assess this goal. 
+
+Guidance for the  [livelihoods](https://oceanhealthindex.org/guidance/livelihoods/) and [economies](https://oceanhealthindex.org/guidance/economies/) subgoals should be considered while developing this goal for the Red Sea and Gulf of Aden.  

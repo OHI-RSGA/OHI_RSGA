@@ -370,9 +370,6 @@ The sustainability scores for reared seafood are fairly high for all countries a
 
 Fisheries scores are low primarily because most of the wild-caught fish from this region do not have stock stack scores, which we use as an indicator of weak fisheries management for the global assessment. Only about 40% of the fish catch is identified to species, which means that it can not be assessed using stock assessments and this is heavily penalized in the global Ocean Health Index fisheries model. 
 
-Future assessments should carefully assess the underlying data for improvements because typically better habitat data is available within each country, this allows for improved estimates of extent, condition, and trend.
+Future assessments should carefully assess the underlying data and models to meet their objectives.
 
-Other OHI+ analyses have revised the [habitat](https://oceanhealthindex.org/guidance/habitats/) and [species](https://oceanhealthindex.org/guidance/species/) subgoals to better reflect local concerns.  
-```{r}
-
-```
+Other OHI+ analyses have revised [mariculture](https://oceanhealthindex.org/guidance/mariculture/) and [fisheries](https://oceanhealthindex.org/guidance/wild-caught-fisheries/) subgoals to better reflect local concerns.  
