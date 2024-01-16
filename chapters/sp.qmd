@@ -9,11 +9,8 @@ format: html
 
 ## Overview
 
-The ocean is an important source of our collective cultural identity. Our connection to marine and coastal environments is profound, providing inspiration and a sense of history and place. For the global assessment, we measure how well we are protecting this legacy for future generations by assessing the condition of iconic species (iconic species subgoal) and the protection of coastal regions (lasting special places subgoal).
+The ocean is an important source of our collective cultural identity. Our connection to marine and coastal environments is profound, providing inspiration and a sense of history and place. For the global assessment, we measure how well we are protecting this legacy for future generations by assessing the condition of iconic species (Iconic Species subgoal) and the protection of coastal regions (Lasting Special Places subgoal).
 
-Overall, the scores for this goal are low throughout the region. This suggests that the marine places people value may not be well protected for future generations. For the iconic species subgoal, we identified 24 iconic species within the region. For each species we determine the IUCN threatened status designations within each region the species is located. In 52 (of N=141) cases, the species were critically endangered or endangered; 45 were vulnerable, and 34 were either of least concern or not threatened.   
-
-In regard to protected areas, only Saudi Arabia (~ 12% protected), Israel (~4%), and Egypt (~21%) have marine protected areas along the coastline and offshore regions (within 3nm of the coast), but none are near the 30% required to obtain a score of 100. 
 
 ## Scores
 
@@ -34,7 +31,7 @@ score <- score(x="SP", ohi_scores)
 
 **The Sense of Place score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">Overall, the scores for this goal are low throughout the region. This suggests that the marine places people value may not be well protected for future generations. </span>
 
 :::
 
@@ -94,7 +91,7 @@ score_spp <- score(x="ICO", ohi_scores)
 
 **The Iconic species subgoal score for the Red Sea and Gulf of Aden region was `r score_spp`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">This goal is low for all countries which indicates that too many of the marine animals that people value are critically endangered or endangered.</span>
 
 :::
 
@@ -155,7 +152,7 @@ score_hab <- score(x="LSP", ohi_scores)
 
 **The overall Lasting Special Places subgoal score for the Red Sea and Gulf of Aden region was `r score_hab`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">The low scores for this goal suggest little effort has been made to preserve culturally valuable coastal and marine areas.</span>
 
 :::
 
@@ -233,11 +230,15 @@ The biggest factor driving scores, by far, is the current status component. Here
 
 We will first look at the data underlying the Iconic species subgoal and then the Lasting special places subgoal. 
 
+#### Iconic species
+The following is a list of iconic species found in the Red Sea and Gulf of Aden region as well as their IUCN conservation status. Iconic species include animals such as the Blue Whale (endangered), Grey Reef Shark (endangered), Blacktip Reef Shark (vulnerable), and the Humphead Wrasse (endangered). 
+
+We identified 24 iconic species within the region. For each species we determine the IUCN threatened status designations within each region the species is located. In 52 (of N=141) cases, the species were critically endangered or endangered; 45 were vulnerable, and 34 were either of least concern or not threatened.
+
 
 ::: {.callout-note collapse=true}
 
-## Iconic species condition: status data (click to expand)
-These data describe the iconic conditions in each country and provides their IUCN conservation status.
+## Iconic species condition scores (click to expand)
 
 ```{r}
 #| echo: false
@@ -278,10 +279,13 @@ ico <- left_join(rsga_rgns, ico_df, by="rgn_id") %>%
 
 <br>
 
+#### Lasting special places
+These data describe the km2 and percent protected areas located in the 1km inland coastal areas and 3nm offshore regions. 
+
+In regard to protected areas, only Saudi Arabia (~ 12% protected), Israel (~4%), and Egypt (~21%) have marine protected areas along the coastline and offshore regions (within 3nm of the coast), but none are near the 30% required to obtain a score of 100. 
 ::: {.callout-note collapse=true}
 
-## Lasting special places: data (click to expand)
-These data describe the km2 and percent protected areas in the 1km inland coastal areas and 3nm offshore regions. 
+## Protected areas: Country data (click to expand)
 
 ```{r}
 #| echo: false
@@ -335,10 +339,8 @@ lsp <- left_join(rsga_rgns, marine_mpa_df, by="rgn_id") %>%
 
 Overall, more could be done to protect the species and areas that people value in this region.
 
-Iconic species scores are fairly low throughout the region, indicating that the welfare of many iconic species may be threatened.
+Iconic species scores are fairly low throughout the region, indicating that the welfare of many iconic species, such as the Blue Whale and Green Sea Turtle, is threatened.
 
-Furthermore, according to the global data, there are very few Marine Protected Areas in the region. Implementing Marine Protected Areas along the coastline and nearshore areas would immediately improve scores.
-
-This goal would be improved by evaluating the accuracy of the iconic species list for the region.
+Furthermore, according to the global data, there are very few Marine Protected Areas in the region. Implementing Marine Protected Areas along the coastline and nearshore areas in all the countries would immediately improve scores.
 
 Other OHI+ analyses have revised the [iconic species](https://oceanhealthindex.org/guidance/iconic-species/) and [lasting special places](https://oceanhealthindex.org/guidance/lasting-special-places/) subgoals to better reflect local concerns.  

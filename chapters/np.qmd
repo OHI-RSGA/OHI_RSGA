@@ -10,7 +10,7 @@ format: html
 
 Marine natural products can provide substantial economic benefits when sustainably harvested and traded. For example, millions of marine ornamental (aquarium) fish are harvested and exported for sale each year. This trade can provide a valuable and long-term income stream for low-income coastal communities if undertaken in a sustainable manner.
 
-For the Red Sea and Gulf of Aden region, this score is driven almost entirely by the fish oil/fish meal trade. The one exception is that ornamental fish trade comprises about 18% of Israel's Natural product score, the rest of the countries have very little (i.e., < 1% of score) or no ornamental fish trade.
+For the Red Sea and Gulf of Aden region, this score is driven almost entirely by the fish oil/fish meal trade. The one exception is that ornamental fish trade comprises about 18% of Israel's Natural Product score, the rest of the countries have very little (i.e., < 1% of score) or no ornamental fish trade.
 
 ## Scores
 ```{r}
@@ -32,7 +32,7 @@ score <- score(x="NP", ohi_scores)
 
 **The Natural Products score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">The scores in this region are fairly high. There are no data for Sudan and Djbouti. This could result if these regions do not trade these products, or, alternatively, from data limitations.</span>
 :::
 
 ::: {.column width="50%"}
@@ -92,10 +92,16 @@ datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/
 ```
 
 
+#### Fish oil / Fish meal  (click to expand)
+We focus on fish oil and meal because there is no seaweed production and the only producer of aquarium ornamentals is Israel.
+
+Scores reflect the sustainability of marine fisheries for the species used for the production of fish oil and fish meal. The scores are scaled to values between 0 and 1, with one indicating that the stocks are managed sustainably. The model is similar to the fisheries subgoal model. 
+
+
 ::: {.callout-note collapse=true}
 
-## Fish oil / Fish meal harvest (click to expand)
-These are the scores for the fish oil/fish meal component of the Natural product goal. Scores reflect the sustainability of marine fisheries for the species used for the production of fish oil and fish meal. The scores are scaled to values between 0 and 1, with one indicating that the stocks are managed sustainably. The model is similar to the fisheries subgoal model. 
+## Sustainability of fish oil / fish meal harvest (click to expand)
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -166,10 +172,10 @@ datatable(fmfo_df,
     
 This score is primarily driven by the harvest of fish for fish oil and fish meal products, which are primarily used for animal feed (land and marine farming). The fish oil/fish meal component of the  score is calculated using a model similar to that used for the marine fisheries subgoal. In this case, the model only includes fish used to produce fish oil and meal. The scores for this goal are reasonably good, with room for improvement, for most of these regions (> 0.8), but Egypt's score is a bit low (score = 0.75)   
 
-For Israel, nearly 20% of the score is based on the harvest of ornamental fish for the aquarium trade. According to our limited data, the risk to these species is low. 
+For Israel, nearly 20% of the score is based on the harvest of ornamental fish for the aquarium trade. According to our limited data, the risk to these species in this region is low. 
 
 Future assessments should consider:
 - Are there other natural products harvested from the region that are currently not accounted for?
-- Does better data exist?
+- Do better data exist?
 
 [Other OHI+ analyses](https://oceanhealthindex.org/guidance/natural-products/) have revised this goal to better reflect local concerns.  

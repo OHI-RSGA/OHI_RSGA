@@ -31,7 +31,7 @@ score <- score(x="CS", ohi_scores)
 
 **The Carbon Storage score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">These scores suggest that key habitats are sequestering and storing atmospheric carbon, however, this process has been somewhat compromised due to habitat loss.</span>
 :::
 
 ::: {.column width="50%"}
@@ -79,12 +79,14 @@ A score of 100 would indicate that these habitats are all still intact or have b
 The biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with EEZ territory in the Red Sea and Gulf of Aden.
 
 ### Current status
-::: {.callout-note collapse=true}
-
+#### Habitat condition
 The status of this goal is based on the condition, area, and carbon storage ability of saltmarsh, seagrass, mangrove, and tidal flats.
 
-## Habitat condition: data (click to expand)
-Extent reflects the estimated area of the habitat; health is the condition of the habitat on a scale from 0 to 1, with 1 indicating the current condition is at, or better, than the reference point; trend is the average yearly change in health during the most recent 5 years.  
+Habitat health is evaluated on a scale from 0 to 1, with 1 indicating the current condition is at, or better, than the reference point; trend is the average yearly change in health during the most recent 5 years; and extent is the estimated area of the habitat in each region in km2.  
+
+::: {.callout-note collapse=true}
+
+## Habitats: Country data (click to expand)
 
 ```{r}
 #| echo: false
@@ -156,4 +158,6 @@ Based on the current model, this goal would be most improved by:
 - improving condition of saltmarsh and seagrass in all regions
 
 Future assessments should carefully assess the underlying data for improvements because typically better habitat data is available within each country, this allows for improved estimates of extent, condition, and trend.
+
+Furthermore, future assessments should consider whether all relevant habitats are included in the model.
 

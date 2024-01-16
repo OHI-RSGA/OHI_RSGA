@@ -30,7 +30,7 @@ score <- score(x="CW", ohi_scores)
 
 **The Clean Waters score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">The Clean Water score of 55 is low, suggesting significant water pollution. For comparison, the average global OHI score was 70.</span>
 :::
 
 ::: {.column width="50%"}
@@ -66,7 +66,7 @@ Pollutant | Sources  | OHI data
 nutrient  | municipal sewage, agricultural fertilizers, livestock manure, aquaculture | fertilizers and manure ([Halpern et al. 2022](https://www.nature.com/articles/s41893-022-00965-x))
 chemicals | oil spills, sewage, agricultural runoff, aquaculture, industrial sources, runoff from impermeable surfaces, shipping |  agricultural pesticide use ([FAO](https://www.fao.org/faostat/en/#data and [Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.)), shipping and ports and harbors ([Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.)), impervious surface runoff([Halpern et al. 2015](https://www.nature.com/articles/ncomms8615.))  
 pathogens | human waste (land and ships), livestock and aquaculture waste | human waste in terms of access to sanitation ([World Health Organization and United Nations Children's Fund](https://data.unicef.org)) and coastal human population 
-Trash | sources on land, ocean vessels, fishing, aquaculture | marine plastic pollution (Eriksen et al. 2014)
+trash | sources on land, ocean vessels, fishing, aquaculture | marine plastic pollution (Eriksen et al. 2014)
 
 ::: {.callout-note collapse=true}
 ## Clean waters calculation details (click to expand)
@@ -90,12 +90,13 @@ The biggest factor driving scores, by far, is the current status component. Here
 
 ### Current status
 
-The status of this goal is based on 4 types of pollution: nutrient, chemical, pathogen, and plastic trash.
+#### Sources of pollution
+The status of this goal is based on 4 types of pollution: nutrient, chemical, pathogen, and plastic trash. Each source was estimated and rescaled to a value between 0 and 1, with high scores indicating low pollution.
 
 ::: {.callout-note collapse=true}
 
-## Clean waters data (click to expand)
-High scores are good because they indicate low pollution.
+## Pollution sources: Country data (click to expand)
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -143,8 +144,10 @@ cw_df <- cw_df %>%
 
 ## Implications
 
-Based on the current model, the pathogen pollution is fairly high. This indicates many people lack access to high quality sanitation. This goal would be most readily improved by improving access to sanitation.
+Based on these data, the largest source of pollution is from human pathogens entering the water from untreated human waste. This indicates many people lack access to high quality sanitation. This goal would be most readily improved by improving access to sanitation.
 
 There also appears to be a fair amount of plastic pollution in the Red Sea and Gulf of Aden. This might be improved by improvements to trash disposal on land.
+
+For future assessments, the quality of data should be assessed. This is particularly the case for the plastic pollution data set which is a global dataset derived from point source samples. We should evaluate the quality of the data in the Red Sea region.
 
 

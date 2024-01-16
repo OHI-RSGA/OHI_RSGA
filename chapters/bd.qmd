@@ -12,7 +12,6 @@ format: html
 People value the existence of a diverse array of species for their intrinsic qualities and their contribution to the structure and function of resilient ecosystems. The risk of species extinction generates great emotional and moral concern for many people. This concern is demonstrated by the large sums of money that people donate to help conserve species and habitats.
 
 ....
-Egypt has the lowest score of 73, and the other countries score 80 or higher. These are reasonably good scores.
 
 ## Scores
 
@@ -29,11 +28,10 @@ score <- score(x="BD", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Biodiversity score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">This region has reasonably good Biodiversity scores. Egypt has the lowest score of 73, and the other countries score 80 or higher. The scores for the Habitat subgoal tend to be lower than the Species subgoal.</span>
 :::
 
 ::: {.column width="50%"}
@@ -92,7 +90,7 @@ score_spp <- score(x="SPP", ohi_scores)
 
 **The Species subgoal score for the Red Sea and Gulf of Aden region was `r score_spp`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">Most regions score around 80 or higher, but Israel has the lowest score (63) and Egypt has a relatively low score (73).</span>
 :::
 
 ::: {.column width="50%"}
@@ -151,7 +149,7 @@ score_hab <- score(x="HAB", ohi_scores)
 
 **The Habitat subgoal score for the Red Sea and Gulf of Aden region was `r score_hab`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">The Habitat subgoal is lower for nearly all countries than the Species subgoal. Saudi Arabia has a particularly low score of 62.</span>
 :::
 
 ::: {.column width="50%"}
@@ -231,7 +229,7 @@ $$
 :::
 
 ### Habitat
-The habitat component of the biodiversity goal measures the status of marine habitats that support large numbers of marine species.
+The habitat component of the Biodiversity goal measures the status of marine habitats that support large numbers of marine species.
 
 Healthier habitats mean healthier species! Habitat is included as a subgoal of the Biodiversity goal to provide a more complete picture of diversity in the system than only considering the conservation status of species (the other subgoal for Biodiversity). This is because species assessments are often incomplete.
 
@@ -263,9 +261,7 @@ The biggest factor driving scores, by far, is the current status component. Here
 
 We will first look at the data underlying the species condition subgoal and then the habitat subgoal. 
 
-::: {.callout-note collapse=true}
-
-## Species condition: status data (click to expand)
+#### Condition of species
 Getting the underlying data for this goal requires processing a large amount of spatial data.
 
 Given this, this section is on hold for now.
@@ -295,15 +291,17 @@ Given this, this section is on hold for now.
   
 ```
 
-:::
 
 
 <br>
 
+#### Habitat condition
+The habitats evaluated include coral, mangrove, saltmarsh, tidal flat, seagrass, and subtidal soft-bottom. Habitat health is evaluated on a scale from 0 to 1, with 1 indicating the current condition is at, or better, than the reference point; trend is the average yearly change in health during the most recent 5 years; and extent is not used in the model, but is the estimated area of the habitat in each region in km2.  
+
+
 ::: {.callout-note collapse=true}
 
-## Habitat condition: data (click to expand)
-Extent reflects the estimated area of the habitat; health is the condition of the habitat on a scale from 0 to 1, with 1 indicating the current condition is at, or better, than the reference point; trend is the average yearly change in health during the most recent 5 years.  
+## Habitat data: Country data (click to expand)
 
 ```{r}
 #| echo: false
@@ -368,12 +366,12 @@ hab_df1 <- hab_df %>%
 Based on the current model, this goal would be most improved by:
 
 - reducing reliance on fishing practices that are destructive to marine soft-bottom habitats, such as dredging, particularly in Saudi Arabia
-- restoring mangrove habitat
+- restoring and protecting mangrove habitat
 
-Future assessments should carefully assess the underlying data for improvements because typically better habitat data is available within each country, this allows for improved estimates of extent, condition, and trend.
+Future assessments should evaluate whether better data is available, particularly habitat data. Most often, countries have access to better habitat data than what we use at the global scale. This goal is driven by how the habitat has changed relative to some historic period, either in extent or condition. Finding data describing how habitats have changed over time is particularly difficult at the global scale, and regional data or expert opinion can provide a more accurate assessment of habitat condition.
 
-The inclusion of both species and habitat levels in the model should also be discussed.
+Furthermore, future assessments should consider whether all relevant habitats are included in the model.
 
-If a habitat subgoal is included, evaluate how to best weight the habitats (currently equal weighting) and whether these habitats fully capture the important habitats of the region. 
+For the Species subgoal, we have found that pairing IUCN data with local expert opinion to be helpful in fine-tuning these scores.
 
 Other OHI+ analyses have revised the [habitat](https://oceanhealthindex.org/guidance/habitats/) and [species](https://oceanhealthindex.org/guidance/species/) subgoals to better reflect local concerns.  

@@ -31,7 +31,7 @@ score <- score(x="FP", ohi_scores)
 
 **The Food Provision score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">The Food Provision scores are low for all regions. This is due to low levels of marine aquaculture and weak fisheries management.</span>
 :::
 
 ::: {.column width="50%"}
@@ -62,15 +62,9 @@ For the Global OHI, this goal assesses seafood obtained from wild-caught fisheri
 
 We calculate each of these subgoals separately and average them to estimate the overall goal score. For this goal we weight the contributions to the final score based on the tonnes of production. A score of 100 means that food production is *sustainably* maximized.
 
-Mariculture scores are based on two factors:
-
-- Maximizing the amount of seafood that can grown based on conditions.
-- Ensuring that mariculture practices are sustainable.
-
 The subgoal scores can be viewed below.
 
 :::{.callout-note collapse=TRUE}
-
 
 ## Subgoal scores (click to expand)
 
@@ -97,7 +91,7 @@ score_mar <- score(x="MAR", ohi_scores)
 
 **The Mariculture subgoal score for the Red Sea and Gulf of Aden region was `r score_mar`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">These scores are low, but mariculture scores are low for most of the world.</span>
 :::
 
 ::: {.column width="50%"}
@@ -156,7 +150,7 @@ score_hab <- score(x="FIS", ohi_scores)
 
 **The Wildcaught Fisheries subgoal score for the Red Sea and Gulf of Aden region was `r score_hab`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">Fisheries scores are low throughout the region, but are particularly low in Egypt, Jordan, and Eritrea.</span>
 :::
 
 ::: {.column width="50%"}
@@ -196,7 +190,7 @@ map_figure(ohi_scores=ohi_scores, goal="FIS")
 
 
 ## Model description
-The Food Provision goal measures the amount of seafood sustainably harvested through any means for human consumption, and thus includes both mariculture and wild-caught fisheries (commercial, artisanal, and recreational).For the global assessment, the contribution of these two subgoals to the overall score is weighted by their total seafood yield. However, other approaches for weighting the contribution of these subgoals are reasonable.
+The Food Provision goal measures the amount of seafood sustainably harvested through any means for human consumption, and thus includes both mariculture and wild-caught fisheries (commercial, artisanal, and recreational). For the global assessment, the contribution of these two subgoals to the overall score is weighted by their total seafood yield. However, other approaches for weighting the contribution of these subgoals are reasonable.
 
 A high score indicates that a region has maximized the amount of sustainably produced seafood from wild or ocean-cultured stocks. For fisheries, both over- and under- harvesting should be penalized. For mariculture, production should be at the sustainable “potential”. 
 
@@ -206,6 +200,11 @@ A high score indicates that a region has maximized the amount of sustainably pro
 As humanity’s population continues to expand, we must increasingly rely upon new and improved methods for cultivating food on land and in the ocean. The term aquaculture refers to the cultivation in water (fresh and saltwater) of animals or plants for human consumption. Mariculture refers to the commercial harvest of seafood that is farm-raised in the ocean and along the coast.
 
 Aquaculture is the fastest growing animal food production sector in the world, with a 527% rise in production from 1990 to 2018 (FAO 2020)! As the population contines to grow, it will become increasingly important to efficiently grow food using sustainable mariculture practices.
+
+Mariculture scores are based on two factors:
+
+- Maximizing the amount of seafood that can grown based on conditions.
+- Ensuring that mariculture practices are sustainable.
 
 ::: {.callout-note collapse="true"}
 ## More details (click to expand)
@@ -242,13 +241,19 @@ The biggest factor driving scores, by far, is the current status component. Here
 
 We will first look at the data underlying the mariculture subgoal and then then wildcaught fisheries subgoal. 
 
+#### Mariculture sustainability
+Mariculture scores are based on two factors:
+
+- Maximizing the amount of seafood that can grown based on conditions.
+- Ensuring that mariculture practices are sustainable.
+
+The following table provides the tonnes of production and sustainability of rearing practices for each species that is currently grown in each country. Sustainability is rescaled to values between 0 and 1, with 1 indicating perfect sustainable.
+
+The sustainability scores for reared seafood are fairly high for all countries and taxa, with the exception of Egypt. Egypt has low sustainability for European seabass, Gilthead seabream, and Meagre.
 
 ::: {.callout-note collapse=true}
 
-## Mariculture: status data (click to expand)
-The tonnes of production and sustainability of rearing practices for each species that is currently grown in each country.Sustainability is rescaled to values between 0 and 1, with 1 being perfectly sustainable.
-
-
+## Mariculture sustainability: Country data (click to expand)
 
 ```{r}
 #| echo: false
@@ -300,7 +305,10 @@ mar_df <- tonnes_df %>%
 ```
 
 
-The following table describes the tonnes of production relative to the tonnes of production that is possible.
+#### Mariculture production
+To determine whether the farming of seafood is maximized relative to potential we determined the tonnes of production relative to the tonnes of production that is possible based on environmental conditions.
+
+Given the potential, there is very little farming of seafood throughout the region.
 ```{r}
 #| echo: false
 #| warning: false
@@ -336,9 +344,11 @@ potential_df <- left_join(rsga_rgns, potential_df, by="rgn_id") %>%
 
 ::: {.callout-note collapse=true}
 
-## Wildcaught fisheries: data (click to expand)
+#### Wildcaught fisheries management: data (click to expand)
 
-This table describes recorded fisheries catch with corresponding stock status scores (i.e., bbmsy). B/Bmsy scores of 1, or greater, indicate the stock is healthy and current biomass is at, or above, maximum sustainable yield.
+The wildcaught fisheries score is based on how well fisheries are managed. We use B/Bmsy values to assess how stocks are managed. This table describes recorded fisheries catch with corresponding stock status scores (i.e., bbmsy). B/Bmsy scores of 1, or greater, indicate the stock is healthy and current biomass is at, or above, maximum sustainable yield.
+
+In this case, many stock throughout the region lack assessments, indicating that fisheries could be better managed.
 
 ```{r}
 #| echo: false
@@ -398,9 +408,9 @@ fish_df <- left_join(catch_df, status_df, by=c("iso3c", "stock_id")) %>%
 
 Overall, both mariculture and fisheries scores are low for all the countries in this region.
 
-Based on the current model, mariculture scores are very low primarily because production is low compared to the potential for production. About 226,000 tonnes of seafood are farmed each year in this region, with Egypt producing the most (~138,00 tonnes) and Saudi Arabia next (~85,000). However, this is small relative to the 3.7 million tonnes that is could, theoretically, be produced.
+Based on these data, mariculture scores are very low primarily because production is low compared to the potential for production. About 226,000 tonnes of seafood are farmed each year in this region, with Egypt producing the most (~138,00 tonnes) and Saudi Arabia next (~85,000). However, this is small relative to the 3.7 million tonnes that could, theoretically, be produced.
 
-The sustainability scores for reared seafood are fairly high for all countries and taxa, with the exception of Egypt. Egypt has low sustainability for European seabass, Gilthead seabream, and Meagre.
+The sustainability scores for reared seafood are fairly high for all countries and taxa, with the exception of Egypt. Egypt has low sustainability for European seabass, Gilthead seabream, and Meagre, which have, relatively, high production.
 
 Fisheries scores are low primarily because most of the wild-caught fish from this region do not have stock stack scores, which we use as an indicator of weak fisheries management for the global assessment. Only about 40% of the fish catch is identified to species, which means that it can not be assessed using stock assessments and this is heavily penalized in the global Ocean Health Index fisheries model. 
 

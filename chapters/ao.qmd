@@ -28,11 +28,9 @@ score <- score(x="AO", ohi_scores)
 
 ::: {.column width="50%"}
 
-<br>
-
 **The Artisanal Fishing Opportunities score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Overall, these scores are fairly high which indicates that demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing (e.g., Saudi Arabia, Israel, Yemen). The lowest scoring regions are Eritrea (high need, fairly low access) and Sudan (high need, small scale fisheries could be better managed).</span>
+<span style="color: gray;">Overall, these scores are fairly high which indicates demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing (e.g., Saudi Arabia, Israel, Yemen). The lowest scoring regions are Eritrea (high need, fairly low access) and Sudan (high need, small scale fisheries could be better managed).</span>
 :::
 
 ::: {.column width="50%"}
@@ -108,7 +106,7 @@ For more details see the data preparation [script](https://ohi-science.org/ohipr
 
 ::: {.callout-note collapse=true}
 
-## Need: Country scores (click to expand)
+## Need: Country data (click to expand)
 ```{r}
 #| echo: false
 #| warning: false
@@ -141,7 +139,7 @@ All Red Sea and Gulf of Aden regions have high access scores from 0.8-1, except 
 
 ::: {.callout-note collapse=true}
 
-## Access to artisanal fisheries: Country scores (click to expand)
+## Access to artisanal fisheries: Country data (click to expand)
 
 ```{r}
 #| echo: false
@@ -178,7 +176,7 @@ https://ohi-science.org/ohiprep_v2023/globalprep/ao/v2023/ao_stock_status_saup.h
 
 ::: {.callout-note collapse=true}
 
-## Sustainable harvest of artisanal stocks: Country scores (click to expand)
+## Sustainable harvest of artisanal stocks: Country data (click to expand)
 
 ```{r}
 #| echo: false

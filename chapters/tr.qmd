@@ -10,9 +10,6 @@ format: html
 
 Tourism and recreation in coastal areas is a major component of thriving coastal communities and a measure of how much people value ocean systems. Tourism and recreation provide opportunities for the enjoyment of marine and coastal environments. The ability to visit culturally or aesthetically pleasing places with healthy coastal ecosystems, diverse wildlife, and opportunities for exploration and recreation contributes to the well-being of many people.
 
-The scores for the region are relatively high for most regions, particularly Saudi Arabia, Sudan, Egypt, Israel, Djibouti, and Jordan. They are low in Eritrea (score = 52) and we have no data for Somalia, and Eritrea.
-
-The sustainability scores for tourism seem in line with the rest of the world.
 
 ## Scores
 ```{r}
@@ -34,7 +31,7 @@ score <- score(x="TR", ohi_scores)
 
 **The overall Tourism and Recreation score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">The scores are high for most regions, particularly Saudi Arabia, Sudan, Egypt, Israel, Djibouti, and Jordan. They are low in Eritrea (score = 52) and we have no data for Somalia, and Eritrea.</span>
 :::
 
 ::: {.column width="50%"}
@@ -67,7 +64,7 @@ map_figure(ohi_scores=ohi_scores, goal="TR")
 
 ## Model description
 
-The Tourism & Recreation goal measures how successfully a region’s marine and coastal areas maintain their attractiveness as destinations for people to experience and enjoy priced activities, such as paid boat excursions, visits to coastal parks with entrance fees and ocean-view hotels, as well as unpriced activities such as free days at the beach and hikes on public trails.
+The Tourism and Recreation goal measures how successfully a region’s marine and coastal areas maintain their attractiveness as destinations for people to experience and enjoy priced activities, such as paid boat excursions, visits to coastal parks with entrance fees and ocean-view hotels, as well as unpriced activities such as free days at the beach and hikes on public trails.
 
 Although coastal tourism industries can be important contributors to coastal economies, the tourism and recreation goal is assessed separately from its economic benefits, which are reported in the coastal livelihoods and economies goal. 
 
@@ -150,10 +147,18 @@ The biggest factor driving scores, by far, is the current status component. Here
 
 ### Current status
 
+#### Tourism rates and sustainability
+
+This score is based on the number of people visiting and area and the sustainability of tourism within the country. 
+
+We use arrivals data to estimate the number of tourists, which we calculate as the proportion of overnight tourist arrivals divided by the total international arrivals. A score of 1 indicates that the vast majority of the people entering the country are remaining in the country as tourists. 
+
+The sustainability scores range from 1-7, but in reality, the observed county scores range from 3.1 to 5.3, with a mean of 4.2. The sustainability scores for the Red Sea and Gulf of Aden seem in line with the rest of the world.
+
 ::: {.callout-note collapse=true}
 
 ## Tourism data (click to expand)
-The arrivals data is the proportion of overnight tourist arrivals divided by the total international arrivals. A score of 1 indicates that the vast majority of the people entering the country are staying. The sustainability scores range from 1-7, but in reality, the observed county scores range from 3.1 to 5.3, with a mean of 4.2. 
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -202,8 +207,8 @@ tr <- left_join(arrivals_df, sustain_df, by="rgn_id") %>%
 
 ## Implications
 
-This goal is in a bit of flux. The dataset we have used to estimate tourism rates was discontinued this year, and we have been trying to establish the best way forward. Given this, local data would be preferable to use. 
+This goal is in a bit of flux. The dataset we have used to estimate tourism rates was discontinued this year, and we have been working to establish the best way forward. Given this, local data would be preferable to use. 
 
-Furthermore, the model underlying this goal should be adapted to the tourism goals of the region.
+Furthermore, the model underlying this goal should be adapted to the tourism goals of the region. For example, the reference point for the global assessment is based on how well a country is doing relative to all the other coastal countries in the world. This is reasonable for a global assessment, but probably isn't relevant to a specific country. 
 
 [Other OHI+ analyses](https://oceanhealthindex.org/guidance/tourism-and-recreation/) have revised this goal to better reflect local concerns.  
