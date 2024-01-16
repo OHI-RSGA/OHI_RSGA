@@ -29,14 +29,17 @@ score <- score(x="Index", ohi_scores)
 
 ```
 
+**The Ocean Health Index measures ocean health so humans may continue to benefit from health marine environments.**
+
 :::: {.columns} 
 
 ::: {.column width="50%"}
 
 <br>
-<br>
 
-Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+**The overall Index score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -53,9 +56,9 @@ dial(score,colors)
 :::
 
 ::::
-The overall Index score is the average of all the regions that have EEZ territories in the [Red Sea and Gulf of Aden](https://ohi-rsga.github.io/OHI_RSGA/chapters/region.html). The contribution of each country is weighted by the area of their EEZ.  
+The overall Index score is the average of the [2023 OHI global scores](oceanhealthindex.org) for all countries with EEZ territories in the [Red Sea and Gulf of Aden](https://ohi-rsga.github.io/OHI_RSGA/chapters/region.html). The contribution of each country to the region's Index score is based on the area of their EEZ within the Red Sea and Gulf of Aden.  
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false
@@ -79,7 +82,7 @@ The Index score is the average of 10 goals that describe how humans value and re
 <br>
 <br>
 
-The Flower plot provides the goal scores for the Red Sea and Gulf of Aden region. The center value is the overall Index score.
+The Flower plot provides the goal scores for the Red Sea and Gulf of Aden region. The center value is the overall Index score, and the petals describe the score for each goal.
 
 :::
 

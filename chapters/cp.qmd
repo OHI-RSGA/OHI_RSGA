@@ -5,9 +5,11 @@ format: html
 
 # ![](figs/coastal-protection.svg){width="8%" height="8%" color="red"} Coastal protection
 
+**This goal aims to assess the amount of protection provided by marine and coastal habitats against flooding and erosion to coastal areas.**
+
 ## Overview
 
-This goal aims to assess the amount of protection provided by marine and coastal habitats against flooding and erosion to coastal areas that people value, both inhabited (homes and other structures) and uninhabited (parks, special places, etc.).
+Many coastal habitats, such as mangrove forests and salt marsh, act as critical barriers that buffer against the flooding and erosion of coastal areas that people value, whether inhabited (homes and other structures) or uninhabited (parks, special places, etc.).
 
 ## Scores
 
@@ -24,7 +26,11 @@ score <- score(x="CP", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+<br>
+
+**The Coastal Protection score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -39,7 +45,7 @@ dial(score,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false

@@ -5,9 +5,11 @@ format: html
 
 # ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of place
 
+**This goal describes how well we are preserving current and future access to the coastal and marine systems that people value as part of their cultural identity.**
+
 ## Overview
 
-This goal describes how well we are preserving current and future access to the coastal and marine systems that people value as part of their cultural identity. For the global assessment, this is evaluated by determining the condition of iconic species (iconic species subgoal) and the protection of coastal regions (lasting special places subgoal).
+The ocean is an important source of our collective cultural identity. Our connection to marine and coastal environments is profound, providing inspiration and a sense of history and place. For the global assessment, we measure how well we are protecting this legacy for future generations by assessing the condition of iconic species (iconic species subgoal) and the protection of coastal regions (lasting special places subgoal).
 
 Overall, the scores for this goal are low throughout the region. This suggests that the marine places people value may not be well protected for future generations. For the iconic species subgoal, we identified 24 iconic species within the region. For each species we determine the IUCN threatened status designations within each region the species is located. In 52 (of N=141) cases, the species were critically endangered or endangered; 45 were vulnerable, and 34 were either of least concern or not threatened.   
 
@@ -28,7 +30,12 @@ score <- score(x="SP", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+<br>
+
+**The Sense of Place score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+
 :::
 
 ::: {.column width="50%"}
@@ -43,7 +50,7 @@ dial(score,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false
@@ -83,7 +90,12 @@ score_spp <- score(x="ICO", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_spp`.
+<br>
+
+**The Iconic species subgoal score for the Red Sea and Gulf of Aden region was `r score_spp`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+
 :::
 
 ::: {.column width="50%"}
@@ -102,7 +114,7 @@ dial(score_spp,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false
@@ -139,7 +151,12 @@ score_hab <- score(x="LSP", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_hab`.
+<br>
+
+**The overall Lasting Special Places subgoal score for the Red Sea and Gulf of Aden region was `r score_hab`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+
 :::
 
 ::: {.column width="50%"}
@@ -159,7 +176,7 @@ dial(score_hab,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false

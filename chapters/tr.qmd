@@ -4,8 +4,9 @@ format: html
 ---
 # ![](figs/tourism-and-recreation.svg){width=8% height=8% color="red"} Tourism and recreation 
 
+**This goal captures the quantity and quality of experiences that people have when visiting coastal and marine areas**
+
 ## Overview
-This goal captures the number of people, and the quality of their experience, visiting coastal and marine areas and attractions.
 
 Tourism and recreation in coastal areas is a major component of thriving coastal communities and a measure of how much people value ocean systems. Tourism and recreation provide opportunities for the enjoyment of marine and coastal environments. The ability to visit culturally or aesthetically pleasing places with healthy coastal ecosystems, diverse wildlife, and opportunities for exploration and recreation contributes to the well-being of many people.
 
@@ -30,8 +31,10 @@ score <- score(x="TR", ohi_scores)
 ::: {.column width="50%"}
 
 <br>
-<br>
-Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+
+**The overall Tourism and Recreation score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -49,7 +52,7 @@ dial(score,colors)
 
 ::::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false

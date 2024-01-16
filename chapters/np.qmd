@@ -4,8 +4,9 @@ format: html
 ---
 # ![](figs/natural-products.svg){width=8% height=8% color="red"} Natural products 
 
+**This goal assesses how well countries are maximizing the sustainable harvest of non-food marine resources.**
+
 ## Overview
-This goal assesses how well countries are maximizing the sustainable harvest of non-food marine resources.
 
 Marine natural products can provide substantial economic benefits when sustainably harvested and traded. For example, millions of marine ornamental (aquarium) fish are harvested and exported for sale each year. This trade can provide a valuable and long-term income stream for low-income coastal communities if undertaken in a sustainable manner.
 
@@ -28,8 +29,10 @@ score <- score(x="NP", ohi_scores)
 ::: {.column width="50%"}
 
 <br>
-<br>
-Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+
+**The Natural Products score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -47,7 +50,7 @@ dial(score,colors)
 
 ::::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false

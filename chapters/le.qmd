@@ -5,15 +5,18 @@ format: html
 
 # ![](figs/livelihoods-and-economies.svg){width="8%" height="8%" color="red"} Livelihoods and economies
 
+**This goal measures jobs and revenue from sustainable marine-related industries.**
+
+
 ## Overview
 
-This goal measures jobs and revenue from sustainable marine-related industries. This goal is divided into two subgoals because the number and quality of jobs (Livelihoods) and the amount of revenue produced (Economies) are both of considerable interest to stakeholders and governments, and can have different patterns in some cases.
+Marine-related jobs and the revenue they generate are significant contributors to the global economy. Healthy oceans generate livelihoods in fisheries, mariculture, tourism, recreation, and sciences. This goal is divided into two subgoals because the number and quality of jobs (Livelihoods) and the amount of revenue produced (Economies) are both of considerable interest to stakeholders and governments, and can have different patterns in some cases.
 
 ## Scores
 ::: {.callout-important}
 ## Livelihoods and economies has not been updated for many years!
 
-Pay little heed to these scores because these scores have not been updated for many years due to a lack of global data.
+These scores have not been updated for many years due to a lack of global data.
 
 :::
 
@@ -31,7 +34,11 @@ score <- score(x="LE", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+<br>
+
+**The Livelihoods and Economies score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -46,7 +53,7 @@ dial(score,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false

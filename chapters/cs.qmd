@@ -5,9 +5,9 @@ format: html
 
 # ![](figs/carbon-storage.svg){width="8%" height="8%" color="red"} Carbon storage
 
-## Overview
+**This goal captures the ability of coastal habitats to store carbon in order to buffer against climate change.**
 
-This goal captures the ability of coastal habitats to store carbon given their capacity to store carbon and their health.
+## Overview
 
 Carbon dioxide (CO₂) is the primary heat trapping gas in Earth’s atmosphere and is a key driver of global climate change. The ocean plays a major role in slowing the pace of global climate change by absorbing CO₂ from the atmosphere and storing it as carbon.
 
@@ -27,7 +27,11 @@ score <- score(x="CS", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+<br>
+
+**The Carbon Storage score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -42,7 +46,7 @@ dial(score,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false

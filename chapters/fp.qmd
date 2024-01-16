@@ -5,9 +5,9 @@ format: html
 
 # ![](figs/food-provision.svg){width="8%" height="8%" color="red"} Food provision
 
-## Overview
+**This goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.**
 
-This goal assesses our ability to sustainably maximize wild-caught or farmed marine foods.
+## Overview
 
 One of the most fundamental services the ocean provides is the provision of food. Fish provide nearly 20% of global animal protein, helping to meet the basic nutritional needs of over half of the world’s population (FAO 2020)!
 
@@ -27,7 +27,11 @@ score <- score(x="FP", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+<br>
+
+**The Food Provision score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -42,7 +46,7 @@ dial(score,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false
@@ -87,7 +91,11 @@ score_mar <- score(x="MAR", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_mar`.
+<br>
+
+**The Mariculture subgoal score for the Red Sea and Gulf of Aden region was `r score_mar`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -106,7 +114,7 @@ dial(score_mar,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false
@@ -142,7 +150,11 @@ score_hab <- score(x="FIS", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score_hab`.
+<br>
+
+**The Wildcaught Fisheries subgoal score for the Red Sea and Gulf of Aden region was `r score_hab`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -162,7 +174,7 @@ dial(score_hab,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false

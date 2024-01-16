@@ -4,8 +4,9 @@ format: html
 ---
 # ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8% color="red"} Artisanal fishing opportunities 
 
+**This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.**
+
 ## Overview
-This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.
 
 Artisanal fishing, often called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation, and livelihood opportunities for many people around the world, especially in developing nations. Small-scale fishing is also an important component of cultural identity and heritage.
 
@@ -28,8 +29,10 @@ score <- score(x="AO", ohi_scores)
 ::: {.column width="50%"}
 
 <br>
-<br>
-Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+
+**The Artisanal Fishing Opportunities score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -47,7 +50,7 @@ dial(score,colors)
 
 ::::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false
@@ -61,15 +64,15 @@ map_figure(ohi_scores=ohi_scores, goal="AO")
 
 
 ## Model description
-This goal measures how easily people can access ocean resources when they *need* them and whether the stocks being harvested are sustainable managed. 
+This goal measures how easily people can access ocean resources when they *need* them and whether the stocks being harvested are sustainably managed. 
 
 The model has three components:
 
--   *Need:* The percent of population below the poverty line. Global OHI model uses per capita GDP as a proxy for this variable.
+-   *Need:* The percent of population below the poverty line. The global OHI model uses per capita GDP as a proxy for need.
 
 -   *Access:* Institutional permits and regulations encouraging small fisheries and providing access to coastal regions. Data is from the UN sustainable development goal 14.b.1 which measures the degree of application of a legal, regulatory, policy, or institutional framework which recognizes and protects access rights for small-scale fisheries.
 
-- *Sustainability:* Sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing. The global data uses the fisheries sustainability scores to assess this.
+- *Sustainability:* Sustainability of fishing methods and/or the health of targeted species. Sustainable gears are traditional hook and line, as opposed to unsustainable practices such as dynamite and gill net fishing. The global assessment uses the same stock status data used to calculate the fisheries subgoal scores.
 
 A high score indicates that the demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing. A low score indicates that regions are not achieving or allowing sustainable artisanal fishing opportunities to be realized.
 

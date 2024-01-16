@@ -5,9 +5,9 @@ format: html
 
 # ![](figs/clean-waters.svg){width="8%" height="8%" color="red"} Clean waters
 
-## Overview
+**This goal captures the degree to which local waters are unpolluted by human-made causes.**
 
-This goal captures the degree to which local waters are unpolluted by human-made causes.
+## Overview
 
 Chemicals, excess nutrients, pathogens, and trash that enter the marine environment can harm human health, livelihoods, and recreation, as well as the health of marine life and habitats.
 
@@ -26,7 +26,11 @@ score <- score(x="CW", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br> <br> Using data from the global 2023 Ocean Health Index analysis, the overall score for the Red Sea and Gulf of Aden region was `r score`.
+<br>
+
+**The Clean Waters score for the Red Sea and Gulf of Aden region was `r score`.**
+
+<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
 :::
 
 ::: {.column width="50%"}
@@ -41,7 +45,7 @@ dial(score,colors)
 :::
 :::
 
-The interactive map below shows how different countries contributed to this score.
+The interactive map below shows the scores for the different countries.
 
 ```{r, fig.width=3, fig.height=1.5}
 #| echo: false
