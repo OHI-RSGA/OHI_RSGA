@@ -27,7 +27,6 @@ score <- score(x="FP", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Food Provision score for the Red Sea and Gulf of Aden region was `r score`.**
 
@@ -44,6 +43,7 @@ dial(score,colors)
 
 ```
 :::
+
 :::
 
 The interactive map below shows the scores for the different countries.
@@ -87,7 +87,6 @@ score_mar <- score(x="MAR", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Mariculture subgoal score for the Red Sea and Gulf of Aden region was `r score_mar`.**
 
@@ -146,7 +145,6 @@ score_hab <- score(x="FIS", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Wildcaught Fisheries subgoal score for the Red Sea and Gulf of Aden region was `r score_hab`.**
 
@@ -251,8 +249,7 @@ The following table provides the tonnes of production and sustainability of rear
 
 The sustainability scores for reared seafood are fairly high for all countries and taxa, with the exception of Egypt. Egypt has low sustainability for European seabass, Gilthead seabream, and Meagre.
 
-::: {.callout-note collapse=true}
-
+::: {.callout-note collapse="true"}
 ## Mariculture sustainability: Country data (click to expand)
 
 ```{r}
@@ -304,11 +301,17 @@ mar_df <- tonnes_df %>%
 
 ```
 
+:::
 
 #### Mariculture production
 To determine whether the farming of seafood is maximized relative to potential we determined the tonnes of production relative to the tonnes of production that is possible based on environmental conditions.
 
 Given the potential, there is very little farming of seafood throughout the region.
+
+
+::: {.callout-note collapse=true}
+
+## Mariculture sustainability: Country data (click to expand)
 ```{r}
 #| echo: false
 #| warning: false
@@ -341,15 +344,15 @@ potential_df <- left_join(rsga_rgns, potential_df, by="rgn_id") %>%
 
 <br>
 
-
-::: {.callout-note collapse=true}
-
 #### Wildcaught fisheries management: data (click to expand)
 
 The wildcaught fisheries score is based on how well fisheries are managed. We use B/Bmsy values to assess how stocks are managed. This table describes recorded fisheries catch with corresponding stock status scores (i.e., bbmsy). B/Bmsy scores of 1, or greater, indicate the stock is healthy and current biomass is at, or above, maximum sustainable yield.
 
 In this case, many stock throughout the region lack assessments, indicating that fisheries could be better managed.
 
+::: {.callout-note collapse=true}
+
+## Fisheries status and catch: Country data (click to expand)
 ```{r}
 #| echo: false
 #| warning: false

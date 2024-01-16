@@ -1,7 +1,7 @@
 ## get Index or goal score (area weighted average)
 # x = "Index"
 
-score <- function(x, ohi_scores){round(weighted.mean(get(x, ohi_scores), ohi_scores$are_km2), 0)}
+score <- function(x, ohi_scores){round(weighted.mean(get(x, ohi_scores), ohi_scores$are_km2, na.rm=TRUE), 0)}
 
 
 # Dial

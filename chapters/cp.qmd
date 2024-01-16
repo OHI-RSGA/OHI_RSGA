@@ -28,7 +28,6 @@ score <- score(x="CP", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Coastal Protection score for the Red Sea and Gulf of Aden region was `r score`.**
 

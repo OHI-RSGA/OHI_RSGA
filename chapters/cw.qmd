@@ -26,7 +26,6 @@ score <- score(x="CW", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Clean Waters score for the Red Sea and Gulf of Aden region was `r score`.**
 

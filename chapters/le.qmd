@@ -34,7 +34,6 @@ score <- score(x="LE", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Livelihoods and Economies score for the Red Sea and Gulf of Aden region was `r score`.**
 

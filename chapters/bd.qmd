@@ -11,7 +11,7 @@ format: html
 
 People value the existence of a diverse array of species for their intrinsic qualities and their contribution to the structure and function of resilient ecosystems. The risk of species extinction generates great emotional and moral concern for many people. This concern is demonstrated by the large sums of money that people donate to help conserve species and habitats.
 
-....
+
 
 ## Scores
 
@@ -86,7 +86,6 @@ score_spp <- score(x="SPP", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Species subgoal score for the Red Sea and Gulf of Aden region was `r score_spp`.**
 
@@ -145,7 +144,6 @@ score_hab <- score(x="HAB", ohi_scores)
 
 ::: columns
 ::: {.column width="50%"}
-<br>
 
 **The Habitat subgoal score for the Red Sea and Gulf of Aden region was `r score_hab`.**
 

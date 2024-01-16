@@ -28,8 +28,6 @@ score <- score(x="NP", ohi_scores)
 
 ::: {.column width="50%"}
 
-<br>
-
 **The Natural Products score for the Red Sea and Gulf of Aden region was `r score`.**
 
 <span style="color: gray;">The scores in this region are fairly high. There are no data for Sudan and Djbouti. This could result if these regions do not trade these products, or, alternatively, from data limitations.</span>

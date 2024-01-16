@@ -27,8 +27,6 @@ score <- score(x="TR", ohi_scores)
 
 ::: {.column width="50%"}
 
-<br>
-
 **The overall Tourism and Recreation score for the Red Sea and Gulf of Aden region was `r score`.**
 
 <span style="color: gray;">The scores are high for most regions, particularly Saudi Arabia, Sudan, Egypt, Israel, Djibouti, and Jordan. They are low in Eritrea (score = 52) and we have no data for Somalia, and Eritrea.</span>
