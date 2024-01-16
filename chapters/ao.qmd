@@ -4,7 +4,7 @@ format: html
 ---
 # ![](figs/artisanal-fishing-opportunities.svg){width=8% height=8% color="red"} Artisanal fishing opportunities 
 
-**This goal measures whether people with the need to fish at a small, local scale have the opportunity to do so.**
+**This goal measures whether people have the opportunity to fish at a small local scales.**
 
 ## Overview
 
@@ -32,7 +32,7 @@ score <- score(x="AO", ohi_scores)
 
 **The Artisanal Fishing Opportunities score for the Red Sea and Gulf of Aden region was `r score`.**
 
-<span style="color: gray;">Data from the global 2023 Ocean Health Index analysis</span>
+<span style="color: gray;">Overall, these scores are fairly high which indicates that demand for artisanal fishing is being met using lawful and sustainable methods, or alternatively, there is little economic need for artisanal fishing (e.g., Saudi Arabia, Israel, Yemen). The lowest scoring regions are Eritrea (high need, fairly low access) and Sudan (high need, small scale fisheries could be better managed).</span>
 :::
 
 ::: {.column width="50%"}
@@ -78,9 +78,7 @@ A high score indicates that the demand for artisanal fishing is being met using 
 
 ## A closer look at the data
 
-The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
-
-A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+The biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with EEZ territory in the Red Sea and Gulf of Aden.
 
 ### Current status
 ```{r}
@@ -100,7 +98,7 @@ prep <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft
 
 ```
 
-### Economic need for small scale marine fisheries 
+#### Economic need for small scale marine fisheries 
 
 As a proxy for subsistence fishing need, we use the inverse of per capita purchasing power parity (PPP) adjusted gross domestic product (GDP), or GDPpcPPP. These data are rescaled to values between 0 and 1 by taking the natural log of the data and dividing all the values by the GDPpcPPP value that corresponds to the 95th quantile across all years (from 2005 to most recent data) and countries. 
 
@@ -136,12 +134,10 @@ ao_need_df <- left_join(rsga_rgns, ao_need_df, by="rgn_id") %>%
 
 :::
 
-### Access to small scale marine fisheries 
+#### Access to small scale marine fisheries 
 These data are from the [UN sustainable development goal 14.b.1](https://www.fao.org/sustainable-development-goals/indicators/14b1/en/), “Degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries (level of implementation: 1 lowest to 5 highest)”. We linearly rescale these data to have values between 0 and 1.
 
 All Red Sea and Gulf of Aden regions have high access scores from 0.8-1, except Eritrea which is 0.6.
-
-https://ohi-science.org/ohiprep_v2023/globalprep/ao/v2023/ao_access_data_prep.html
 
 ::: {.callout-note collapse=true}
 
@@ -171,7 +167,7 @@ ao_access_df <- left_join(rsga_rgns, ao_access_df, by="rgn_id") %>%
 :::
 
 
-### Sustainable harvest of artisanally fished stocks 
+#### Sustainable harvest of artisanally fished stocks 
 
 This is calculated using the same data as the fisheries subgoal, but using only the artisanal catch. For each region, we average the stock status scores weighted by the total catch. The country level catch data (tonnes per year) is from FAO and the B/Bmsy (the biomass of the population relative to the biomass at maximum sustainable yield) are from RAM when available. Otherwise, we use the CMSY approach to estimate B/Bmsy. 
 
@@ -212,12 +208,12 @@ ao_sust_df <- left_join(rsga_rgns, ao_sust_df, by="rgn_id") %>%
 
 Based on the current model, this goal would be most improved by reducing the economic need for artisanal fishing in Somalia, Sudan, Dijibouti, Eritrea, Jordan, and Egypt. Access to artisanal fishing could also be improved in Eritrea.
 
-Otherwise, based on the data, there is relatively good access for artisanal fishing and artisanally fished stocks are relatively healthy. 
+Otherwise, access to artisanal fishing is good and artisanally fished stocks are relatively healthy. 
 
-Future assessments should carefully assess the underlying data for improvements:
-- How gapfilled are the stock status scores? Are there better regional assessments of stock status?
-- Does the artisanal stock list seem accurate? 
+Future assessments should carefully assess the underlying data for improvements, here are some factors to consider:
+
+- To determine whether artisanally fished stocks are well managed we use a global database of stock status scores that requires much gapfilling of missing data. However, regional assessments of stock status may be available.
 - Do the opportunity scores seem reasonable? Should other factors be incorporated, such as piracy?
-- Use a better estimate of poverty than rescaled per capita GDP, such as portion of population below the poverty line.
+- There are better estimates of poverty than the rescaled per capita GDP used for the global assessment. For example, there may be within country estimates of the portion of population living below the poverty line.
 
 [Other OHI+ analyses](https://oceanhealthindex.org/guidance/artisanal-fishing-opportunities/) have revised this goal to better reflect local concerns.  

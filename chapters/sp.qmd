@@ -5,7 +5,7 @@ format: html
 
 # ![](figs/sense-of-place.svg){width="8%" height="8%" color="red"} Sense of place
 
-**This goal describes how well we are preserving current and future access to the coastal and marine systems that people value as part of their cultural identity.**
+**This goal describes how well we are preserving current and future access to coastal and marine systems that people value as part of their cultural identity.**
 
 ## Overview
 
@@ -227,9 +227,7 @@ The lasting special places sub-goal focuses on geographic locations that hold pa
 
 ## A closer look at the data
 
-The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
-
-A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+The biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with EEZ territory in the Red Sea and Gulf of Aden.
 
 ### Current status
 

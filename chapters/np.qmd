@@ -4,7 +4,7 @@ format: html
 ---
 # ![](figs/natural-products.svg){width=8% height=8% color="red"} Natural products 
 
-**This goal assesses how well countries are maximizing the sustainable harvest of non-food marine resources.**
+**This goal assesses whether countries are maximizing the sustainable harvest of non-food marine resources.**
 
 ## Overview
 
@@ -72,9 +72,7 @@ A high score indicates that natural resources are maximally harvested at a rate 
 
 ## A closer look at the data
 
-The final score for each goal is based on its current status and future predicted status. Future status is the current status adjusted by recent trends as well as the pressures and resilience measures acting on the goal.
-
-A great deal of data are used to calculate the final score for each goal, but the biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with eez territory in the Red Sea and Gulf of Aden.
+The biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with EEZ territory in the Red Sea and Gulf of Aden.
 
 For this region, fishoil and fishmeal drives the Natural products score. The one exception is that Israel collects ornamental fish for the aquarium trade, and this comprises about 18% of its score. No seaweed is grown for non-food purposes in any of the regions. 
 
