@@ -90,7 +90,7 @@ datafiles <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/
 ```
 
 
-#### Fish oil / Fish meal  (click to expand)
+#### Fish oil / Fish meal
 We focus on fish oil and meal because there is no seaweed production and the only producer of aquarium ornamentals is Israel.
 
 Scores reflect the sustainability of marine fisheries for the species used for the production of fish oil and fish meal. The scores are scaled to values between 0 and 1, with one indicating that the stocks are managed sustainably. The model is similar to the fisheries subgoal model. 
