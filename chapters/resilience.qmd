@@ -26,23 +26,110 @@ For the global OHI assessment, we assess three general categories of resilience:
 
 <br>
 
-* **Ecological Health**
-* Healthy ecosystems have the ability to absorb disturbance to maintain critical functions (Chambers et al. 2019). For the global OHI assessment, ecosystem health is measured as the relative condition of assessed species in a given location. For some goals, there is little evidence that this index of ecosystem integrity directly affects the value of the goal (or subgoal). In these instances, ecological integrity falls out of the resilience model.
+**Ecological Health**
 
-<br>
+> Healthy ecosystems have the ability to absorb disturbance to maintain critical functions (Chambers et al. 2019). For the global OHI assessment, ecosystem health is measured as the relative condition of assessed species in a given location. For some goals, there is little evidence that this index of ecosystem integrity directly affects the value of the goal (or subgoal). In these instances, ecological integrity falls out of the resilience model.
 
-* **Regulatory effort**
-* Institutional measures (e.g., rules, regulations, and laws) can address the specific pressures acting on systems. For the global OHI assessment, regulatory effort is comprised of five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and species introductions. There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a specific pressure category.  
 
-<br>
+**Regulatory effort**
 
-* **Social integrity**
-* Well functioning societies have the capacity and resources to mitigate a wide array of challenges.This indicator is intended to describe the effectiveness of social institutions that exist to meet human needs such as government, economy, education, heathcare, and religion.
+> Institutional measures (e.g., rules, regulations, and laws) can address the specific pressures acting on systems. For the global OHI assessment, regulatory effort is comprised of five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and species introductions. There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a specific pressure category.  
+
+
+**Social integrity**
+
+> Well functioning societies have the capacity and resources to mitigate a wide array of challenges.This indicator is intended to describe the effectiveness of social institutions that exist to meet human needs such as government, economy, education, heathcare, and religion.
 
 ----
 
 Each resilience category may be composed of several datasets. For each dataset, values will range from 0 to 1, reflecting the magnitude of resilience for each country (with 1 indicating high resilience).  
 
-The resilience data is then combined to estimate the total resilience for each goal and country. Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.
+::: {.callout-note collapse=true}
+
+## Description of global resilience data (click to expand)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(ggplot2)
+library(DT)
+
+
+full_lyr_names <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/layers_eez_base.csv") %>% 
+  select(layer, name, description)
+
+resilience_pre <-  read.csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/eez/conf/resilience_categories.csv") %>% 
+  left_join(full_lyr_names, by = "layer") %>% 
+  mutate(subcategory = gsub("_", " ", subcategory))
+
+resilience_pretty <- resilience_pre %>%
+  select(Resilience = name, Category = category, Subcategory = subcategory, Description = description)
+
+  datatable(resilience_pretty,
+          options = list(pageLength = 10, autoWidth = TRUE),
+          filter = 'top')
+```
+
+:::
+
+
+We then link the resilience variables to specific goals (Figure 2). Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.
+
+*Figure 2. The impact of the global pressures on the goals. The larger the dot, the larger the impact (ranging from 0 - 3). Dots of the same color are the same goal, but some goals have different components that are affected differently. For example, the pressures affecting the Habitat goal will depend on which habitats a country has.*
+
+```{r, fig.width=9, fig.height=9}
+#| echo: false
+#| warning: false
+#| message: false
+
+resilience_labels <- resilience_pre %>%
+  select(resilience_short=layer, category, subcategory, resilience = name)
+
+#subgoal_labels <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/ohi_model/tables/Subgoal_Descriptions.csv") 
+#goal_labels <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/metadata_documentation/ohi_model/tables/ten_goals.csv") %>%
+#  filter(!(tolower(Goal) %in% tolower(subgoal_labels$Goal)))
+#goal_names <- subgoal_labels %>%
+#  mutate(Goal = paste0(Goal, ": ", Subgoal)) %>%
+#  select(Goal, Abbreviation) %>%
+#  rbind(select(goal_labels, c(Goal, Abbreviation)))
+
+goal_names <- data.frame(Goal = c("Food provision: Fisheries", "Food provision: Mariculture", "Biodiversity: Habitat", "Biodiversity: Species condition", "Sense of place: Iconic species", "Sense of place: Lasting special places", "Livelihoods", "Economies", "Artisanal Fishing Opportunity", "Natural Products", "Carbon Storage", "Tourism and Recreation", "Clean Waters", "Coastal Protection"),
+                 Abbreviation = c("FIS", "MAR", "HAB", "SPP", "ICO", "LSP", "LIV",
+                                  "ECO", "AO", "NP", "CS", "TR", "CW", "CP"))
+
+
+
+resilience_matrix <- read_csv("https://raw.githubusercontent.com/OHI-Science/ohi-global/draft/eez/conf/resilience_matrix.csv") %>%
+#  mutate(element = ifelse(is.na(element_name), element, element_name)) %>%
+#  select(-element_name) %>%
+  pivot_longer(cols=-c("goal", "element"),
+               names_to = "resilience_short") %>%
+  mutate(resilience_category = substr(resilience_short, 1,2)) %>%
+  left_join(resilience_labels, by="resilience_short") %>%
+  rename(Abbreviation = goal) %>%
+  left_join(goal_names, by="Abbreviation") %>%
+  mutate(goal = ifelse(!is.na(element), paste0(Goal, ": ", element), Goal)) %>%
+  mutate(goal = gsub("_", " ", goal)) %>%
+  select(Abbreviation, goal, resilience, value) %>%
+  mutate(goal = gsub("NA", "", goal))
+
+
+ggplot(resilience_matrix, aes(x = resilience, y = goal, size = value, color = Abbreviation)) +
+  geom_point(alpha = 0.7) +  # Adjust alpha for dot transparency
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels
+    axis.text.y = element_text(angle = 0, hjust = 1),  # Rotate x-axis labels
+    axis.title.x = element_blank(),                      # Remove x-axis title
+    axis.title.y = element_blank(),                       # Remove y-axis title
+    legend.position = "none"
+    ) 
+
+
+```
+
 
 The pressure estimate for each goal and country is then combined with the trend and resilience estimates to estimate goal scores.

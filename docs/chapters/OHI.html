@@ -62,6 +62,16 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="../site_libs/datatables-binding-0.26/datatables.js"></script>
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../site_libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../site_libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../site_libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
 
 </head>
 
@@ -213,9 +223,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-a-goal" id="toc-what-is-a-goal" class="nav-link active" data-scroll-target="#what-is-a-goal">What is a goal?</a></li>
+  <li><a href="#what-is-the-ocean-health-index-ohi" id="toc-what-is-the-ocean-health-index-ohi" class="nav-link active" data-scroll-target="#what-is-the-ocean-health-index-ohi">What is the Ocean Health Index (OHI)?</a></li>
+  <li><a href="#why-ohi" id="toc-why-ohi" class="nav-link" data-scroll-target="#why-ohi">Why OHI?</a></li>
+  <li><a href="#what-is-a-goal" id="toc-what-is-a-goal" class="nav-link" data-scroll-target="#what-is-a-goal">What is a goal?</a></li>
   <li><a href="#how-are-ohi-scores-calculated" id="toc-how-are-ohi-scores-calculated" class="nav-link" data-scroll-target="#how-are-ohi-scores-calculated">How are OHI scores calculated?</a></li>
-  <li><a href="#spatial-scale" id="toc-spatial-scale" class="nav-link" data-scroll-target="#spatial-scale">Spatial scale</a></li>
   <li><a href="#why-do-an-independent-assessment" id="toc-why-do-an-independent-assessment" class="nav-link" data-scroll-target="#why-do-an-independent-assessment">Why do an independent assessment?</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ohi-rsga/OHI_RSGA/edit/main/chapters/OHI.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/ohi-rsga/OHI_RSGA/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -226,9 +237,69 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><img src="figs/ocean_health_index2.jpg" style="width: 100%;"></p>
+<section id="what-is-the-ocean-health-index-ohi" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-ocean-health-index-ohi">What is the Ocean Health Index (OHI)?</h2>
+<p>The Ocean Health Index is a framework we developed to assess ocean health, which we define as how well we are managing ocean resources to sustainably deliver benefits to people now and in the future.</p>
+<p>Since it’s inception in <a href="https://www.nature.com/articles/nature11397">2012</a>, we have conducted 12 global assessments and over 30 regional assessments have been conducted (either independently, or in partnership us).</p>
+</section>
+<section id="why-ohi" class="level2">
+<h2 class="anchored" data-anchor-id="why-ohi">Why OHI?</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Ocean Health Index focuses on what people actually care about, such as jobs and food!</p>
+</div>
+</div>
+<p>Many indices of ocean health focus on abstract stressor variables, such as phosphate levels, sedimentation, pH, etc. Individual indicators are very important, but they provide limited information when it comes to evaluating how well an overall ecosystem is functioning. Plus, they can be difficult to communicate because most people do not directly care about nutrient pollution, however, they do care about its effects on the ocean’s ability to provide recreation and food.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The OHI recognizes people are an important part of the marine system.</p>
+</div>
+</div>
+<p>The OHI tracks both the <em>pressures</em> we put on oceans as well as the <em>benefits</em> we receive. Both conservation and extractive use of ocean resources are valued, and consequently, scores are highest when we maximize the benefits we receive while maintaining sustainability. Many indices focus only on the pressures that humans apply to systems, which makes sense because we want to be sure to adequately protect the ocean. However, eliminating all pressures on the ocean would require eliminating all contact between humans and the ocean. Beyond being unrealistic, this is undesirable because we would stop receiving all the benefits that we rely on from the ocean.</p>
+</section>
 <section id="what-is-a-goal" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-goal">What is a goal?</h2>
-<p>For the global study, participating scientists, economists, and sociologists reviewed what people want and expect from the ocean and then grouped them into ten categories called ‘goals.’</p>
+<p>Scientists, economists, and sociologists reviewed what people want and expect from the ocean and then grouped them into ten categories called ‘goals.’</p>
+<p><img src="figs/goals.jpg" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More about each of the goals (click to expand)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Clicking on the goal will link to the goal pages which provide more information about goals.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-fb0cf863d42afe6beaa0" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fb0cf863d42afe6beaa0">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/ao.html\">Artisanal fishing opportunity<\/a>","<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/bd.html\">Biodiversity<\/a>",null,null,"<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/cs.html\">Carbon storage<\/a>","<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/cw.html\">Clean waters<\/a>","<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/cp.html\">Coastal protection<\/a>","<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/fp.html\">Food provision<\/a>",null,null,"<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/le.html\">Livelihoods & economies<\/a>",null,null,"<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/np.html\">Natural products<\/a>","<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/sp.html\">Sense of place<\/a>",null,null,"<a href=\"https://ohi-rsga.github.io/OHI_RSGA/chapters/tr.html\">Tourism & recreation<\/a>"],[null,null,"&nbsp;&nbsp;&nbsp;&nbsp;Habitats","&nbsp;&nbsp;&nbsp;&nbsp;Species",null,null,null,null,"&nbsp;&nbsp;&nbsp;&nbsp;Fisheries","&nbsp;&nbsp;&nbsp;&nbsp;Mariculture",null,"&nbsp;&nbsp;&nbsp;&nbsp;Livelihoods","&nbsp;&nbsp;&nbsp;&nbsp;Economies",null,null,"&nbsp;&nbsp;&nbsp;&nbsp;Iconic species","&nbsp;&nbsp;&nbsp;&nbsp;Lasting special places",null],["Access people have to coastal resources, whether or not they actually take fish or harvest from coastal waters.","Conservation status of marine species.","Condition of habitats that are important for supporting a wide array of species diversity.","How successfully the richness and variety of marine life is being maintained.","Ability of natural coastal ecosystems to absorb and sequester carbon.","Degree to which waters are unpolluted.","Amount of current coastal protection provided by habitats relative to historic protection.","Amount of seafood sustainably grown or harvested for human consumption, including wild-caught commercial fisheries, mariculture, artisanal-scale and recreational fisheries.","Amount of wild-caught seafood that can be sustainably harvested, with sustainability defined by multi-species yield, and with penalties assigned for both over- and under-harvesting.","Ability to obtain maximal seafood yield from farm facilities without damaging the ocean's ability to continue providing resources for people in the future.","Maintainence of coastal and ocean-dependent livelihoods and economies.","Benefits people obtain from the oceans in the form of quality jobs and wages.","Economic value associated with marine industries.","Sustainable harvest of marine resources.","Level of protection provided for coastal and marine systems that contribute to cultural identity.","Health of species that are important to local cultural identity.","Conservation status of geographic locations that hold significant aesthetic, spiritual, cultural, recreational, or existence value for people.","Value people have for experiencing and taking pleasure in coastal areas."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>goal<\/th>\n      <th>subgoal<\/th>\n      <th>description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Each goal is scored on the delivery of specific benefits with respect to a sustainable target. A goal is given a score of 100 if its benefits are maximized without compromising the ocean’s ability to deliver those benefits in the future. Lower scores indicate that more benefits could be gained or that current methods are harming the delivery of future benefits.</p>
 </section>
 <section id="how-are-ohi-scores-calculated" class="level2">
@@ -243,31 +314,25 @@ Goal scores are the building blocks of the OHI score!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To obtain the overall OHI score, the scores of the ten goals are averaged. The global assessment weights the goal scores equally, but some regions may place different values on the goals, and thus, weight the goals differently.</p>
+<p>To obtain the overall OHI score for each region, the scores of the ten goals are averaged. The global assessment weights the goal scores equally, but some assessments may place different values on the goals, and thus, weight the goals differently.</p>
 </div>
 </div>
 <p>Goal scores are based on several components: current status, likely future status, trend, pressures, and resilience.</p>
-<p><em>CURRENT STATUS:</em> A goal’s current value compared to its reference point, resulting in a score from 0 to 100.</p>
-<p><em>LIKELY FUTURE STATUS:</em> The goal’s predicted status score five years in the future (once again on a scale of 0 to 100), which is estimated by adjusting the current status score by three variables:</p>
+<p><strong>Current status</strong> A goal’s current value compared to its reference point, resulting in a score from 0 to 100.</p>
+<p><strong>Likely future status</strong> The goal’s predicted status score five years in the future (once again on a scale of 0 to 100), which is estimated by adjusting the current status score by three variables:</p>
 <ul>
-<li><p><em>TREND:</em> observed change in goal’s status during most recent 5 years.</p></li>
-<li><p><em>PRESSURES</em> ecological and social factors that decrease a goal’s status.</p></li>
-<li><p><em>RESILIENCE</em> ecological factors and social initiatives (policies, laws, etc.) that mitigate the pressures acting on a goal.</p></li>
+<li><p><strong>Trend</strong> observed change in goal’s status during most recent 5 years.</p></li>
+<li><p><strong>Pressures</strong> ecological and social factors that decrease a goal’s status.</p></li>
+<li><p><strong>Resilience</strong> ecological factors and social initiatives (policies, laws, etc.) that mitigate the pressures acting on a goal.</p></li>
 </ul>
-<p><img src="figs/methodology-chart.png" class="img-fluid"></p>
-</section>
-<section id="spatial-scale" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-scale">Spatial scale</h2>
-<p>Scores are calculated at several spatial scales.</p>
-<p>Each goal score is calculated at the smallest spatial scale for the assessment.For the global analysis this is each country (or, territory, in some cases), but these spatial units can be smaller than a country when doing regional assessments.</p>
-<p>The scores for larger geographic areas can then be calculated based on the size of their marine area.</p>
+<p><img src="figs/methodology-chart.png" class="img-fluid"> Once each region has a goal and index score, these can be averaged (weighted by EEZ area) to obtain an overall score for the entire area of interest.</p>
 </section>
 <section id="why-do-an-independent-assessment" class="level2">
 <h2 class="anchored" data-anchor-id="why-do-an-independent-assessment">Why do an independent assessment?</h2>
 <p>OHI+ assessments are conducted by independent groups to measure ocean health in their regions, countries, states, and communities. These assessments can be used by managers to incorporate local information and priorities at the spatial scale where policy and management decisions are made.</p>
 <p>Independent assessments use the same framework as the global assessment, but can explore the variables influencing ocean health at the smaller scales where policy and management decisions are made. Goal models and targets are created using higher resolution data, indicators, and priorities, which produce scores better reflecting local realities. This enables scientists, managers, policy makers, and the public to better and more holistically understand, track, and communicate the status of local marine ecosystems, and to design strategic management actions to improve overall ocean health.</p>
 <p>Assessments provide an opportunity engage multiple stakeholders in a collaborative process. In our experiences engaging with various countries around the world, the process of conducting the assessment was just as valuable (if not more) than the final results. This is because the assessment process serves as a forum to engage stakeholders from multiple backgrounds (scientific, civil society, government, private sector, NGOs, etc.) to discuss local preferences and priorities, understand the interactions between various activities, and collaboratively establish management targets.</p>
-<p>Conducting a local OHI+ assessment is also valuable because it results in a synthesized collection of data, scientific findings, and management efforts.</p>
+<p>Conducting a local OHI+ assessment is also valuable because it results in a synthesized collection of data and scientific findings.</p>
 
 
 </section>

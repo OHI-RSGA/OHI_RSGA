@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OHI+ -</title>
+<title>OHI: Red Sea &amp; Gulf of Aden -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,6 +60,20 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="../site_libs/datatables-binding-0.26/datatables.js"></script>
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../site_libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../site_libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../site_libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="../site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet">
+<script src="../site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="../site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet">
+<script src="../site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
 
 </head>
@@ -233,23 +247,49 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>For the global OHI assessment, we assess three general categories of resilience: ecological health, regulatory effort, and social effectiveness.</p>
 <p><br></p>
-<ul>
-<li><strong>Ecological Health</strong></li>
-<li>Healthy ecosystems have the ability to absorb disturbance to maintain critical functions (Chambers et al.&nbsp;2019). For the global OHI assessment, ecosystem health is measured as the relative condition of assessed species in a given location. For some goals, there is little evidence that this index of ecosystem integrity directly affects the value of the goal (or subgoal). In these instances, ecological integrity falls out of the resilience model.</li>
-</ul>
-<p><br></p>
-<ul>
-<li><strong>Regulatory effort</strong></li>
-<li>Institutional measures (e.g., rules, regulations, and laws) can address the specific pressures acting on systems. For the global OHI assessment, regulatory effort is comprised of five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and species introductions. There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a specific pressure category.</li>
-</ul>
-<p><br></p>
-<ul>
-<li><strong>Social integrity</strong></li>
-<li>Well functioning societies have the capacity and resources to mitigate a wide array of challenges.This indicator is intended to describe the effectiveness of social institutions that exist to meet human needs such as government, economy, education, heathcare, and religion.</li>
-</ul>
+<p><strong>Ecological Health</strong></p>
+<blockquote class="blockquote">
+<p>Healthy ecosystems have the ability to absorb disturbance to maintain critical functions (Chambers et al.&nbsp;2019). For the global OHI assessment, ecosystem health is measured as the relative condition of assessed species in a given location. For some goals, there is little evidence that this index of ecosystem integrity directly affects the value of the goal (or subgoal). In these instances, ecological integrity falls out of the resilience model.</p>
+</blockquote>
+<p><strong>Regulatory effort</strong></p>
+<blockquote class="blockquote">
+<p>Institutional measures (e.g., rules, regulations, and laws) can address the specific pressures acting on systems. For the global OHI assessment, regulatory effort is comprised of five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and species introductions. There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a specific pressure category.</p>
+</blockquote>
+<p><strong>Social integrity</strong></p>
+<blockquote class="blockquote">
+<p>Well functioning societies have the capacity and resources to mitigate a wide array of challenges.This indicator is intended to describe the effectiveness of social institutions that exist to meet human needs such as government, economy, education, heathcare, and religion.</p>
+</blockquote>
 <hr>
 <p>Each resilience category may be composed of several datasets. For each dataset, values will range from 0 to 1, reflecting the magnitude of resilience for each country (with 1 indicating high resilience).</p>
-<p>The resilience data is then combined to estimate the total resilience for each goal and country. Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Description of global resilience data (click to expand)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-326dbc0194b10a3a9d64" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-326dbc0194b10a3a9d64">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"],["Measure of ecological integrity","Measure of coastal ecological integrity","Management of nonindigenous species","CITES signatories","Coastal protected marine areas (fishing preservation)","EEZ protected marine areas (fishing preservation)","Management of habitat to protect fisheries biodiversity","Minderoo Global Fishing Index","Artisanal fisheries management effectiveness","Management of habitat to protect habitat biodiversity","Coastal protected marine areas (habitat preservation)","EEZ protected marine areas (habitat preservation)","Management of tourism to preserve biodiversity","Management of waters to preserve biodiversity","Global Competitiveness Index (GCI)","Economic diversity","Strength of governance","Social Progress Index"],["ecological","ecological","ecological","ecological","ecological","ecological","ecological","ecological","ecological","ecological","ecological","ecological","ecological","ecological","social","social","social","social"],["ecological","ecological","alien species","goal","fishing pressure","fishing pressure","fishing pressure","fishing pressure","fishing pressure","habitat destruction","habitat destruction","habitat destruction","goal","pollution","social","social","social","social"],["Marine species condition (species subgoal status score) as a proxy for ecological integrity","Marine species condition (same calculation and data as the species subgoal status score)  calculated within 3 nm of shoreline as a proxy for ecological integrity","Survey responses by country to the Convention on Biological Diversity (CBD) Third National Report: invasive species related questions","Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES) signatories","Protected marine areas within 3nm of coastline (lasting special places goal status score)","Protected marine areas within EEZ (lasting special places calculation applied to the entire EEZ)","Survey responses by country to the Convention on Biological Diversity (CBD) Third National Report: habitat related questions","Country scale fisheries governance capacity based on policy and objectives, management capacity, information availability and monitoring, level and control of access to fisheries resources, compliance management system, and stakeholder engagement and participation","Quality of management of small-scale fishing for artisanal and recreational purposes","Survey responses by country to the Convention on Biological Diversity (CBD) Third National Report: habitat related questions","Protected marine areas within 3nm of coastline (lasting special places goal status score)","Protected marine areas within EEZ (lasting special places calculation applied to the entire EEZ)","Survey responses by country to the Convention on Biological Diversity (CBD) Third National Report: tourism related questions","Survey responses by country to the Convention on Biological Diversity (CBD) Third National Report: clean water management related questions","Competitiveness in achieving sustained economic prosperity","Sector evenness based on Shannon's Diversity Index calculated on the proportion of jobs in each sector as a measure of economic diversity","World Governance Indicators (WGI) six combined scores","Social Progress Index scores"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Resilience<\/th>\n      <th>Category<\/th>\n      <th>Subcategory<\/th>\n      <th>Description<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"autoWidth":true,"columnDefs":[{"orderable":false,"targets":0}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>We then link the resilience variables to specific goals (Figure 2). Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.</p>
+<p><em>Figure 2. The impact of the global pressures on the goals. The larger the dot, the larger the impact (ranging from 0 - 3). Dots of the same color are the same goal, but some goals have different components that are affected differently. For example, the pressures affecting the Habitat goal will depend on which habitats a country has.</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="resilience_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
 <p>The pressure estimate for each goal and country is then combined with the trend and resilience estimates to estimate goal scores.</p>
 
 

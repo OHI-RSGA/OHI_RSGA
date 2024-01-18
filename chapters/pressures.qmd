@@ -57,7 +57,7 @@ The **social** pressure category describes the lack of effectiveness of governme
 
 ----
 
-Each pressure category may include several stressors (See Table 1 for full list of stressors). For example, the climate category includes: increases to sea surface temperature, ocean acidification, sea level rise, and changes to UV radiation. We determine the intensity of each individual stressor within each country on a scale of 0-1, with 1 indicating the highest stress.
+Each pressure category may include several stressors (see below for full list of stressors). For example, the climate category includes: increases to sea surface temperature, ocean acidification, sea level rise, and changes to UV radiation. We determine the intensity of each individual stressor within each country on a scale of 0-1, with 1 indicating the highest stress.
 
 ::: {.callout-note collapse=true}
 

@@ -235,6 +235,21 @@ To calculate the status for each region and year, $B/B_{MSY}$ values were conver
 
 The biggest factor driving scores, by far, is the current status component. Here, we take a closer look at the data underlying the status scores for each country with EEZ territory in the Red Sea and Gulf of Aden.
 
+:::{callout-note collapse=TRUE}
+
+## Other components of an OHI score: Pressures, resilience, and trend
+
+OHI scores are primarily driven by the *current status* dimension of the score, but *pressures*, *resilience*, and *past trends* are also important components of the goal score. In most cases, these variables will nudge the score a bit higher or lower than the *current status* score.  
+
+There are over 20 pressure variables (e.g., ocean warming, ocean acidification) and about 15 resilience variables (e.g., good governance and high gdp) used in the global assessment. 
+
+Each country gets a score for each pressure and resilience variable. For example, for each country we estimated the intensity of increase in ocean temperature, and rescaled these data to range from 0 to 1 (no pressure vs. highest pressure). 
+
+Each goal is affected by a subset of the pressure and resilience variables.    
+We provide a brief description of all the [pressure](https://ohi-rsga.github.io/OHI_RSGA/chapters/pressures.html) and [resilience](https://ohi-rsga.github.io/OHI_RSGA/chapters/resilience.html) variables along with how they affect each goal. A brief description of how these variables are incorporated into the final score is [here](https://mazu.nceas.ucsb.edu/rstudio/p/56fe4d6c/chapters/OHI.html#how-are-ohi-scores-calculated). 
+::: 
+
+
 ### Current status
 
 We will first look at the data underlying the mariculture subgoal and then then wildcaught fisheries subgoal. 
