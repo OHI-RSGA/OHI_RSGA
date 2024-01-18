@@ -132,4 +132,4 @@ ggplot(resilience_matrix, aes(x = resilience, y = goal, size = value, color = Ab
 ```
 
 
-The pressure estimate for each goal and country is then combined with the trend and resilience estimates to estimate goal scores.
+The resilience estimate for each goal and country is then combined with the trend and pressure estimates to estimate goal scores.
