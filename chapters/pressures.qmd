@@ -87,7 +87,7 @@ pressure_pretty <- pressure_pre %>%
 
 We then link the stressors to specific goals, by estimating the rank sensitivity of each goal to each stressor (Figure 2). For example, in the global assessment, coral habitat is extremely sensitive to increasing sea surface temperature but is not particularly sensitive to trash pollution. 
 
-*Figure 2. The impact of the global pressures on the goals. The larger the dot, the larger the impact (ranging from 0 - 3). Dots of the same color are the same goal, but some goals have different components that are affected differently. For example, the pressures affecting the Habitat goal will depend on which habitats a country has.*
+*Figure 2. The impact of the global pressures on the goals. The larger the point, the larger the impact (ranging from 0 - 3). Points of the same color are the same goal, but some goals have different components that are affected differently. For example, the pressures affecting the Habitat goal will depend on the specific habitat.*
 
 ```{r, fig.width=9, fig.height=9}
 #| echo: false

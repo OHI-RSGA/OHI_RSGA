@@ -33,11 +33,13 @@ score <- score(x="Index", ohi_scores)
 
 Here we report Ocean Health Index scores for the [Red Sea and Gulf of Aden region](https://ohi-rsga.github.io/OHI_RSGA/chapters/region.html) using data extracted from the [2023 global assessment](https://oceanhealthindex.org). A quick overview of OHI can be found [here](https://ohi-rsga.github.io/OHI_RSGA/chapters/OHI.html). 
 
+## Index score
+
+
 :::: {.columns} 
 
 ::: {.column width="50%"}
 
-<br>
 
 **The overall Index score for the Red Sea and Gulf of Aden region was `r score`.**
 <br>

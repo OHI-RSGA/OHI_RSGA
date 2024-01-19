@@ -78,7 +78,7 @@ resilience_pretty <- resilience_pre %>%
 
 We then link the resilience variables to specific goals (Figure 2). Resilience estimates are intended to directly address, as much as possible, the specific pressures acting on a goal. Consequently, resilience scores should not exceed pressure scores, otherwise likely future status scores will be inflated.
 
-*Figure 2. The impact of the global pressures on the goals. The larger the dot, the larger the impact (ranging from 0 - 3). Dots of the same color are the same goal, but some goals have different components that are affected differently. For example, the pressures affecting the Habitat goal will depend on which habitats a country has.*
+*Figure 2. The relationship between the resilience layers and goals. Points with the same color are the same goal, but some goals have different components that are affected differently.*
 
 ```{r, fig.width=9, fig.height=9}
 #| echo: false

@@ -10,7 +10,7 @@ website:
   repo-actions: [edit, issue]
   
   page-footer:
-    right: "Something here?"
+    right: "Source repository: https://github.com/OHI-RSGA"
     left: "An Ocean Health Index collaboration"
     
   sidebar:
